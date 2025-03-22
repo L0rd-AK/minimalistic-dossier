@@ -10,6 +10,14 @@ function Projects() {
           <span className="text-gray-800 font-medium">
             Full-stack Job Finder React app
           </span>
+          <a
+            href="https://jobdoc-de92b.web.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 px-2 py-1 font-medium text-red-600 hover:text-red-800 hover:bg-blue-100 rounded transition-colors"
+          >
+            [Live]
+          </a>
         </li>
         <li className="p-2 hover:bg-blue-50 rounded-md transition-colors flex items-center">
           <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
@@ -28,6 +36,14 @@ function Projects() {
           <span className="text-gray-800 font-medium">
             Auto Attendance System Using Face-Recognition in Python
           </span>
+          <a
+            href="https://github.com/L0rd-AK/Auto-Attendance-System-using-Face-Recognition"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 px-2 py-1 font-medium text-red-600 hover:text-red-800 hover:bg-blue-100 rounded transition-colors"
+          >
+            [Repo]
+          </a>
         </li>
         <li className="p-2 hover:bg-blue-50 rounded-md transition-colors flex items-center">
           <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
