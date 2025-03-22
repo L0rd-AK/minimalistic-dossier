@@ -8,6 +8,7 @@ import Skills from './pages/Skills';
 import Activities from './pages/Activities';
 import Projects from './pages/Projects';
 import References from './pages/References';
+import Books from './pages/Books';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/activities" element={<Activities />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/references" element={<References />} />
+          <Route path="/books" element={<Books />} />
         </Routes>
       </div>
     </Router>

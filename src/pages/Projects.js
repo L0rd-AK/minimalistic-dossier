@@ -20,6 +20,14 @@ function Projects() {
           >
             [Live]
           </a>
+          <a
+            href="https://github.com/L0rd-AK/JobDoc_Frontend"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-5 sm:ml-2 mt-1 sm:mt-0 px-2 py-1 font-medium text-red-600 hover:text-red-800 hover:bg-blue-100 rounded transition-colors"
+          >
+            [Repo]
+          </a>
         </li>
         <li className="p-2 hover:bg-blue-50 rounded-md transition-colors flex items-center">
           <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 flex-shrink-0"></div>

@@ -19,7 +19,9 @@ function Header() {
         <ul className="flex flex-col md:flex-row md:space-x-2 md:justify-end space-y-2 md:space-y-0 text-sm text-gray-600">
           <Link to="/" className="hover:text-blue-600 transition-colors px-2">Home</Link>
           <span className="hidden md:inline">/</span>
-          <Link to="/education" className="hover:text-blue-600 transition-colors px-2">Education</Link>
+          {/* <Link to="/education" className="hover:text-blue-600 transition-colors px-2">Education</Link>
+          <span className="hidden md:inline">/</span> */}
+          <Link to="/books" className="hover:text-blue-600 transition-colors px-2">Books</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/courses" className="hover:text-blue-600 transition-colors px-2">Courses</Link>
           <span className="hidden md:inline">/</span>
@@ -30,8 +32,8 @@ function Header() {
           <Link to="/activities" className="hover:text-blue-600 transition-colors px-2">Activities</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/projects" className="hover:text-blue-600 transition-colors px-2">Projects</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/references" className="hover:text-blue-600 transition-colors px-2">References</Link>
+          {/* <span className="hidden md:inline">/</span>
+          <Link to="/references" className="hover:text-blue-600 transition-colors px-2">References</Link> */}
         </ul>
       </nav>
     </header>
