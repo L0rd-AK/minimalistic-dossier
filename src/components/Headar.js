@@ -2,18 +2,17 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <header className="sticky top-0 bg-white shadow-md p-4 flex justify-between items-center z-10">
-      <h1 className="text-2xl font-bold">Amit Kumar Ghosh</h1>
+    <header className="sticky max-w-4xl mx-auto top-0 bg-white  p-4 flex justify-end items-center z-10">
       <nav>
-        <ul className="flex space-x-4 text-sm">
-          <li><Link to="/" className="hover:underline">Home</Link></li>
-          <li><Link to="/education" className="hover:underline">Education</Link></li>
-          <li><Link to="/courses" className="hover:underline">Courses</Link></li>
-          <li><Link to="/contests" className="hover:underline">Contests</Link></li>
-          <li><Link to="/skills" className="hover:underline">Skills</Link></li>
-          <li><Link to="/activities" className="hover:underline">Activities</Link></li>
-          <li><Link to="/projects" className="hover:underline">Projects</Link></li>
-          <li><Link to="/references" className="hover:underline">References</Link></li>
+        <ul className="flex space-x-2 text-sm text-gray-600">
+          <Link to="/" className="hover:text-blue-600 transition-colors px-2">Home</Link>/
+          <Link to="/education" className="hover:text-blue-600 transition-colors px-2">Education</Link>/
+          <Link to="/courses" className="hover:text-blue-600 transition-colors px-2">Courses</Link>/
+          <Link to="/contests" className="hover:text-blue-600 transition-colors px-2">Contests</Link>/
+          <Link to="/skills" className="hover:text-blue-600 transition-colors px-2">Skills</Link>/
+          <Link to="/activities" className="hover:text-blue-600 transition-colors px-2">Activities</Link>/
+          <Link to="/projects" className="hover:text-blue-600 transition-colors px-2">Projects</Link>/
+          <Link to="/references" className="hover:text-blue-600 transition-colors px-2">References</Link>
         </ul>
       </nav>
     </header>
