@@ -1,4 +1,4 @@
-import img from "../assates/profile.jpeg";
+import img from "../assates/pasport.jpg";
 function Hero() {
     return (
       <div className="p-8 max-w-4xl mx-auto bg-gray-50  shadow-sm rounded-lg">
@@ -6,7 +6,7 @@ function Hero() {
           <img
             src={img}// Replace with actual profile picture URL
             alt="Profile"
-            className="w-32 h-32 object-cover object-top rounded-full mr-4 border-2 border-blue-500 shadow-md"
+            className="w-36 h-36 object-cover object-top rounded-full mr-4 border-2 border-blue-500 shadow-md"
           />
           <div>
             <h2 className="text-2xl font-bold text-blue-700">Amit Kumar Ghosh</h2>

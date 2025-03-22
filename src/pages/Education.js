@@ -9,7 +9,7 @@ function Education() {
             <p className="text-gray-700">Daffodil International University</p>
             <p className="text-gray-700">CGPA: <span className="font-medium text-green-600">3.80</span> out of 4.00</p>
           </div>
-          <p className="text-purple-600 italic">[ 01/2022 – Present ]</p>
+          <p className="text-purple-600 font-medium italic">[01/2022 – Present]</p>
         </div>
         <div className="flex justify-between">
           <div>
@@ -18,7 +18,7 @@ function Education() {
             <p className="text-gray-700">Background: Science</p>
             <p className="text-gray-700">GPA: <span className="font-medium text-green-600">4.67</span> out of 5.00</p>
           </div>
-          <p className="text-purple-600 italic">[ 01/2017 – 03/2019 ]</p>
+          <p className="text-purple-600 font-medium italic">[01/2017 – 03/2019]</p>
         </div>
         <div className="flex justify-between">
           <div>
@@ -27,7 +27,7 @@ function Education() {
             <p className="text-gray-700">Background: Science</p>
             <p className="text-gray-700">GPA: <span className="font-medium text-green-600">5.00</span> out of 5.00</p>
           </div>
-          <p className="text-purple-600 italic">[ 02/2014 – 11/2016 ]</p>
+          <p className="text-purple-600 font-medium italic">[02/2014 – 11/2016]</p>
         </div>
       </div>
     </div>
