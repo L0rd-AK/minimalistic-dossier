@@ -24,6 +24,7 @@ function Projects() {
     {
       title: "Auto Attendance System Using Face-Recognition in Python",
       links: [
+        { url: "https://youtu.be/hEhCqYvJyNw?si=Q_1lpFz1cL3zt3RN", label: "Video" },
         { url: "https://github.com/L0rd-AK/Auto-Attendance-System-using-Face-Recognition", label: "Repo" }
       ]
     },
