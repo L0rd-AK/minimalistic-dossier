@@ -20,7 +20,9 @@ function Books() {
 
   return (
     <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
-      <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">Books I Have Read</h2>
+      <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">Books I Have Read 
+        <span className="text-sm text-gray-600">(<span className="text-red-600 font-medium">{booksList.length}</span>)</span>
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-3">
         {booksList.map((book, index) => (
           <div key={index} className="p-2 hover:bg-blue-50 rounded-md transition-colors flex flex-col md:flex-row md:justify-between md:items-center">
