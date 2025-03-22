@@ -28,7 +28,7 @@ function Hero() {
       </div>
       <div>
         <h3 className="text-lg font-bold uppercase mb-2 text-blue-700 border-b border-gray-300 pb-1">Summary</h3>
-        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+        <p className="text-gray-700 leading-relaxed text-justify text-sm sm:text-base">
           I am a full-stack developer with years of experience in creating and managing websites. My skills include coding in HTML, CSS, and JavaScript, as well as working in React, Node JS, Express JS, and MongoDB. As a full-stack developer with a lot of ambition, I seek a position in a reputable IT company where I can use the most advanced technologies and work on various and complex projects. If I had to define myself in one sentence, I would be a team player, problem solver, and tech obsessed!!
         </p>
       </div>

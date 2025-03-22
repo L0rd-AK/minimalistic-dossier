@@ -16,7 +16,7 @@ function Header() {
       </button>
       
       <nav className={`${menuOpen ? 'block' : 'hidden'} md:block w-full`}>
-        <ul className="flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0 text-sm text-gray-600">
+        <ul className="flex flex-col md:flex-row md:space-x-2 md:justify-end space-y-2 md:space-y-0 text-sm text-gray-600">
           <Link to="/" className="hover:text-blue-600 transition-colors px-2">Home</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/education" className="hover:text-blue-600 transition-colors px-2">Education</Link>
