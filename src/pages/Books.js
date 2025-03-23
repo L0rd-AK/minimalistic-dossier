@@ -2,20 +2,104 @@ import React from 'react';
 
 function Books() {
   const booksList = [
-      { title: "1984", status: "Completed", isReading: false },
-      { title: "The Courage to Be Disliked", status: "Completed", isReading: false },
-      { title: "Three Days of Happiness", status: "Completed", isReading: false },
-      { title: "Norwegian Wood", status: "Completed", isReading: false },
-      { title: "Crime and Punishment", status: "125 pages", isReading: true },
-      { title: "The Subtle Art of Not Giving a F*ck", status: "Completed", isReading: false },
-      { title: "As a Man Thinketh", status: "Completed", isReading: false },
-      { title: "Dopamine Detox", status: "Completed", isReading: false },
-    { title: "Art of Living", status: "Completed", isReading: false },
-    { title: "Brave New World", status: "Completed", isReading: false },
-    { title: "Ikigai", status: "Completed", isReading: false },
-    { title: "How to Win Friends and Influence People", status: "Completed", isReading: false },
-    { title: "Man's Search for Meaning", status: "Completed", isReading: false },
-    { title: "Deep Work", status: "Completed", isReading: false },
+    { 
+      title: "1984", 
+      author: "George Orwell", 
+      description: "A dystopian novel set in a totalitarian society under constant surveillance.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "The Courage to Be Disliked", 
+      author: "Ichiro Kishimi and Fumitake Koga", 
+      description: "A self-help book based on Adlerian psychology.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "Three Days of Happiness", 
+      author: "Sugaru Miaki", 
+      description: "A story about selling your lifespan for money and finding meaning in life.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "Norwegian Wood", 
+      author: "Haruki Murakami", 
+      description: "A nostalgic story of love and loss in 1960s Japan.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "Crime and Punishment", 
+      author: "Fyodor Dostoevsky", 
+      description: "A psychological exploration of morality and redemption.", 
+      status: "125 pages", 
+      isReading: true 
+    },
+    { 
+      title: "The Subtle Art of Not Giving a F*ck", 
+      author: "Mark Manson", 
+      description: "A counterintuitive approach to living a good life.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "As a Man Thinketh", 
+      author: "James Allen", 
+      description: "A philosophical essay on the power of thought.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "Dopamine Detox", 
+      author: "Thibaut Meurisse", 
+      description: "A guide to overcoming distractions and regaining focus.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "Art of Living", 
+      author: "Epictetus", 
+      description: "A manual for living based on Stoic philosophy.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "Brave New World", 
+      author: "Aldous Huxley", 
+      description: "A dystopian novel exploring a technologically advanced society.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "Ikigai", 
+      author: "Héctor García and Francesc Miralles", 
+      description: "A guide to finding purpose and happiness in life.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "How to Win Friends and Influence People", 
+      author: "Dale Carnegie", 
+      description: "A classic book on interpersonal skills and communication.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "Man's Search for Meaning", 
+      author: "Viktor E. Frankl", 
+      description: "A memoir and exploration of finding meaning in suffering.", 
+      status: "Completed", 
+      isReading: false 
+    },
+    { 
+      title: "Deep Work", 
+      author: "Cal Newport", 
+      description: "A guide to achieving focused success in a distracted world.", 
+      status: "Completed", 
+      isReading: false 
+    },
   ];
 
   return (
@@ -26,9 +110,13 @@ function Books() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-3">
         {booksList.map((book, index) => (
           <div key={index} className="p-2 hover:bg-blue-50 rounded-md transition-colors flex flex-col md:flex-row md:justify-between md:items-center">
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-              <span className="font-medium text-blue-600">{book.title}</span>
+            <div className="flex flex-col">
+              <div className="flex items-center">
+                <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                <span className="font-medium text-blue-600">{book.title}</span>
+              </div>
+              <span className="text-gray-600 text-sm">by {book.author}</span>
+              <p className="text-gray-500 text-xs mt-1">{book.description}</p>
             </div>
             <p className="text-black ml-5 md:ml-2 text-sm mt-1 md:mt-0">
               [<span className={`${book.isReading ? 'text-red-600' : 'text-purple-600'} font-medium`}>{book.status}</span>]

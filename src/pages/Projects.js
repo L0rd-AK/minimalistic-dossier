@@ -51,6 +51,7 @@ function Projects() {
               </span>
             </div>
             
+            <div className="flex">
             {project.links.map((link, linkIndex) => (
               <a
                 key={linkIndex}
@@ -62,6 +63,7 @@ function Projects() {
                 [{link.label}]
               </a>
             ))}
+            </div>
           </li>
         ))}
       </ul>
