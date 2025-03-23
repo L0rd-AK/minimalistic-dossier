@@ -23,6 +23,8 @@ function Header() {
           <span className="hidden md:inline">/</span> */}
           <Link to="/books" className="hover:text-blue-600 transition-colors px-2">Books</Link>
           <span className="hidden md:inline">/</span>
+          <Link to="/projects" className="hover:text-blue-600 transition-colors px-2">Projects</Link>
+          <span className="hidden md:inline">/</span>
           <Link to="/courses" className="hover:text-blue-600 transition-colors px-2">Courses</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/contests" className="hover:text-blue-600 transition-colors px-2">Contests</Link>
@@ -30,8 +32,6 @@ function Header() {
           <Link to="/skills" className="hover:text-blue-600 transition-colors px-2">Skills</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/activities" className="hover:text-blue-600 transition-colors px-2">Activities</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/projects" className="hover:text-blue-600 transition-colors px-2">Projects</Link>
           {/* <span className="hidden md:inline">/</span>
           <Link to="/references" className="hover:text-blue-600 transition-colors px-2">References</Link> */}
         </ul>

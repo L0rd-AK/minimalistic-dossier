@@ -22,8 +22,9 @@ const updates = [
         date: "[27/11/2024]",
         description: (
             <>
-                Reached 2 ⭐ on Codechef.{" "}
-                <span className="text-red-600 font-medium">MAX rating: 1559</span>.
+                Reached 2 ⭐ on Codechef.{" "}MAX rating: 
+                <span className="text-red-600 font-medium">1559</span>.
+                Country rank: <span className="text-red-600 font-medium">860</span>.
             </>
         ),
     },
