@@ -9,7 +9,7 @@ import Activities from './pages/Activities';
 import Projects from './pages/Projects';
 import References from './pages/References';
 import Books from './pages/Books';
-
+import Update from './pages/Update';
 function App() {
   return (
     <Router>
@@ -17,6 +17,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/update" element={<Update />} />
           <Route path="/education" element={<Education />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/contests" element={<Contests />} />

@@ -6,11 +6,13 @@ import Skills from "./Skills";
 import Activities from "./Activities";
 import Projects from "./Projects";
 import References from "./References";
+import Update from "./Update";
 
 function Home() {
     return (
       <>
           <Hero />
+          <Update />
           <Education />
           <Courses />
           <Contests />
