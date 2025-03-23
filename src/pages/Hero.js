@@ -1,6 +1,20 @@
+import { useEffect, useState } from "react";
+import AnimatedLetters from "../AnimatedLetters";
 import img from "../assates/pasport.jpg";
 
 function Hero() {
+  const [letterClass, setLetterClass] = useState("text-animate");
+  const nameArray = ["A", "M", "I", "T", " ", "K", "U", "M", "A", "R", " ", "G", "H", "O", "S", "H"];
+
+  const setLetter = async() =>{
+    return setTimeout(() => {
+        setLetterClass('text-animate-hover')
+    }, 4000)
+  }
+  useEffect(() => {
+  setLetter()
+  }, [])
+
   return (
     <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
       <div className="flex flex-col md:grid md:grid-cols-2 gap-6 mb-6">
@@ -12,7 +26,13 @@ function Hero() {
           />
         </div>
         <div className="text-center md:text-left">
-          <h2 className="text-xl sm:text-2xl font-bold text-blue-700">Amit Kumar Ghosh</h2>
+          <h2 className="text-3xl sm:text-2xl font-bold text-blue-700">
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={nameArray}
+              idx={15}
+            />
+          </h2>
           <p className="text-gray-600">Ashulia, Dhaka</p>
           <p className="text-gray-600">amitkumar89155@gmail.com</p>
           <p className="text-gray-600">+8801788133927</p>

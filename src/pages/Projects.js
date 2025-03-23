@@ -2,8 +2,8 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 function Projects() {
-  const location = useLocation(); // Get the current path
-  const isProjectPage = location.pathname === '/projects'; // Check if the path is '/project'
+  const location = useLocation(); 
+  const isProjectPage = location.pathname === '/projects'; 
 
   const projectsList = [
     {
