@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Projects() {
   const location = useLocation(); // Get the current path
@@ -62,16 +62,24 @@ function Projects() {
     <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
       <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
         Projects
+        <span className="text-sm text-gray-600">
+          <Link to="/projects" className="text-blue-600">
+          (<span className="text-red-600 text-sm lowercase font-medium">details</span>)
+          </Link>
+        </span>
       </h2>
       <ul className="space-y-2">
         {projectsList.map((project, index) => (
           <li
             key={index}
-            className={`p-2 hover:bg-blue-50 rounded-md border border-gray-300 transition-colors flex ${
+            className={`p-2 hover:bg-blue-50 rounded-md transition-colors flex ${
               project.links.length > 0
                 ? 'flex-col sm:flex-row items-start sm:items-center gap-10'
                 : 'items-center'
-            }`}
+            }${
+              isProjectPage ? ' border border-gray-300 p-4' : ''
+             }
+            `}
           >
             <div className={`${project.links.length > 0 ? 'items-left w-full' : ''}`}>
               <div className='flex items-center'>
