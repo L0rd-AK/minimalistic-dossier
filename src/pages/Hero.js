@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import AnimatedLetters from "../AnimatedLetters";
 import img from "../assates/pasport.jpg";
+import Loader from "react-loaders";
+import 'loaders.css/src/animations/pacman.scss';
+import 'loaders.css/loaders.min.css';
 
 function Hero() {
   const [letterClass, setLetterClass] = useState("text-animate");
   const nameArray = ["A", "M", "I", "T", " ", "K", "U", "M", "A", "R", " ", "G", "H", "O", "S", "H"];
 
-  const setLetter = async() =>{
-    return setTimeout(() => {
-        setLetterClass('text-animate-hover')
-    }, 4000)
-  }
   useEffect(() => {
-  setLetter()
-  }, [])
+    const timeout = setTimeout(() => {
+      setLetterClass("text-animate-hover");
+    }, 4000); 
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
@@ -21,7 +23,7 @@ function Hero() {
         <div className="flex justify-center md:justify-start">
           <img
             src={img}
-            alt="Profile"
+            alt="Profile pic of Amit Kumar Ghosh"
             className="w-32 h-32 sm:w-36 sm:h-36 object-cover object-top rounded-full border-2 border-blue-500 shadow-md"
           />
         </div>
@@ -33,6 +35,7 @@ function Hero() {
               idx={15}
             />
           </h2>
+          
           <p className="text-gray-600">Ashulia, Dhaka</p>
           <p className="text-gray-600">amitkumar89155@gmail.com</p>
           <p className="text-gray-600">+8801788133927</p>
@@ -52,6 +55,7 @@ function Hero() {
           I am a full-stack developer with years of experience in creating and managing websites. My skills include coding in HTML, CSS, and JavaScript, as well as working in React, Node JS, Express JS, and MongoDB. As a full-stack developer with a lot of ambition, I seek a position in a reputable IT company where I can use the most advanced technologies and work on various and complex projects. If I had to define myself in one sentence, I would be a team player, problem solver, and tech obsessed!!
         </p>
       </div>
+      <Loader type="pacman" />
     </div>
   );
 }
