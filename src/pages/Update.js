@@ -1,27 +1,37 @@
 import React from 'react';
 
 function Update() {
-  const updates = [
+const updates = [
     {
-      title: "Working on a React project",
-      date: "[03/2025]",
-      description: "Building a responsive resume website using React and Tailwind CSS.",
+        title: "Working on a React project",
+        date: "[03/2025]",
+        description: "Building a responsive resume website using React and Tailwind CSS.",
     },
     {
-      title: "Learning TypeScript",
-      date: "[02/2025]",
-      description: "Exploring TypeScript to improve code quality and maintainability.",
+        title: "Reached Pupil on Codeforces",
+        date: "[25/02/2025]",
+        description: (
+            <>
+                Just reached pupil. Working on improving problem-solving skills.{" "}
+                <span className="text-red-600 font-medium">MAX rating: 1215</span>.
+            </>
+        ),
     },
     {
-      title: "Contributing to Open Source",
-      date: "[01/2025]",
-      description: "Contributing to GitHub repositories to enhance my collaboration skills.",
+        title: "Reached 2 Star on Codechef",
+        date: "[27/11/2024]",
+        description: (
+            <>
+                Reached 2 ⭐ on Codechef.{" "}
+                <span className="text-red-600 font-medium">MAX rating: 1559</span>.
+            </>
+        ),
     },
-  ];
+];
 
   return (
     <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
-      <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
+      <h2 className="text-xl font-bold uppercase mb-4 text-green-500 border-b border-gray-300 pb-2">
         Recent Updates
       </h2>
       <ul className="space-y-4">
