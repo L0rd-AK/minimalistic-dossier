@@ -12,8 +12,8 @@ const updates = [
         date: "[25/02/2025]",
         description: (
             <>
-                Just reached pupil. Working on improving problem-solving skills.{" "}
-                <span className="text-red-600 font-medium">MAX rating: 1215</span>.
+                Just reached pupil. Working on improving problem-solving skills.{" "}MAX rating:
+                <span className="text-red-600 font-medium">1215</span>.
             </>
         ),
     },

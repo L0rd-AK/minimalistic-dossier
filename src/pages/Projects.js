@@ -1,38 +1,60 @@
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+
 function Projects() {
+  const location = useLocation(); // Get the current path
+  const isProjectPage = location.pathname === '/projects'; // Check if the path is '/project'
+
   const projectsList = [
     {
       title: "Full-stack Job Finder React app",
       links: [
         { url: "https://jobdoc-de92b.web.app", label: "Live" },
         { url: "https://github.com/L0rd-AK/JobDoc_Frontend", label: "Repo" }
-      ]
+      ],
+      technologies: "React JS, Express JS, MongoDB, Node JS, Firebase",
+      description: `User can sign in using Email or Google account. Once Logged in user can   
+      search for job, apply for a job or post a job. For authentication I used Firebase. For      
+      backend I used Express JS and for storing data I used MongoDB.`,
     },
     {
       title: "Full-stack Medical clinic React-app",
       links: [
         { url: "https://medlab-3e261.web.app", label: "Live" },
         { url: "https://github.com/L0rd-AK/MedLab_Frontend", label: "Repo" }
-      ]
+      ],
+      technologies: "React JS, Express JS, MongoDB, Node JS, Firebase",
+      description: `User can sign in using Email or Google account. Once Logged in, the user can 
+      search for a doctor and test. To book a test, the user must pay a fee. I have implemented 
+      a Payment-gateway using Stripe. This site contains an Admin role system. When an admin 
+      logs in, they can access their Admin-Dashboard. Through this dashboard, the admin can 
+      delete or update any test information, block any user, and blocked users cannot access 
+      the site anymore. For the backend, I used Express JS, and for storing data, I used MongoDB.`,
     },
     {
       title: "Front-end wedding React-project",
       links: [
         { url: "https://love-and-wedding-demo-site.vercel.app", label: "Live" },
         { url: "https://github.com/L0rd-AK/Love-and-Wedding_Demo-site", label: "Repo" }
-      ]
+      ],
+      technologies: "React JS, Tailwind CSS, DaisyUI, Firebase",
     },
     {
       title: "Auto Attendance System Using Face-Recognition in Python",
       links: [
         { url: "https://youtu.be/hEhCqYvJyNw?si=Q_1lpFz1cL3zt3RN", label: "Video" },
         { url: "https://github.com/L0rd-AK/Auto-Attendance-System-using-Face-Recognition", label: "Repo" }
-      ]
+      ],
+      technologies: "Python, OpenCV, SQLite",
+      description: `This project is an automated attendance system using face recognition.`,
     },
     {
       title: "Simple Server-Client Chat Application in Java",
       links: [
         { url: "https://github.com/L0rd-AK/Simple_chat_App_using_java", label: "Repo" }
-      ]
+      ],
+      technologies: "Java",
+      description: `This project is a simple chat application using Java. The server and client can chat with each other.`,
     }
   ];
 
@@ -43,26 +65,47 @@ function Projects() {
       </h2>
       <ul className="space-y-2">
         {projectsList.map((project, index) => (
-          <li key={index} className={`p-2 hover:bg-blue-50 rounded-md transition-colors flex ${project.links.length > 0 ? 'flex-col sm:flex-row items-start sm:items-center' : 'items-center'}`}>
-            <div className={`${project.links.length > 0 ? 'flex items-center w-full' : ''}`}>
+          <li
+            key={index}
+            className={`p-2 hover:bg-blue-50 rounded-md border border-gray-300 transition-colors flex ${
+              project.links.length > 0
+                ? 'flex-col sm:flex-row items-start sm:items-center gap-10'
+                : 'items-center'
+            }`}
+          >
+            <div className={`${project.links.length > 0 ? 'items-left w-full' : ''}`}>
+              <div className='flex items-center'>
               <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 flex-shrink-0"></div>
-              <span className="text-gray-800 font-medium">
-                {project.title}
-              </span>
+              <span className="text-gray-800 font-medium">{project.title}</span>
+              </div>
+              {/* Show extra information if on /project path */}
+              {isProjectPage && (
+                <div className="mt-2">
+                  <p className="text-gray-700 text-sm">
+                    <strong>Technologies:</strong> {project.technologies}
+                  </p>
+                  {project.description && (
+                    <div className='text-gray-700 text-sm mt-1 text-justify'>
+                      <strong className='inline'>Description: </strong>
+                      <p className="text-gray-600 text-sm mt-1 inline">{project.description}</p>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
-            
+
             <div className="flex">
-            {project.links.map((link, linkIndex) => (
-              <a
-                key={linkIndex}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-5 sm:ml-2 mt-1 sm:mt-0 px-2 py-1 font-medium text-red-600 hover:text-red-800 hover:bg-blue-100 rounded transition-colors"
-              >
-                [{link.label}]
-              </a>
-            ))}
+              {project.links.map((link, linkIndex) => (
+                <a
+                  key={linkIndex}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-5 sm:ml-2 mt-1 sm:mt-0 px-2 py-1 font-medium text-red-600 hover:text-red-800 hover:bg-blue-100 rounded transition-colors"
+                >
+                  [{link.label}]
+                </a>
+              ))}
             </div>
           </li>
         ))}
