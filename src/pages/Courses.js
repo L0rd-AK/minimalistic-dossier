@@ -25,7 +25,7 @@ function Courses() {
   return (
     <>
       <Helmet>
-        <title>Courses</title>
+        <title>Amit Kumar Ghosh - Courses</title>
         <meta
           name="Amit Kumar Ghosh | Courses"
           content="This is my Courses page."
@@ -35,7 +35,7 @@ function Courses() {
           content="This page contains details about the Courses, Amit Kumar Ghosh has taken."
         />
         <meta
-          property="og:description"
+          property="description"
           content="This page highlights Amit Kumar Ghosh's participation in various courses, including Learn C++ Programming - Beginner to Advance - Deep Dive in C++, Graphic Design, and Complete Web Development Course With Jhankar Mahbub. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
         />
         <link rel="canonical" href="/courses" />

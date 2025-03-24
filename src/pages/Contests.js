@@ -20,17 +20,17 @@ function Contests() {
   return (
     <>
       <Helmet>
-        <title>Contests</title>
+        <title>Amit Kumar Ghosh - Contests</title>
         <meta
           name="Amit Kumar Ghosh | Contests"
           content="This is my Contests page."
         />
         <meta
-          property="og:Contests"
+          property="Contests"
           content="This page contains details about the Contests, Amit Kumar Ghosh has participated in."
         />
         <meta
-          property="og:description"
+          property="description"
           content="This page highlights Amit Kumar Ghosh's participation in various programming contests, including the DIU FALL TAKEOFF Programming contest, DIU Spring TAKEOFF Programming contest, and regular attendance at online CP contests on platforms like Codeforces, Codechef, and Atcoder. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
         />
         <link rel="canonical" href="/contests" />

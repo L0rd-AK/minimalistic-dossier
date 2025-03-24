@@ -4,17 +4,17 @@ function Activities() {
   return (
     <>
       <Helmet>
-        <title>Activities</title>
+        <title>Amit Kumar Ghosh - Activities</title>
         <meta
           name="Amit Kumar Ghosh | Activities"
           content="This is my Extra-Curricular Activities page."
         />
         <meta
-          property="og:Activities"
+          property="Activities"
           content="This page contains my Extra-Curricular Activities"
         />
         <meta
-          property="og:description"
+          property="description"
           content="This page highlights Amit Kumar Ghosh's Extra-Curricular Activities. It actively showcases his role as an associate member of the DIU Computer & Programming Club, his achievement of solving over 1500 competitive programming problems on platforms like LeetCode, Codeforces, and CodeChef, and his language proficiencies in English and Bangla. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
         />
         <link rel="canonical" href="/activities" />

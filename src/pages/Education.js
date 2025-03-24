@@ -4,7 +4,7 @@ function Education() {
   return (
     <>
       <Helmet>
-        <title>Education</title>
+        <title>Amit Kumar Ghosh - Education</title>
         <meta
           name="Amit Kumar Ghosh | Education"
           content="This is my Education details page."
@@ -14,7 +14,7 @@ function Education() {
           content="This page contains details about Education, Amit Kumar Ghosh has completed."
         />
         <meta
-          property="og:description"
+          property="description"
           content="This page highlights Amit Kumar Ghosh's Education details, including his B.Sc. in Computer Science and Engineering from Daffodil International University, his Higher Secondary Certificate (H.S.C.) from Sirajganj Government College, Sirajganj, and his Secondary School Certificate (S.S.C.) from Jahan-Ara High School, Sirajganj. The page is designed with a responsive layout, ensuring a clean and interactive user experience"
         />
         <link rel="canonical" href="/education" />

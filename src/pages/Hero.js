@@ -31,16 +31,20 @@ function Hero() {
   return (
     <>
       <Helmet>
-        <title>Bio</title>
-        <meta name="Amit Kumar Ghosh | Bio" content="This is my Bio page." />
+        <title>Amit Kumar Ghosh</title>
         <meta
-          property="og:Bio"
-          content="This page contains details of my Bio"
+          name="Amit Kumar Ghosh"
+          content="This is portfolio page of Amit Kumar Ghosh."
+        />
+        <meta
+          property="og:Amit Kumar Ghosh"
+          content="This page contains details about Amit Kumar Ghosh"
         />
         <meta
           property="og:description"
-          content="This page highlights Amit Kumar Ghosh's Bio. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
+          content="Hello, I am Amit Kumar Ghosh. I am a Full Stack Web Developer. I have completed my B.Sc. in Computer Science and Engineering from Daffodil International University. I am passionate about learning new technologies and building web applications. I have experience in developing web applications using React, Node.js, Express.js, and MongoDB. I am also familiar with Python, Django, and MySQL. I am currently working as a Full Stack Web Developer at Daffodil International University. I am always eager to learn new things and improve my skills. I am looking for opportunities to work on challenging projects and contribute to the tech community."
         />
+        <link rel="canonical" href="/" />
       </Helmet>
       <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-6 mb-6">

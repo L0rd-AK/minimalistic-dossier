@@ -4,7 +4,7 @@ function Skills() {
   return (
     <>
       <Helmet>
-        <title>Skills</title>
+        <title>Amit Kumar Ghosh - Skills</title>
         <meta
           name="Amit Kumar Ghosh | Skills"
           content="This is Skills page of Amit Kumar Ghosh."
@@ -14,7 +14,7 @@ function Skills() {
           content="This page contains details about Skills of Amit Kumar Ghosh."
         />
         <meta
-          property="og:description"
+          property="description"
           content="This page highlights Amit Kumar Ghosh's Skills, including his proficiency in Tools like Adobe Photoshop, Illustrator, Figma, MS Office (Excel, Word), Pro Skills like Front-End Developer, Web Developer, Mern-Stack Developer, Web Technologies like HTML, CSS, JS, React JS, Express JS, Node JS, MongoDB, Languages like Python, C, C++, Java, JavaScript, and IDE like VS-Code, PyCharm, Eclipse. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
         />
         <link rel="canonical" href="/skills" />

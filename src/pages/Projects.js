@@ -74,7 +74,7 @@ function Projects() {
   return (
     <>
       <Helmet>
-        <title>Projects</title>
+        <title>Amit Kumar Ghosh - Projects</title>
         <meta
           name="Amit Kumar Ghosh | Projects"
           content="This is Amit Kumar Ghosh's Project page."
@@ -84,10 +84,10 @@ function Projects() {
           content="This page contains details about Ammit Kumar Ghosh's Projects"
         />
         <meta
-          property="og:description"
+          property="description"
           content="This page highlights Amit Kumar Ghosh's Projects. It actively showcases his projects, including Full-stack Job Finder React app, Full-stack Medical clinic React-app, Front-end wedding React-project, Auto Attendance System Using Face-Recognition in Python, and Simple Server-Client Chat Application in Java. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
         />
-        <link rel="canonical" href="/projects" />
+        <link rel="canonical" href="/projects"/>
       </Helmet>
       <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
         <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">

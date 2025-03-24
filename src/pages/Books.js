@@ -110,17 +110,17 @@ function Books() {
   return (
     <>
       <Helmet>
-        <title>Books</title>
+        <title>Amit Kumar Ghosh - Books</title>
         <meta
           name="Amit Kumar Ghosh | Books"
           content="This is my Books page."
         />
         <meta
-          property="og:Books"
+          property="Books"
           content="This page contains Books I have read."
         />
         <meta
-          property="og:description"
+          property="description"
           content="This page highlights Amit Kumar Ghosh's Books. It actively showcases his reading habits, including the books he has read and the books he is currently reading. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
         />
         <link rel="canonical" href="/books" />
