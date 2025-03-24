@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import AnimatedLetters from "../AnimatedLetters";
 import img from "../assates/pasport.jpg";
 import 'loaders.css/src/animations/pacman.scss';
