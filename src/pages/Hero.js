@@ -1,21 +1,14 @@
 import { useEffect, useState } from "react";
 import AnimatedLetters from "../AnimatedLetters";
 import img from "../assates/pasport.jpg";
-import Loader from "react-loaders";
 import 'loaders.css/src/animations/pacman.scss';
 import 'loaders.css/loaders.min.css';
 
 function Hero() {
-  const [letterClass, setLetterClass] = useState("text-animate");
+  const [letterClass, setLetterClass] = useState("text-animate-hover");
   const nameArray = ["A", "M", "I", "T", " ", "K", "U", "M", "A", "R", " ", "G", "H", "O", "S", "H"];
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLetterClass("text-animate-hover");
-    }, 4000); 
-
-    return () => clearTimeout(timeout);
-  }, []);
+  const github = ["G", "i", "t", "H", "u", "b"];
+  const linkedin = ["L", "i", "n", "k", "e", "d", "I", "n"];
 
   return (
     <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
@@ -32,7 +25,7 @@ function Hero() {
             <AnimatedLetters
               letterClass={letterClass}
               strArray={nameArray}
-              idx={15}
+              idx={nameArray.length}
             />
           </h2>
           
@@ -41,10 +34,18 @@ function Hero() {
           <p className="text-gray-600">+8801788133927</p>
           <p className="text-gray-600 mt-2">
             [<a href="https://github.com/L0rd-AK" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 transition-colors">
-              GitHub
+              <AnimatedLetters
+              letterClass={letterClass}
+              strArray={github}
+              idx={github.length}
+            />
             </a>]
             [<a href="https://www.linkedin.com/in/amit-kumar-ghosh-41a602215" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 transition-colors">
-              LinkedIn
+              <AnimatedLetters
+              letterClass={letterClass}
+              strArray={linkedin}
+              idx={linkedin.length}
+            />
             </a>]
           </p>
         </div>
@@ -55,7 +56,6 @@ function Hero() {
           I am a full-stack developer with years of experience in creating and managing websites. My skills include coding in HTML, CSS, and JavaScript, as well as working in React, Node JS, Express JS, and MongoDB. As a full-stack developer with a lot of ambition, I seek a position in a reputable IT company where I can use the most advanced technologies and work on various and complex projects. If I had to define myself in one sentence, I would be a team player, problem solver, and tech obsessed!!
         </p>
       </div>
-      <Loader type="pacman" />
     </div>
   );
 }
