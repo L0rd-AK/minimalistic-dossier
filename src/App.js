@@ -10,9 +10,11 @@ import Projects from './pages/Projects';
 import References from './pages/References';
 import Books from './pages/Books';
 import Update from './pages/Update';
+import { HelmetProvider } from 'react-helmet-async';
 function App() {
   return (
-    <Router>
+    <HelmetProvider>
+      <Router>
       <div className="min-h-screen bg-white text-black font-sans">
         <Header />
         <Routes>
@@ -29,6 +31,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </HelmetProvider>
   );
 }
 
