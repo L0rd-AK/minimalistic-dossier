@@ -6,18 +6,18 @@ function Activities() {
       <Helmet>
         <title>Amit Kumar Ghosh - Activities</title>
         <meta
-          name="Amit Kumar Ghosh | Activities"
-          content="This is my Extra-Curricular Activities page."
-        />
-        <meta
-          property="Activities"
-          content="This page contains my Extra-Curricular Activities"
-        />
-        <meta
-          property="description"
+          name="description"
           content="This page highlights Amit Kumar Ghosh's Extra-Curricular Activities. It actively showcases his role as an associate member of the DIU Computer & Programming Club, his achievement of solving over 1500 competitive programming problems on platforms like LeetCode, Codeforces, and CodeChef, and his language proficiencies in English and Bangla. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
         />
-        <link rel="canonical" href="/activities" />
+        <meta
+          property="og:title"
+          content="Amit Kumar Ghosh | Activities"
+        />
+        <meta
+          property="og:description"
+          content="This page highlights Amit Kumar Ghosh's Extra-Curricular Activities. It actively showcases his role as an associate member of the DIU Computer & Programming Club, his achievement of solving over 1500 competitive programming problems on platforms like LeetCode, Codeforces, and CodeChef, and his language proficiencies in English and Bangla. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
+        />
+        <link rel="canonical" href="https://amitkumarghosh.vercel.app/activities" />
       </Helmet>
       <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
         <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">

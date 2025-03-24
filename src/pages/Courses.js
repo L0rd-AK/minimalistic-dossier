@@ -27,18 +27,18 @@ function Courses() {
       <Helmet>
         <title>Amit Kumar Ghosh - Courses</title>
         <meta
-          name="Amit Kumar Ghosh | Courses"
-          content="This is my Courses page."
-        />
-        <meta
-          property="og:Courses"
-          content="This page contains details about the Courses, Amit Kumar Ghosh has taken."
-        />
-        <meta
-          property="description"
+          name="description"
           content="This page highlights Amit Kumar Ghosh's participation in various courses, including Learn C++ Programming - Beginner to Advance - Deep Dive in C++, Graphic Design, and Complete Web Development Course With Jhankar Mahbub. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
         />
-        <link rel="canonical" href="/courses" />
+        <meta
+          property="og:title"
+          content="Amit Kumar Ghosh | Courses"
+        />
+        <meta
+          property="og:description"
+          content="This page highlights Amit Kumar Ghosh's participation in various courses, including Learn C++ Programming - Beginner to Advance - Deep Dive in C++, Graphic Design, and Complete Web Development Course With Jhankar Mahbub. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
+        />
+        <link rel="canonical" href="https://amitkumarghosh.vercel.app/courses" />
       </Helmet>
       <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
         <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">

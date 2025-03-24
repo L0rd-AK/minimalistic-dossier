@@ -6,18 +6,18 @@ function Skills() {
       <Helmet>
         <title>Amit Kumar Ghosh - Skills</title>
         <meta
-          name="Amit Kumar Ghosh | Skills"
-          content="This is Skills page of Amit Kumar Ghosh."
-        />
-        <meta
-          property="og:Skills"
-          content="This page contains details about Skills of Amit Kumar Ghosh."
-        />
-        <meta
-          property="description"
+          name="description"
           content="This page highlights Amit Kumar Ghosh's Skills, including his proficiency in Tools like Adobe Photoshop, Illustrator, Figma, MS Office (Excel, Word), Pro Skills like Front-End Developer, Web Developer, Mern-Stack Developer, Web Technologies like HTML, CSS, JS, React JS, Express JS, Node JS, MongoDB, Languages like Python, C, C++, Java, JavaScript, and IDE like VS-Code, PyCharm, Eclipse. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
         />
-        <link rel="canonical" href="/skills" />
+        <meta
+          property="og:title"
+          content="Amit Kumar Ghosh | Skills"
+        />
+        <meta
+          property="og:description"
+          content="This page highlights Amit Kumar Ghosh's Skills, including his proficiency in Tools like Adobe Photoshop, Illustrator, Figma, MS Office (Excel, Word), Pro Skills like Front-End Developer, Web Developer, Mern-Stack Developer, Web Technologies like HTML, CSS, JS, React JS, Express JS, Node JS, MongoDB, Languages like Python, C, C++, Java, JavaScript, and IDE like VS-Code, PyCharm, Eclipse. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
+        />
+        <link rel="canonical" href="https://amitkumarghosh.vercel.app/skills" />
       </Helmet>
       <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
         <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">

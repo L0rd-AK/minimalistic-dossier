@@ -6,18 +6,18 @@ function Education() {
       <Helmet>
         <title>Amit Kumar Ghosh - Education</title>
         <meta
-          name="Amit Kumar Ghosh | Education"
-          content="This is my Education details page."
-        />
-        <meta
-          property="og:Education"
-          content="This page contains details about Education, Amit Kumar Ghosh has completed."
-        />
-        <meta
-          property="description"
+          name="description"
           content="This page highlights Amit Kumar Ghosh's Education details, including his B.Sc. in Computer Science and Engineering from Daffodil International University, his Higher Secondary Certificate (H.S.C.) from Sirajganj Government College, Sirajganj, and his Secondary School Certificate (S.S.C.) from Jahan-Ara High School, Sirajganj. The page is designed with a responsive layout, ensuring a clean and interactive user experience"
         />
-        <link rel="canonical" href="/education" />
+        <meta
+          property="og:title"
+          content="Amit Kumar Ghosh | Education"
+        />
+        <meta
+          property="og:description"
+          content="This page highlights Amit Kumar Ghosh's Education details, including his B.Sc. in Computer Science and Engineering from Daffodil International University, his Higher Secondary Certificate (H.S.C.) from Sirajganj Government College, Sirajganj, and his Secondary School Certificate (S.S.C.) from Jahan-Ara High School, Sirajganj. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
+        />
+        <link rel="canonical" href="https://amitkumarghosh.vercel.app/education" />
       </Helmet>
       <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
         <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
