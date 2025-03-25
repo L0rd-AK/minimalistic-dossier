@@ -8,8 +8,8 @@ body {
   }
   
   .spinner {
-    perspective: 1000px;
     -webkit-perspective: 1000px;
+    perspective: 1000px;
   }
   
   .spinner .circle,
@@ -22,8 +22,8 @@ body {
   
   .spinner .circle {
     position: relative;
-    transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
     animation: spinn 8s infinite linear;
   }
   

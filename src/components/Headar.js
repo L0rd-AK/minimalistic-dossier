@@ -5,7 +5,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky max-w-4xl mx-auto top-0 bg-white p-4 flex flex-col md:flex-row justify-end items-center z-10 shadow-sm">
+    <header className="sticky   top-0 bg-white p-4 flex flex-col md:flex-row justify-end items-center z-10 shadow-sm">
       <button 
         className="md:hidden self-end mb-2" 
         onClick={() => setMenuOpen(!menuOpen)}

@@ -19,7 +19,7 @@ function Skills() {
         />
         <link rel="canonical" href="https://amitkumarghosh.vercel.app/skills" />
       </Helmet>
-      <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
+      <div className="p-4 sm:p-8   bg-gray-50 shadow-sm rounded-lg">
         <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
           Skills & Proficiencies
         </h2>

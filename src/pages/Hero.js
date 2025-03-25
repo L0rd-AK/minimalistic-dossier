@@ -46,7 +46,7 @@ function Hero() {
         />
         <link rel="canonical" href="https://amitkumarghosh.vercel.app/" />
       </Helmet>
-      <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
+      <div className="p-4 sm:p-8   bg-gray-50 shadow-sm rounded-lg">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-6 mb-6">
           <div className="flex justify-center md:justify-start">
             <img

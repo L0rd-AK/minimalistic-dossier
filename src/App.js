@@ -10,12 +10,13 @@ import Projects from './pages/Projects';
 import References from './pages/References';
 import Books from './pages/Books';
 import Update from './pages/Update';
+import './App.css';
 import { HelmetProvider } from 'react-helmet-async';
 function App() {
   return (
     <HelmetProvider>
       <Router>
-      <div className="min-h-screen bg-white text-black font-sans">
+      <div className="min-h-screen max-w-4xl mx-auto bg-white text-black font-sans">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
