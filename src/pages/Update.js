@@ -1,4 +1,5 @@
 import React from 'react';
+import Spinner from '../3DSpiner/Spinner';
 
 function Update() {
 const updates = [
@@ -32,8 +33,11 @@ const updates = [
 
   return (
     <div className="p-4 sm:p-8 max-w-4xl mx-auto bg-gray-50 shadow-sm rounded-lg">
-      <h2 className="text-xl font-bold uppercase mb-4 text-green-500 border-b border-gray-300 pb-2">
+      <h2 className="text-xl font-bold uppercase mb-4 text-red-500 border-b border-gray-300 pb-2 flex gap-2 items-center relative">
         Recent Updates
+        <span className='absolute left-[142px] mb-6'>
+          <Spinner className="inline" />
+        </span>
       </h2>
       <ul className="space-y-4">
         {updates.map((update, index) => (

@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .spinner {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+  
+    .circle,
+    .line {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ff0000;
+      border-radius: 50%;
+    }
+  
+    .circle {
+      position: relative;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      animation: spinn 6s infinite linear;
+    }
+  
+    .line {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+  
+      &:nth-child(1) { transform: rotateY(36deg); }
+      &:nth-child(2) { transform: rotateY(72deg); }
+      &:nth-child(3) { transform: rotateY(108deg); }
+      &:nth-child(4) { transform: rotateY(144deg); }
+    }
+  }
+  
+  @keyframes spinn {
+    100% {
+      transform: rotatey(360deg) rotatez(360deg);
+    }
+  }
