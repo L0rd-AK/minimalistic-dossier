@@ -90,7 +90,7 @@ function Projects() {
         <link rel="canonical" href="https://amitkumarghosh.vercel.app/projects"/>
       </Helmet>
       <div className="p-4 sm:p-8   bg-gray-50 shadow-sm rounded-lg">
-        <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
+        <h1 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
           Projects
           <span className="text-sm text-gray-600">
             <Link to="/projects" className="text-blue-600">
@@ -101,7 +101,7 @@ function Projects() {
               )
             </Link>
           </span>
-        </h2>
+        </h1>
         <ul className="space-y-2">
           {projectsList.map((project, index) => (
             <li

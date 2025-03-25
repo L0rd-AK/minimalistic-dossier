@@ -20,9 +20,9 @@ function Skills() {
         <link rel="canonical" href="https://amitkumarghosh.vercel.app/skills" />
       </Helmet>
       <div className="p-4 sm:p-8   bg-gray-50 shadow-sm rounded-lg">
-        <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
+        <h1 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
           Skills & Proficiencies
-        </h2>
+        </h1>
         <div className="space-y-4">
           <div className="p-1 hover:bg-blue-50 rounded-md transition-colors">
             <h3 className="font-bold text-blue-600">Tools</h3>

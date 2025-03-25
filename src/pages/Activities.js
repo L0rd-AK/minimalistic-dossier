@@ -20,9 +20,9 @@ function Activities() {
         <link rel="canonical" href="https://amitkumarghosh.vercel.app/activities" />
       </Helmet>
       <div className="p-4 sm:p-8   bg-gray-50 shadow-sm rounded-lg">
-        <h2 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
+        <h1 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
           Extra-Curricular Activities
-        </h2>
+        </h1>
         <div className="space-y-6">
           <div className="p-2 hover:bg-blue-50 rounded-md transition-colors flex flex-col sm:flex-row sm:justify-between">
             <div>
