@@ -5,22 +5,20 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky   top-0 bg-white p-4 flex flex-col md:flex-row justify-end items-center z-10 shadow-sm">
+    <header className="sticky top-0 bg-white p-4 flex justify-between md:justify-end items-center z-10 shadow-sm">
       <button 
-        className="md:hidden self-end mb-2" 
-        onClick={() => setMenuOpen(!menuOpen)}
+        className="md:hidden" 
+        onClick={() => setMenuOpen(true)}
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-      
-      <nav className={`${menuOpen ? 'block' : 'hidden'} md:block w-full`}>
-        <ul className="flex flex-col md:flex-row md:space-x-2 md:justify-end space-y-2 md:space-y-0 text-sm text-gray-600">
+
+      <nav className="hidden md:block">
+        <ul className="flex space-x-2 text-sm text-gray-600">
           <Link to="/" className="hover:text-blue-600 transition-colors px-2">Home</Link>
           <span className="hidden md:inline">/</span>
-          {/* <Link to="/education" className="hover:text-blue-600 transition-colors px-2">Education</Link>
-          <span className="hidden md:inline">/</span> */}
           <Link to="/books" className="hover:text-blue-600 transition-colors px-2">Books</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/projects" className="hover:text-blue-600 transition-colors px-2">Projects</Link>
@@ -32,10 +30,36 @@ function Header() {
           <Link to="/skills" className="hover:text-blue-600 transition-colors px-2">Skills</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/activities" className="hover:text-blue-600 transition-colors px-2">Activities</Link>
-          {/* <span className="hidden md:inline">/</span>
-          <Link to="/references" className="hover:text-blue-600 transition-colors px-2">References</Link> */}
         </ul>
       </nav>
+
+      {menuOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-20" onClick={() => setMenuOpen(false)}></div>
+      )}
+
+      <div
+        className={`fixed inset-0 bg-white z-30 transform ${
+          menuOpen ? 'translate-x-0' : '-translate-x-full'
+        } transition-transform duration-300 flex flex-col justify-center items-center`}
+      >
+        <button 
+          className="absolute top-4 right-4" 
+          onClick={() => setMenuOpen(false)}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <ul className="flex flex-col space-y-6 text-lg text-gray-600 text-center">
+          <Link to="/" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/books" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Books</Link>
+          <Link to="/projects" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Projects</Link>
+          <Link to="/courses" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Courses</Link>
+          <Link to="/contests" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Contests</Link>
+          <Link to="/skills" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Skills</Link>
+          <Link to="/activities" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Activities</Link>
+        </ul>
+      </div>
     </header>
   );
 }
