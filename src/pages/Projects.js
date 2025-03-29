@@ -44,6 +44,16 @@ function Projects() {
       technologies: "React JS, Tailwind CSS, DaisyUI, Firebase",
     },
     {
+      title: "Cursor-Controlled Snake Game",
+      technologies: "React JS, Tailwind CSS, DaisyUI",
+      description:"Just built this fun mouse-controlled Snake Game in 5 minutes using prompt engineering with DeepSeek R1! 🚀 The game is made with React.js and leverages useState, useEffect, and requestAnimationFrame for smooth movement and interactions. It features a countdown timer, food mechanics, collision detection, and a simple scoring system. This showcases the power of AI-assisted development in rapid prototyping.",
+      links: [
+        { url: "https://cursor-snake.vercel.app", label: "Live" },
+        { url: "https://youtu.be/OFGOr5Sm55w?si=366ft1vYQrikrKkA", label: "Video" },
+        { url: "https://github.com/L0rd-AK/Cursor_snake", label: "Repo" },
+      ],
+    },
+    {
       title: "Auto Attendance System Using Face-Recognition in Python",
       links: [
         {
