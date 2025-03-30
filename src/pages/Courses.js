@@ -34,6 +34,20 @@ function Courses() {
       instructor: "Jhankar Mahbub",
       platform: "Online",
     },
+    {
+      title:"Communication Foundations",
+      date: "[14/02/2024]",
+      instructor: "LinkedIn Learning",
+      platform: "Online",
+      certificateImage: "https://i.ibb.co.com/Pz4wZbzQ/Certificate-Of-Completion-Communication-Foundations-2018.jpg",
+    },
+    {
+      title:"Communication Secrets",
+      date: "[15/02/2024]",
+      instructor: "10 Minute School",
+      platform: "Online",
+      certificateImage: "https://i.ibb.co.com/wZv2jB7W/a-FREE-online-course-offered-by-10-Minute-School.jpg",
+    },
   ];
 
   const handleCertificateClick = (index) => {
@@ -73,7 +87,7 @@ function Courses() {
                 <span className="font-bold text-blue-600 mb-1 sm:mb-0">
                   {course.title}
                 </span>
-                <span className="text-purple-600 font-medium italic px-2 rounded sm:ml-2 flex items-center">
+                <span className="text-purple-600 font-medium italic px-0 md:px-2 rounded ml-0 md:ml-2 flex items-center">
                   {course.date}
                   {course?.certificateImage && (
                     <button
@@ -91,7 +105,7 @@ function Courses() {
                   )}
                 </span>
               </div>
-              <p className="text-gray-700 ml-0 sm:ml-4 mt-1">
+              <p className="text-gray-700 ml-0 mt-1">
                 {course.platform} course by{" "}
                 <span className="text-blue-800 font-medium">
                   {course.instructor}
