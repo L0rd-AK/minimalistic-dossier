@@ -79,7 +79,7 @@ function Activities() {
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-gray-700 ml-2">{activity.description}</p>
+                  <p className="text-gray-700">{activity.description}</p>
                 )}
 
                 {activity.links && (
