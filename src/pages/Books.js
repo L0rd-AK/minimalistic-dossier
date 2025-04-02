@@ -4,6 +4,20 @@ import { Helmet } from "react-helmet-async";
 function Books() {
   const booksList = [
     {
+      title: "Crime and Punishment",
+      author: "Fyodor Dostoevsky",
+      description: "A psychological exploration of morality and redemption.",
+      status: "148 page",
+      isReading: true,
+    },
+    {
+      title: "The Stranger",
+      author: "Albert Camus",
+      description: "A philosophical novel about absurdism and existentialism.",
+      status: "5 page",
+      isReading: true,
+    },
+    {
       title: "1984",
       author: "George Orwell",
       description:
@@ -32,13 +46,6 @@ function Books() {
       description: "A nostalgic story of love and loss in 1960s Japan.",
       status: "Completed",
       isReading: false,
-    },
-    {
-      title: "Crime and Punishment",
-      author: "Fyodor Dostoevsky",
-      description: "A psychological exploration of morality and redemption.",
-      status: "148 page",
-      isReading: true,
     },
     {
       title: "The Subtle Art of Not Giving a F*ck",
