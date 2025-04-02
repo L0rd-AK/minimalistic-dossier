@@ -37,7 +37,7 @@ function Books() {
       title: "Crime and Punishment",
       author: "Fyodor Dostoevsky",
       description: "A psychological exploration of morality and redemption.",
-      status: "125 pages",
+      status: "148 page",
       isReading: true,
     },
     {
@@ -150,7 +150,7 @@ function Books() {
                 <span className="text-gray-600 text-sm">by {book.author}</span>
                 <p className="text-gray-500 text-xs mt-1">{book.description}</p>
               </div>
-              <p className="text-black ml-5 md:ml-2 text-sm mt-1 md:mt-0">
+              <p className="text-black text-sm mt-1 md:mt-0">
                 [
                 <span
                   className={`${
