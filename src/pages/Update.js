@@ -49,7 +49,7 @@ const updates = [
           <li key={index} className="hover:bg-blue-50 p-2 rounded-md transition-colors">
             <div className="flex flex-col sm:flex-row sm:justify-between">
               <span className="font-bold text-blue-600 mb-1 sm:mb-0">{update.title}</span>
-              <span className="text-purple-600 italic px-2 rounded font-medium sm:ml-2">{update.date}</span>
+              <span className="text-purple-600 italic rounded font-medium">{update.date}</span>
             </div>
             <p className="text-gray-700 mt-1">{update?.description}</p>
           </li>

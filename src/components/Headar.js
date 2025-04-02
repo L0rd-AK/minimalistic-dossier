@@ -19,17 +19,17 @@ function Header() {
         <ul className="flex space-x-2 text-sm text-gray-600">
           <Link to="/" className="hover:text-blue-600 transition-colors px-2">Home</Link>
           <span className="hidden md:inline">/</span>
-          <Link to="/books" className="hover:text-blue-600 transition-colors px-2">Books</Link>
-          <span className="hidden md:inline">/</span>
           <Link to="/projects" className="hover:text-blue-600 transition-colors px-2">Projects</Link>
+          <span className="hidden md:inline">/</span>
+          <Link to="/activities" className="hover:text-blue-600 transition-colors px-2">Activities</Link>
+          <span className="hidden md:inline">/</span>
+          <Link to="/books" className="hover:text-blue-600 transition-colors px-2">Books</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/courses" className="hover:text-blue-600 transition-colors px-2">Courses</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/contests" className="hover:text-blue-600 transition-colors px-2">Contests</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/skills" className="hover:text-blue-600 transition-colors px-2">Skills</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/activities" className="hover:text-blue-600 transition-colors px-2">Activities</Link>
         </ul>
       </nav>
 
@@ -52,12 +52,12 @@ function Header() {
         </button>
         <ul className="flex flex-col space-y-6 text-lg text-gray-600 text-center">
           <Link to="/" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/books" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Books</Link>
           <Link to="/projects" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Projects</Link>
+          <Link to="/activities" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Activities</Link>
+          <Link to="/books" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Books</Link>
           <Link to="/courses" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Courses</Link>
           <Link to="/contests" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Contests</Link>
           <Link to="/skills" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Skills</Link>
-          <Link to="/activities" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Activities</Link>
         </ul>
       </div>
     </header>

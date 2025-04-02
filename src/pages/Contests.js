@@ -49,7 +49,7 @@ function Contests() {
                 <span className="font-bold text-blue-600 mb-1 sm:mb-0">
                   {contest.title}
                 </span>
-                <span className="text-purple-600 italic px-2 rounded font-medium sm:ml-2">
+                <span className="text-purple-600 italic rounded font-medium">
                   {contest.year}
                 </span>
               </div>
