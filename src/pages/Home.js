@@ -21,7 +21,7 @@ function Home() {
       <Skills />
       <Activities />
       <Projects />
-      <References />
+      {/* <References /> */}
       <Helmet>
         <title>Amit Kumar Ghosh</title>
         <meta

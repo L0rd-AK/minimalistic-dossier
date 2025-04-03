@@ -3,8 +3,12 @@ import { Helmet } from "react-helmet-async";
 function Contests() {
   const contests = [
     {
-      title: "DIU FALL TAKEOFF Programming contest",
-      year: "[2022]",
+      title:"ICPC Asia Dhaka Regional Contest 2024",
+      year: "[2024]",
+    },
+    {
+      title:"DIU Unlock The Algorithm Programming contest",
+      year: "[2023]",
     },
     {
       title: "DIU Spring TAKEOFF Programming contest",
@@ -12,8 +16,12 @@ function Contests() {
     },
     {
       title:
-        "Regularly Attend Online CP Contest on Codeforces, Codechef, Atcoder",
+      "Regularly Attend Online CP Contest on Codeforces, Codechef, Atcoder",
       year: "[2023]",
+    },
+    {
+      title: "DIU FALL TAKEOFF Programming contest",
+      year: "[2022]",
     },
   ];
 
