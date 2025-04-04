@@ -117,7 +117,7 @@ function Books() {
   return (
     <>
       <Helmet>
-        <title>Amit Kumar Ghosh - Books</title>
+        <title>Amit - Books</title>
         <meta
           name="description"
           content="This page highlights Amit Kumar Ghosh's Books. It actively showcases his reading habits, including the books he has read and the books he is currently reading. The page is designed with a responsive layout, ensuring a clean and interactive user experience."

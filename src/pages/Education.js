@@ -4,7 +4,7 @@ function Education() {
   return (
     <>
       <Helmet>
-        <title>Amit Kumar Ghosh - Education</title>
+        <title>Amit - Education</title>
         <meta
           name="description"
           content="This page highlights Amit Kumar Ghosh's Education details, including his B.Sc. in Computer Science and Engineering from Daffodil International University, his Higher Secondary Certificate (H.S.C.) from Sirajganj Government College, Sirajganj, and his Secondary School Certificate (S.S.C.) from Jahan-Ara High School, Sirajganj. The page is designed with a responsive layout, ensuring a clean and interactive user experience"

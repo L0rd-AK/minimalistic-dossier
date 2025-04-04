@@ -84,7 +84,7 @@ function Projects() {
   return (
     <>
       <Helmet>
-        <title>Amit Kumar Ghosh - Projects</title>
+        <title>Amit - Projects</title>
         <meta
           name="description"
           content="This page highlights Amit Kumar Ghosh's Projects. It actively showcases his projects, including Full-stack Job Finder React app, Full-stack Medical clinic React-app, Front-end wedding React-project, Auto Attendance System Using Face-Recognition in Python, and Simple Server-Client Chat Application in Java. The page is designed with a responsive layout, ensuring a clean and interactive user experience."

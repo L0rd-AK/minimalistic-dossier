@@ -39,7 +39,7 @@ function Activities() {
   return (
     <>
       <Helmet>
-        <title>Amit Kumar Ghosh - Activities</title>
+        <title>Amit - Activities</title>
         <meta
           name="description"
           content="This page highlights Amit Kumar Ghosh's Extra-Curricular Activities. It actively showcases his role as an associate member of the DIU Computer & Programming Club, his achievement of solving over 1500 competitive programming problems on platforms like LeetCode, Codeforces, and CodeChef, and his language proficiencies in English and Bangla. The page is designed with a responsive layout, ensuring a clean and interactive user experience."

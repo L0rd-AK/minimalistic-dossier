@@ -4,7 +4,7 @@ function Skills() {
   return (
     <>
       <Helmet>
-        <title>Amit Kumar Ghosh - Skills</title>
+        <title>Amit - Skills</title>
         <meta
           name="description"
           content="This page highlights Amit Kumar Ghosh's Skills, including his proficiency in Tools like Adobe Photoshop, Illustrator, Figma, MS Office (Excel, Word), Pro Skills like Front-End Developer, Web Developer, Mern-Stack Developer, Web Technologies like HTML, CSS, JS, React JS, Express JS, Node JS, MongoDB, Languages like Python, C, C++, Java, JavaScript, and IDE like VS-Code, PyCharm, Eclipse. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
