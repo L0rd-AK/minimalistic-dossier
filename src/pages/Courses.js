@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import AnimatedLetters from "../AnimatedLetters";
 
 function Courses() {
-  const [showCertificate, setShowCertificate] = useState(null); // State to track which certificate is shown
+  const [showCertificate, setShowCertificate] = useState(null); 
   const [letterClass, setLetterClass] = useState("text-animate-hover");
   const certificate =["C", "e", "r", "t", "i", "f", "i", "c", "a", "t", "e"];
   const courses = [
