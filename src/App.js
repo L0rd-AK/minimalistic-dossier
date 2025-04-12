@@ -10,7 +10,7 @@ import Projects from './pages/Projects';
 import References from './pages/References';
 import Books from './pages/Books';
 import Update from './pages/Update';
-import Error from './pages/Error'; // Import the Error component
+import Error from './pages/Error'; 
 import Blog from './pages/Blog';
 import BlogDetails from './pages/BlogDetails';
 import './App.css';
