@@ -1,6 +1,57 @@
 export const blogsData = [
     {
-      id: 1,
+        id: 1,
+        title: "Lynx: Tiktok's React Native killer?",
+        date: "April 10, 2025",
+        description: "Exploring Lynx, ByteDance's new cross-platform mobile development framework that aims to revolutionize the industry.",
+        readTime: "12 min read",
+        author: "Amit Kumar Ghosh",
+        tags: ["Lynx", "Mobile Development", "Cross-Platform", "React Native", "Flutter", "TikTok", "ByteDance"],
+        content:(
+            <>
+                <div className="mb-8">  
+                    <p className="mb-4 text-justify">The world of cross-platform mobile development is constantly evolving, and a recent entrant has been making waves: Lynx, a technology developed by TikTok's parent company, ByteDance. This isn't just another alternative; it's a comprehensive approach aiming to address the limitations of existing solutions like React Native and Flutter. Let's delve into what makes Lynx noteworthy.</p>
+
+                    <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">The Promise of a New Mobile Development Paradigm</h2>
+                    <p className="mb-4 text-justify">One of the core motivations behind Lynx is to overcome performance bottlenecks often encountered in React Native due to its single-threaded JavaScript queue. Lynx introduces a dual-threaded architecture with a framework thread and a UI thread, allowing for heavy data processing without blocking UI updates, potentially leading to smoother 60 FPS performance even on less powerful devices. This separation also enables more complex UI interactions without the lag sometimes experienced in other frameworks. Furthermore, Lynx isn't limited to just being a React Native alternative; it's designed to be a broader platform for building native UIs for both mobile and web from a single codebase.</p>
+
+                    <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">Embracing Web Familiarity with Native Power</h2>
+                    <p className="mb-4 text-justify">Interestingly, Lynx allows developers to write markup and CSS much like they would for the web, with native support for CSS animations, transitions, selectors, and modern visual effects. This lowers the barrier to entry for web developers looking to build native mobile applications. Unlike Flutter, which uses a custom rendering engine, Lynx, similar to React Native, renders native UI elements. This commitment to native primitives is seen as crucial for delivering a high-quality user experience that doesn't feel like a disguised game engine, a point the speaker makes strongly against Flutter. However, Lynx also has the flexibility to switch to a custom renderer for pixel-perfect consistency across platforms, similar to Flutter's approach.</p>
+
+                    <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">Faster Development Cycles and Scalability</h2>
+                    <p className="mb-4 text-justify">Lynx also tackles the challenges of app distribution and scalability. It leverages technologies like module federation, allowing different teams to own and deploy parts of the application independently without having to update the entire bundle. This, combined with the potential for over-the-air updates for non-native binding changes, promises faster iteration cycles and reduced reliance on lengthy app store review processes. The introduction of R Speedy, a build tool based on Rust, further aims to provide fast build times crucial for large-scale applications. Additionally, Lynx boasts excellent developer tooling, including full Chrome DevTools protocol support, a significant improvement over the debugging experience in React Native.</p>
+
+                    <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">Conclusion</h2>
+                    <p className="mb-4 text-justify">Lynx represents a significant step forward in cross-platform mobile development, offering a compelling blend of web development familiarity with the performance and native feel of platform-specific applications. By addressing key pain points in existing frameworks, particularly around performance, developer experience, and scalability, Lynx has the potential to become a major player in the cross-platform landscape. While still early in its open-source journey, its production readiness at TikTok and the pedigree of its creators suggest a bright future. It's definitely a technology worth watching for anyone interested in building high-quality mobile apps efficiently.</p>
+
+                    <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">Inspired By:
+                    <a
+                            key="1"
+                            href="https://youtu.be/No0k-TMRuMA?si=89YrKJOdn675uKIW"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ml-5 sm:ml-2 mt-1 sm:mt-0 px-2 py-1 font-medium text-red-600 hover:text-red-800 hover:bg-blue-100 rounded transition-colors"
+                        >
+                            [Link]
+                        </a>
+                    </h2>
+
+                    <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">Categories/Tags:</h2>
+                    <ul className="flex flex-wrap gap-2 text-sm text-blue-500 mb-4">
+                        <li>[Lynx]</li>
+                        <li>[Mobile Development]</li>
+                        <li>[Cross-Platform]</li>
+                        <li>[React Native]</li>
+                        <li>[Flutter]</li>
+                        <li>[TikTok]</li>
+                        <li>[ByteDance]</li>
+                    </ul>
+                </div>
+            </>
+        )
+    },
+    {
+      id: 2,
       title: "Why Has Reading Become a Struggle?",
       date: "April 12, 2025",
       description: "Exploring the challenges faced by modern students in reading comprehension and sustained reading.",
@@ -45,5 +96,18 @@ export const blogsData = [
       </div>
       ),
     }
-    // Add more blog posts here
+    
+];
+
+export const blogs = [
+    {
+        id: 1,
+        title: "Why Has Reading Become a Struggle?",
+        date: "March 15, 2024",
+        description: "Exploring the challenges of reading in the digital age and how technology impacts literacy.",
+        readTime: "15 min read",
+        author: "Amit Kumar Ghosh",
+        tags: ["reading", "Education", "Literacy", "Technology"],
+    },
+    // Add more blogs here...
 ];

@@ -23,6 +23,8 @@ function Header() {
           <span className="hidden md:inline">/</span>
           <Link to="/activities" className="hover:text-blue-600 transition-colors px-2">Activities</Link>
           <span className="hidden md:inline">/</span>
+          <Link to="/blogs" className="hover:text-blue-600 transition-colors px-2">Blogs</Link>
+          <span className="hidden md:inline">/</span>
           <Link to="/books" className="hover:text-blue-600 transition-colors px-2">Books</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/courses" className="hover:text-blue-600 transition-colors px-2">Courses</Link>
@@ -54,6 +56,7 @@ function Header() {
           <Link to="/" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/projects" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Projects</Link>
           <Link to="/activities" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Activities</Link>
+          <Link to="/blogs" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Blogs</Link>
           <Link to="/books" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Books</Link>
           <Link to="/courses" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Courses</Link>
           <Link to="/contests" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Contests</Link>
