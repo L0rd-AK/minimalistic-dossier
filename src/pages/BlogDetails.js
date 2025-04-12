@@ -1,115 +1,139 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { blogsData } from "../data/blogData";
 
 function BlogDetails() {
   const { id } = useParams();
+  const [blog, setBlog] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const blogs = [
-    {
-      id: 1,
-      title: "Getting Started with React Development",
-      date: "March 15, 2024",
-      description:
-        "A comprehensive guide for beginners starting their journey in React development.",
-      readTime: "5 min read",
-      tags: ["React", "Web Development", "JavaScript"],
-      content: (
-        <>
-          <div className="mb-8">
-  <p className="mb-4">It's a concerning trend being reported by professors across the nation: students, even at the most prestigious universities, are struggling to read books. In one instance at Columbia University, students in a required class, expected to read about a book a week, confessed they simply couldn't manage it, with one student admitting to never having been required to read an entire book before. This isn't just a university problem; it reflects a broader societal shift where people aren't reading anymore, regardless of gender or educational background. What's behind this decline in reading? The sources point to a confluence of factors.</p>
+  useEffect(() => {
+    // Simulate loading time
+    setLoading(true);
+    const foundBlog = blogsData.find((b) => b.id === parseInt(id));
+    setBlog(foundBlog);
+    setLoading(false);
+  }, [id]);
 
-  <h2 className="font-bold text-xl mb-2">The Impact of Early Reading Instruction</h2>
-  <p className="mb-4">One significant piece of the puzzle lies in how children have been taught to read. For a very long time, the dominant method was phonics, which focuses on building reading skills from individual sounds to complex words. However, starting around the 1960s, a new approach called whole language learning emerged, along with some successor ideas like balanced literacy. This method emphasized inferring the meaning of words from context, presented as a more natural way to learn. The idea was that children had a natural propensity to read and would essentially teach themselves with the right context. The problem? Whole language learning didn't work, and literacy rates fell in the countries that adopted it, including parts of the United States, Canada, the UK, New Zealand, and Australia. If foundational reading skills weren't properly developed, reading is never going to be something that you do for fun. It's never going to be pleasurable. It's going to feel really difficult and like a lot of work, naturally leading people to avoid it. While whole language learning and balanced literacy were never uncontested ideas, and more states and countries are bringing back phonics, much of the damage is already done for those who were never taught phonics. It's speculated that even students who make it to elite universities like Columbia, while likely able to read at grade level, may still struggle with the volume of reading if their foundational skills weren't strong. Therefore, part of the explanation for why fewer people are reading seems to stem from how they were taught in school.</p>
-
-  <h2 className="font-bold text-xl mb-2">The Role of Educational Reforms and Testing</h2>
-  <p className="mb-4">However, the issue isn't solely about initial reading instruction. Educational reforms, most notably things like No Child Left Behind and Common Core in the United States, have also played a role. These reforms emphasized two things: informational text and standardized testing. When students were being taught how to engage with text, they were learning how to extract information from it. Some even suggested that books were outdated and that education should focus on the types of text encountered in real life, like articles and web pages. As an exercise, a student might be presented with an excerpt from a longer text. They would be asked to analyze the argument or talk about what evidence was presented in the text or even what the thesis statement was. A lot of this would happen in English classes where traditionally you would be first exposed to reading longer and more difficult books. So instead of learning things like analyzing symbolism or theme or being able to practice your close reading of text, you were mostly focused on extracting information from those excerpts. Doing that traditional English stuff like close reading builds something that we could call your reading stamina. When a student who is fully capable of reading says that they can't read a whole book in a week, it's likely because they haven't had a chance to develop their reading stamina. In fact, in one survey only 17% of Educators said that they were teaching primarily with whole text. Therefore, the inability of students at universities like Columbia to read whole books might be more related to this lack of training in sustained reading rather than just initial literacy issues. These students were able to get into some of the best colleges and universities in the world, but they were never taught how to be great readers. They were taught how to be great test takers. So when these students get to college and they're asked to read whole books, they can't do it because this is a completely different skill than they've been told that they need to develop in high school. So much of their education has been about optimizing themselves for standardized tests and then eventually to take something like the SAT or the act. If you're just trying to do really well on a standardized test, you need to focus on reading excerpts and being able to answer multiple choice questions or maybe write a five paragraph essay about what you just read. You don't have to focus on analyzing themes in Tolstoy Dostoevsky Dickens. You don't have to worry about reading great books. So then if you have a required freshman class that's about great novels in the western tradition, well this might be your first time being exposed to many of those great novels in the western tradition, and it's going to be hard because you're not used to it.</p>
-
-  <h2 className="font-bold text-xl mb-2">The Pervasiveness of Digital Distractions</h2>
-  <p className="mb-4">Finally, we cannot ignore the ubiquitous presence of phones and other digital distractions. While many people actually do spend their days reading text online through social media, news articles, and captions. Platforms like TikTok are maybe the most addictive of these platforms, and practically every video has burned in captions, so people are constantly reading something when they are online. If you want to get any reading done, you have to be disciplined and you have to decide that your phone needs to stay inside some place where it can't distract you. Imagine that you're a college student and you've never read a full book in a week or really ever been asked to read a hard or long book for your education and your professor says Hey I want you to read Homer's Iliad in a week. Even if you're a good sport and you get your book, think about all the things that are there ready to distract you—other people or your phone or your laptop. Anything with the screen really is there and it's ready to just make you feel more stimulated because even if we're people who really like to read compared to doing other things, the act of reading is really boring. It is the antithesis of our sort of constant need to be over stimulated. A lot of schools have decided to start Banning smartphones from the classroom. Not only have we systematically failed students as we've taught them to read or not taught them to read in some cases, we've also just designed a world that is there to constantly demand our attention and that takes us away from those deeper reflective sort of focus heavy practices like reading good books.</p>
-
-  <h2 className="font-bold text-xl mb-2">Conclusion</h2>
-  <p className="mb-4">In conclusion, the decline in reading habits appears to be a multifaceted issue stemming from ineffective early reading instruction due to the adoption of whole language learning, an educational system that prioritized test-taking over deep reading and focused on informational excerpts, and a modern world filled with constant digital distractions that compete for our attention. While there's a move to reintroduce phonics in early education, the challenge of cultivating a love for and ability to engage in sustained reading in an attention-demanding world remains significant. Fewer and fewer people read books. You have your super readers who read tons of books and they keep the average numbers up but you have more and more people who decide that reading just isn't for them.</p>
-
-  <h2 className="font-bold text-xl mb-2">Categories/Tags:</h2>
-  <ul className="list-disc list-inside">
-    <li>Reading</li>
-    <li>Education</li>
-    <li>Literacy</li>
-    <li>Technology</li>
-  </ul>
-</div>
-        </>
-      ),
-    },
-    // ...Add other blog posts with full content
-  ];
-
-  const blog = blogs.find((b) => b.id === parseInt(id));
+  if (loading) {
+    return (
+      <div className="p-4 sm:p-8 bg-gray-50 shadow-sm rounded-lg flex justify-center items-center min-h-[400px]">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
 
   if (!blog) {
     return (
-      <div className="p-4 sm:p-8 bg-gray-50 shadow-sm rounded-lg">
-        <h1 className="text-xl font-bold text-red-600">Blog post not found</h1>
+      <div className="p-4 sm:p-8 bg-gray-50 shadow-sm rounded-lg text-center">
+        <h1 className="text-2xl font-bold text-red-600 mb-4">Blog post not found</h1>
+        <p className="text-gray-600 mb-6">The blog post you're looking for doesn't exist or has been removed.</p>
         <Link
-          to="/blog"
-          className="text-blue-600 hover:text-blue-800 mt-4 inline-block"
+          to="/blogs"
+          className="text-blue-600 hover:text-blue-800 inline-flex items-center gap-2"
         >
-          ← Back to all posts
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
+          </svg>
+          Back to all posts
         </Link>
       </div>
     );
   }
 
+  const ShareButton = ({ platform, icon, link }) => (
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="p-2 text-gray-600 hover:text-blue-600 transition-colors"
+      title={`Share on ${platform}`}
+    >
+      {icon}
+    </a>
+  );
+
   return (
     <>
       <Helmet>
-        <title>{`${blog.title} - Amit's Blog`}</title>
-        <meta name="description" content={blog.description} />
-        <meta property="og:title" content={`${blog.title} - Amit's Blog`} />
-        <meta property="og:description" content={blog.description} />
-        <link
-          rel="canonical"
-          href={`https://amitkumarghosh.vercel.app/blog/${id}`}
-        />
+        <title>{blog.title} | Amit</title>
+        <meta name="description" content={blog.description.slice(0,30)} />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.description.slice(0,30)} />
       </Helmet>
 
       <div className="p-4 sm:p-8 bg-gray-50 shadow-sm rounded-lg">
-        <Link
-          to="/blog"
-          className="text-blue-600 hover:text-blue-800 mb-4 inline-block"
-        >
-          ← Back to all posts
-        </Link>
+        <div className="max-w-4xl mx-auto">
+          {/* Navigation */}
+          <nav className="flex items-center justify-between mb-8">
+            <Link
+              to="/blogs"
+              className="text-blue-600 hover:text-blue-800 inline-flex items-center gap-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
+              </svg>
+              Back to all posts
+            </Link>
+            
+            {/* Share buttons */}
+            <div className="flex gap-2">
+              <ShareButton
+                platform="Twitter"
+                icon={<svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg>}
+                link={`https://twitter.com/intent/tweet?text=${encodeURIComponent(blog.title)}&url=${encodeURIComponent(window.location.href)}`}
+              />
+              {/* Add more share buttons as needed */}
+            </div>
+          </nav>
 
-        <article className="prose prose-blue max-w-none">
-          <h1 className="text-2xl sm:text-3xl font-bold text-blue-700 mb-2">
-            {blog.title}
-          </h1>
+          <article className="prose prose-blue max-w-none">
+            {/* Article header */}
+            <header className="mb-8">
+              <h1 className="text-3xl sm:text-4xl font-bold text-blue-700 mb-4">
+                {blog.title}
+              </h1>
 
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-2">
-            <div className="flex flex-wrap gap-2">
-              {blog.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs"
-                >
-                  {tag}
+              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-6">
+                <span className="flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  {blog.readTime}
                 </span>
-              ))}
-            </div>
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-500">{blog.readTime}</span>
-              <span className="text-sm text-purple-600 italic">
-                {blog.date}
-              </span>
-            </div>
-          </div>
+                <span className="flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  {blog.date}
+                </span>
+                <span className="flex items-center gap-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                  {blog.author}
+                </span>
+              </div>
 
-          <div className="mt-8 text-gray-700 leading-relaxed">
-            {blog.content}
-          </div>
-        </article>
+              <div className="flex flex-wrap gap-2">
+                {blog.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </header>
+
+            {/* Article content */}
+            <div className="mt-8 text-gray-700 leading-relaxed">
+              {blog.content}
+            </div>
+          </article>
+        </div>
       </div>
     </>
   );

@@ -6,31 +6,30 @@ function Blog() {
   const blogs = [
     {
       id: 1,
-      title: "Getting Started with React Development",
+      title: "Why Has Reading Become a Struggle?",
       date: "March 15, 2024",
-      description: "A comprehensive guide for beginners starting their journey in React development.",
-      readTime: "5 min read",
-      tags: ["React", "Web Development", "JavaScript"],
-      link: "https://dev.to/your-blog-1"
+      description: "Exploring the challenges of reading in the digital age and how technology impacts literacy.",
+      readTime: "15 min read",
+      tags: ["reading", "Education", "Literacy", "Technology"],
     },
-    {
-      id: 2,
-      title: "Understanding Data Structures in JavaScript",
-      date: "March 10, 2024",
-      description: "Deep dive into common data structures and their implementations in JavaScript.",
-      readTime: "8 min read",
-      tags: ["JavaScript", "Data Structures", "Programming"],
-      link: "https://dev.to/your-blog-2"
-    },
-    {
-      id: 3,
-      title: "Mastering CSS Grid Layout",
-      date: "March 5, 2024",
-      description: "Learn how to create complex layouts easily using CSS Grid.",
-      readTime: "6 min read",
-      tags: ["CSS", "Web Design", "Frontend"],
-      link: "https://dev.to/your-blog-3"
-    }
+    // {
+    //   id: 2,
+    //   title: "Understanding Data Structures in JavaScript",
+    //   date: "March 10, 2024",
+    //   description: "Deep dive into common data structures and their implementations in JavaScript.",
+    //   readTime: "8 min read",
+    //   tags: ["JavaScript", "Data Structures", "Programming"],
+    //   link: "https://dev.to/your-blog-2"
+    // },
+    // {
+    //   id: 3,
+    //   title: "Mastering CSS Grid Layout",
+    //   date: "March 5, 2024",
+    //   description: "Learn how to create complex layouts easily using CSS Grid.",
+    //   readTime: "6 min read",
+    //   tags: ["CSS", "Web Design", "Frontend"],
+    //   link: "https://dev.to/your-blog-3"
+    // }
   ];
 
   return (
