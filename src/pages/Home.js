@@ -16,11 +16,11 @@ function Home() {
       <Hero />
       <Update />
       <Education />
+      <Projects />
       <Courses />
       <Contests />
       <Skills />
       <Activities />
-      <Projects />
       {/* <References /> */}
       <Helmet>
         <title>Amit Kumar Ghosh</title>

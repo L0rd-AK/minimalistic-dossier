@@ -11,6 +11,8 @@ import References from './pages/References';
 import Books from './pages/Books';
 import Update from './pages/Update';
 import Error from './pages/Error'; // Import the Error component
+import Blog from './pages/Blog';
+import BlogDetails from './pages/BlogDetails';
 import './App.css';
 import { HelmetProvider } from 'react-helmet-async';
 
@@ -31,6 +33,8 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/references" element={<References />} />
             <Route path="/books" element={<Books />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetails />} />
             <Route path="*" element={<Error />} /> {/* Add fallback route */}
           </Routes>
         </div>
