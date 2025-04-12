@@ -49,7 +49,7 @@ function Blog() {
           property="og:description"
           content="Read Amit Kumar Ghosh's blog posts about web development, programming, and technology."
         />
-        <link rel="canonical" href="https://amitkumarghosh.vercel.app/blog" />
+        <link rel="canonical" href="https://amitkumarghosh.vercel.app/blogs" />
       </Helmet>
       <div className="p-4 sm:p-8 bg-gray-50 shadow-sm rounded-lg">
         <h1 className="text-xl sm:text-2xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
@@ -62,7 +62,7 @@ function Blog() {
               className="p-4 hover:bg-blue-50 rounded-lg transition-colors border border-gray-200 flex flex-col"
             >
               <Link 
-                to={`/blog/${blog.id}`}
+                to={`/blogs/${blog.id}`}
                 className="flex flex-col h-full"
               >
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">

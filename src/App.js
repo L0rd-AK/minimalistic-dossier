@@ -33,8 +33,8 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/references" element={<References />} />
             <Route path="/books" element={<Books />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogDetails />} />
+            <Route path="/blogs" element={<Blog />} />
+            <Route path="/blogs/:id" element={<BlogDetails />} />
             <Route path="*" element={<Error />} /> {/* Add fallback route */}
           </Routes>
         </div>
