@@ -57,6 +57,9 @@ function Projects() {
       title: "CSE-332 Compiler Design Project",
       technologies: "C, Yacc, Lex, Bison, Flex, Lexical Analyzer, Parser Generator (Yacc)",
       description: `This project is a comprehensive implementation of a compiler for a custom programming language, I developed it as part of the CSE-332 Compiler Design course. It covers essential compiler design stages such as lexical analysis, syntax analysis, and intermediate code generation. The project is written in C and utilizes Yacc for syntax parsing and Lex for lexical analysis. It demonstrates a strong understanding of compiler construction principles and practical skills in low-level programming and parser generation.`,
+      links:[
+        { url: "https://github.com/L0rd-AK/CSE-332_Compiler_Design", label: "Repo" },
+      ]
     },
     {
       title: "Auto Attendance System Using Face-Recognition in Python",
