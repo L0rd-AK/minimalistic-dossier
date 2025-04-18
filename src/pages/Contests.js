@@ -7,6 +7,10 @@ function Contests() {
       year: "[2024]",
     },
     {
+      title:"Ranked 6th at DIU DataThon Contest 2024",
+      year: "[2024]",
+    },
+    {
       title:"DIU Unlock The Algorithm Programming contest",
       year: "[2023]",
     },
