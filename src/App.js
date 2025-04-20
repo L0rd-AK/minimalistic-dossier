@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Headar';
 import Home from './pages/Home';
@@ -15,8 +16,35 @@ import Blog from './pages/Blog';
 import BlogDetails from './pages/BlogDetails';
 import './App.css';
 import { HelmetProvider } from 'react-helmet-async';
+import { initDynamicFavicon, setNotificationCount, updateFavicon } from './utils/dynamicFavicon';
 
 function App() {
+  React.useEffect(() => {
+    initDynamicFavicon();
+
+    // Example: Update notification count based on new blogs/updates
+    const checkForNewContent = () => {
+      const newUpdates = 3; // Replace with actual logic to check new content
+      setNotificationCount(newUpdates);
+    };
+
+    // Check for updates every 5 minutes
+    const interval = setInterval(checkForNewContent, 5 * 60 * 1000);
+    
+    // Watch for system theme changes
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleThemeChange = (e) => {
+      document.documentElement.classList.toggle('dark', e.matches);
+      updateFavicon();
+    };
+    darkModeMediaQuery.addListener(handleThemeChange);
+
+    return () => {
+      clearInterval(interval);
+      darkModeMediaQuery.removeListener(handleThemeChange);
+    };
+  }, []);
+
   return (
     <HelmetProvider>
       <Router>
