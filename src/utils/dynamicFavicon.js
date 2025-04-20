@@ -43,10 +43,41 @@ function drawFavicon(ctx, emoji) {
   }
 }
 
+let lastUpdate = 0;
+let scheduledUpdate = null;
+let cachedCanvas = null;
+
+// Throttle updates to max once per second
+const THROTTLE_TIME = 1000;
+
+// Cache canvas creation
+function getCanvas() {
+  if (!cachedCanvas) {
+    cachedCanvas = document.createElement('canvas');
+    cachedCanvas.width = 32;
+    cachedCanvas.height = 32;
+  }
+  return cachedCanvas;
+}
+
 export function updateFavicon() {
-  const canvas = document.createElement('canvas');
-  canvas.width = 32;
-  canvas.height = 32;
+  const now = Date.now();
+  
+  // Throttle updates
+  if (now - lastUpdate < THROTTLE_TIME) {
+    if (!scheduledUpdate) {
+      scheduledUpdate = requestAnimationFrame(() => {
+        scheduledUpdate = null;
+        updateFavicon();
+      });
+    }
+    return;
+  }
+
+  // Performance measurement
+  const startTime = performance.now();
+
+  const canvas = getCanvas();
   const ctx = canvas.getContext('2d');
   
   const hour = new Date().getHours();
@@ -67,10 +98,25 @@ export function updateFavicon() {
   drawFavicon(ctx, currentIcon.emoji);
   
   const favicon = document.querySelector("link[rel='icon']");
-  favicon.href = canvas.toDataURL();
+  if (favicon.href !== canvas.toDataURL()) {
+    favicon.href = canvas.toDataURL();
+  }
+
+  lastUpdate = now;
+
+  // Log if update takes too long
+  const duration = performance.now() - startTime;
+  if (duration > 16.67) { // longer than one frame (60fps)
+    console.warn(`Favicon update took ${duration.toFixed(2)}ms`);
+  }
 }
 
 export function initDynamicFavicon() {
+  // Cleanup previous animation frame if exists
+  if (scheduledUpdate) {
+    cancelAnimationFrame(scheduledUpdate);
+  }
+
   // Update on visibility change
   document.addEventListener('visibilitychange', updateFavicon);
 
@@ -90,4 +136,12 @@ export function initDynamicFavicon() {
   
   // Regular updates
   setInterval(updateFavicon, 60000); // Update every minute
+
+  // Cleanup function
+  return () => {
+    if (scheduledUpdate) {
+      cancelAnimationFrame(scheduledUpdate);
+    }
+    cachedCanvas = null;
+  };
 }

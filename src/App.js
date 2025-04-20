@@ -19,14 +19,13 @@ import { HelmetProvider } from 'react-helmet-async';
 import { initDynamicFavicon, setNotificationCount, updateFavicon } from './utils/dynamicFavicon';
 
 function App() {
-  React.useEffect(() => {
-    initDynamicFavicon();
+  const checkForNewContent = React.useCallback(() => {
+    const newUpdates = 4; // Replace with actual logic to check new content
+    setNotificationCount(newUpdates);
+  }, []);
 
-    // Example: Update notification count based on new blogs/updates
-    const checkForNewContent = () => {
-      const newUpdates = 3; // Replace with actual logic to check new content
-      setNotificationCount(newUpdates);
-    };
+  React.useEffect(() => {
+    const cleanup = initDynamicFavicon();
 
     // Check for updates every 5 minutes
     const interval = setInterval(checkForNewContent, 5 * 60 * 1000);
@@ -42,8 +41,9 @@ function App() {
     return () => {
       clearInterval(interval);
       darkModeMediaQuery.removeListener(handleThemeChange);
+      cleanup();
     };
-  }, []);
+  }, [checkForNewContent]);
 
   return (
     <HelmetProvider>
