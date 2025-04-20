@@ -5,7 +5,7 @@ import Contests from "./Contests";
 import Skills from "./Skills";
 import Activities from "./Activities";
 import Projects from "./Projects";
-import References from "./References";
+// import References from "./References";
 import Update from "./Update";
 import { Helmet } from "react-helmet-async";
 

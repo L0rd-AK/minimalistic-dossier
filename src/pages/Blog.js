@@ -123,6 +123,9 @@ function Blog() {
           )}
         </div>
       </div>
+      <div className='flex justify-center items-center mt-8'>
+      <a href="https://clustrmaps.com/site/1c5mk" title="Visit tracker for Amitkumarghosh.vercel.app"><img alt="clustermaps plugin" src="//www.clustrmaps.com/map_v2.png?d=0LVDVCa48UMbcFc5A7j7x6SXo1CjooXrZrvX6ar6lyQ" /></a>
+      </div>
     </>
   );
 }
