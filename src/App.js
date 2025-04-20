@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Headar';
 import Home from './pages/Home';
@@ -19,31 +19,40 @@ import { HelmetProvider } from 'react-helmet-async';
 import { initDynamicFavicon, setNotificationCount, updateFavicon } from './utils/dynamicFavicon';
 
 function App() {
-  const checkForNewContent = React.useCallback(() => {
-    const newUpdates = 4; // Replace with actual logic to check new content
-    setNotificationCount(newUpdates);
+  const [notificationCount, setLocalNotificationCount] = useState(() => {
+    return parseInt(localStorage.getItem('notificationCount') || '0');
+  });
+
+  const updateNotificationCount = useCallback((count) => {
+    setLocalNotificationCount(count);
+    localStorage.setItem('notificationCount', count.toString());
+    setNotificationCount(count);
   }, []);
 
-  React.useEffect(() => {
-    const cleanup = initDynamicFavicon();
+  // Theme change optimization with debounce
+  const handleThemeChange = useCallback((e) => {
+    document.documentElement.classList.toggle('dark', e.matches);
+    // Debounce favicon update
+    requestAnimationFrame(() => updateFavicon());
+  }, []);
 
-    // Check for updates every 5 minutes
-    const interval = setInterval(checkForNewContent, 5 * 60 * 1000);
-    
-    // Watch for system theme changes
+  useEffect(() => {
+    const cleanup = initDynamicFavicon();
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleThemeChange = (e) => {
-      document.documentElement.classList.toggle('dark', e.matches);
-      updateFavicon();
-    };
+
+    // Initial notification check
+    const storedCount = parseInt(localStorage.getItem('notificationCount') || '0');
+    if (storedCount > 0) {
+      setNotificationCount(storedCount);
+    }
+
     darkModeMediaQuery.addListener(handleThemeChange);
 
     return () => {
-      clearInterval(interval);
       darkModeMediaQuery.removeListener(handleThemeChange);
       cleanup();
     };
-  }, [checkForNewContent]);
+  }, [handleThemeChange]);
 
   return (
     <HelmetProvider>

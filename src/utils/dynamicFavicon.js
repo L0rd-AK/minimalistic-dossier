@@ -47,8 +47,25 @@ let lastUpdate = 0;
 let scheduledUpdate = null;
 let cachedCanvas = null;
 
-// Throttle updates to max once per second
-const THROTTLE_TIME = 1000;
+// Use more aggressive throttling
+const THROTTLE_TIME = 2000; // 2 seconds
+
+// Cache emoji data
+const emojiCache = new Map();
+
+function getEmoji(hour) {
+  const cacheKey = `emoji_${hour}`;
+  
+  if (emojiCache.has(cacheKey)) {
+    return emojiCache.get(cacheKey);
+  }
+
+  const emoji = favicons.find(f => hour >= f.time[0] && hour <= f.time[1])?.emoji 
+    || randomEmojis[Math.floor(hour / 2) % randomEmojis.length];
+    
+  emojiCache.set(cacheKey, emoji);
+  return emoji;
+}
 
 // Cache canvas creation
 function getCanvas() {
@@ -63,13 +80,12 @@ function getCanvas() {
 export function updateFavicon() {
   const now = Date.now();
   
-  // Throttle updates
   if (now - lastUpdate < THROTTLE_TIME) {
     if (!scheduledUpdate) {
-      scheduledUpdate = requestAnimationFrame(() => {
+      scheduledUpdate = setTimeout(() => {
         scheduledUpdate = null;
-        updateFavicon();
-      });
+        requestAnimationFrame(updateFavicon);
+      }, THROTTLE_TIME);
     }
     return;
   }
@@ -87,12 +103,7 @@ export function updateFavicon() {
   if (document.hidden) {
     currentIcon = { emoji: '💭' }; // Tab inactive
   } else {
-    // Get random emoji every hour
-    const randomIndex = Math.floor(new Date().getTime() / (1000 * 60 * 60)) % randomEmojis.length;
-    const randomEmoji = randomEmojis[randomIndex];
-    
-    currentIcon = favicons.find(f => hour >= f.time[0] && hour <= f.time[1]) || 
-                 { emoji: randomEmoji };
+    currentIcon = { emoji: getEmoji(hour) };
   }
 
   drawFavicon(ctx, currentIcon.emoji);
