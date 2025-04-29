@@ -103,10 +103,12 @@ function Hero() {
             Summary
           </h3>
           <p className="text-gray-700 leading-relaxed text-justify text-sm sm:text-base">
-            I am a highly motivated and detail-oriented full-stack developer with extensive experience in designing, developing, and managing dynamic web applications. My expertise spans across HTML, CSS, JavaScript, React, Node.js, Express.js, and MongoDB, enabling me to build scalable and efficient solutions. I am passionate about leveraging cutting-edge technologies to solve real-world problems and deliver exceptional user experiences.
+          “Full-stack developer” is just a fancy way of saying “I can argue with both front-end and back-end until neither works, then fix them while muttering darkly.”
+          I’ve mastered the art of translating caffeine into code, churning out “dynamic web applications” that users pretend to love until the next shiny thing comes along. My toolkit? HTML, CSS, JavaScript, React, Node.js, Express.js, and MongoDB—because why settle for one language when you can juggle seven? I build “scalable and efficient solutions,” which is corporate-speak for “I can make your tech stack slightly less of a disaster.”
           </p>
           <p className="text-gray-700 leading-relaxed text-justify text-sm sm:text-base mt-4">
-            As a proactive team player and problem solver, I thrive in collaborative environments where innovation and creativity are encouraged. I am committed to continuous learning and professional growth, always seeking opportunities to enhance my skills and contribute to impactful projects. My ultimate goal is to join a forward-thinking organization where I can make meaningful contributions and grow as a developer.
+          Passionate about leveraging “cutting-edge” technologies (read: whatever just got a Medium blog post) to solve “real-world problems” (read: make someone’s app slightly less slow). I thrive in “collaborative environments” where “innovation” means three-hour meetings to decide a button’s color.
+          Committed to “continuous learning,” mainly because half my tools become obsolete every six months. Actively seeking a “forward-thinking organization” where I can contribute groundbreaking code (read: debug ancient legacy systems) and occasionally see sunlight.
           </p>
         </div>
       </div>
