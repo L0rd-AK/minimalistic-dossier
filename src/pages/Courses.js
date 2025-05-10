@@ -95,9 +95,7 @@ function Courses() {
                       onClick={() => handleCertificateClick(index)}
                       className="ml-2 text-purple-600 hover:text-purple-700 italic"
                     >
-                      [
-                       View Certificate
-                      ]
+                      [View Certificate]
                     </button>
                   )}
                 </span>
