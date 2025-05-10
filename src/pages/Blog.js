@@ -61,44 +61,44 @@ function Blog() {
           <h1 className="text-xl sm:text-2xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2 flex justify-between items-center">
             Blog Posts
             <span className="text-sm text-gray-600">
-              ({blogPosts.length} posts)
+              ({blogPosts?.length} posts)
             </span>
           </h1>
 
-          {blogPosts.length === 0 ? (
+          {blogPosts?.length === 0 ? (
             <p className="text-center text-gray-600 py-8">No blog posts found.</p>
           ) : (
             <div className="grid grid-cols-1 gap-6">
-              {blogPosts.map((blog) => (
+              {blogPosts?.map((blog) => (
                 <article 
-                  key={blog.id} 
+                  key={blog?.id} 
                   className="group p-4 rounded-lg transition-all duration-300 border border-gray-200 hover:border-blue-300 hover:shadow-md"
                 >
                   <Link 
-                    to={`/blogs/${blog.id}`}
+                    to={`/blogs/${blog?.id}`}
                     className="flex flex-col h-full"
                   >
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
                       <h2 className="text-base sm:text-lg font-bold text-blue-600 group-hover:text-blue-800 transition-colors">
-                        {blog.title}
+                        {blog?.title}
                       </h2>
                       <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-500">
                         <span className="inline-flex items-center">
                           <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
-                          {blog.readTime}
+                          {blog?.readTime}
                         </span>
                       </div>
                     </div>
 
                     <p className="text-gray-600 mb-3 text-sm sm:text-base flex-grow">
-                      {blog.description}
+                      {blog?.description}
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                       <div className="flex flex-wrap gap-2">
-                        {blog.tags.map((tag, tagIndex) => (
+                        {blog?.tags.map((tag, tagIndex) => (
                           <span 
                             key={tagIndex}
                             className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs group-hover:bg-blue-200 transition-colors"
@@ -109,7 +109,7 @@ function Blog() {
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-xs sm:text-sm text-purple-600 italic">
-                          {blog.date}
+                          {blog?.date}
                         </span>
                         <svg className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
