@@ -719,6 +719,189 @@ int main() {
       </div>
     ),
   },
+  {
+  id: 5,
+  title: "ডিসজয়েন্ট সেট ইউনিয়ন (ইউনিয়ন-ফাইন্ড): একটি শক্তিশালী ডেটা স্ট্রাকচার",
+  date: "১৫ মে, ২০২৫",
+  description: "ডিসজয়েন্ট সেট ইউনিয়ন (ইউনিয়ন-ফাইন্ড) ডেটা স্ট্রাকচার সম্পর্কে জানুন, এটি কীভাবে কাজ করে, এর অপটিমাইজেশন, এবং গ্রাফ সংযোগের মতো সমস্যা সমাধানে এর ব্যবহার।",
+  readTime: "১২ মিনিট পড়তে সময় লাগবে",
+  author: "অমিত কুমার ঘোষ",
+  tags: ["ডেটা স্ট্রাকচার", "অ্যালগরিদম", "ইউনিয়ন-ফাইন্ড", "গ্রাফ তত্ত্ব"],
+  content: (
+    <div className="mb-8">
+      <p className="mb-4 text-justify">
+        কখনো ভেবেছ কীভাবে সোশ্যাল নেটওয়ার্কে বন্ধুদের গ্রুপ তৈরি হয় বা গ্রাফে সাইকেল ধরা পড়ে? এর পিছনে রয়েছে একটি চমৎকার ডেটা স্ট্রাকচার, যার নাম <strong>ডিসজয়েন্ট সেট ইউনিয়ন (DSU)</strong>, যাকে আমরা <strong>ইউনিয়ন-ফাইন্ড</strong> নামেও ডাকি। এই ডেটা স্ট্রাকচার গ্রুপ পরিচালনার কাজ দ্রুত করে, তাই কম্পিউটার সায়েন্সে সংযোগ ও গ্রুপিংয়ের সমস্যা সমাধানে এটি খুব জনপ্রিয়। এই ব্লগে আমরা DSU কী, এটি কীভাবে কাজ করে, এর অপটিমাইজেশন এবং কোথায় ব্যবহৃত হয় তা সহজভাবে শিখব!
+      </p>
+
+      <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">ডিসজয়েন্ট সেট ইউনিয়ন কী? বেসিক ধারণা</h2>
+      <p className="mb-4 text-justify">
+        ডিসজয়েন্ট সেট ইউনিয়ন হলো এমন একটি ডেটা স্ট্রাকচার যা উপাদানগুলোকে পৃথক পৃথক গ্রুপে বা <strong>সেটে</strong> ভাগ করে রাখে। কল্পনা করো, একটি স্কুলে ছাত্ররা বিভিন্ন ক্লাবে ভাগ হয়েছে, এবং কোনো ছাত্র একাধিক ক্লাবে নেই। DSU আমাদের এই প্রশ্নের উত্তর দেয়: “কোন ছাত্র কোন ক্লাবে আছে?” বা “দুটি ক্লাব কি এক করা যায়?”
+      </p>
+      <p className="mb-4 text-justify">
+        DSU সাধারণত একটি বন (ফরেস্ট) হিসেবে তৈরি হয়, যেখানে প্রতিটি গাছ একটি সেট। গাছের <strong>রুট</strong> হলো সেই সেটের প্রতিনিধি বা নেতা। আমরা একটি <strong>প্যারেন্ট অ্যারে</strong> ব্যবহার করি উপাদানের প্যারেন্ট ট্র্যাক করতে। এর দুটি প্রধান অপারেশন:
+      </p>
+      <ul className="list-disc pl-6 mb-4">
+        <li><strong>Find</strong>: কোনো উপাদানের সেটের রুট খুঁজে বের করে।</li>
+        <li><strong>Union</strong>: দুটি সেটকে এক করে।</li>
+      </ul>
+      <p className="mb-4 text-justify">
+        এই অপারেশনগুলো DSU কে এমন সমস্যার জন্য আদর্শ করে, যেখানে গ্রুপিং দরকার, যেমন শহরের নেটওয়ার্ক সংযোগ বা অনলাইনে বন্ধুদের গ্রুপ।
+      </p>
+
+      <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">মূল অপারেশন: Find, Union, এবং Path Compression</h2>
+      <p className="mb-4 text-justify">
+        চলো, DSU কীভাবে কাজ করে তা এর মূল অপারেশন এবং <strong>Path Compression</strong> নামক একটি গুরুত্বপূর্ণ অপটিমাইজেশন দিয়ে বুঝি।
+      </p>
+
+      <h3 className="font-semibold text-lg mb-1">Find: নেতা খুঁজে বের করা</h3>
+      <p className="mb-4 text-justify">
+        <strong>Find</strong> অপারেশন কোনো উপাদানের সেটের রুট বা নেতা খুঁজে বের করে। আমরা উপাদান থেকে তার প্যারেন্টের দিকে যাই, যতক্ষণ না এমন একটি নোড পাই যার প্যারেন্ট সে নিজেই—এটাই রুট। উদাহরণস্বরূপ, যদি আমাদের থাকে <code>0 → 1 → 4</code>, তাহলে <code>Find(0)</code> করলে আমরা <code>0</code> থেকে <code>1</code>, তারপর <code>1</code> থেকে <code>4</code> যাবো এবং <code>4</code> পাবো।
+      </p>
+
+      <h3 className="font-semibold text-lg mb-1">Union: গ্রুপ এক করা</h3>
+      <p className="mb-4 text-justify">
+        <strong>Union</strong> অপারেশন দুটি সেটকে এক করে দেয়। এটি এভাবে কাজ করে:
+        <ol className="list-decimal pl-6">
+          <li><code>Find</code> দিয়ে দুটি উপাদানের রুট খুঁজি।</li>
+          <li>একটি রুটকে অন্য রুটের প্যারেন্ট করে গাছগুলো এক করি।</li>
+        </ol>
+        উদাহরণ: <code>[0, 1]</code> (রুট <code>1</code>) এবং <code>{4}</code> (রুট <code>4</code>) এক করতে, আমরা <code>parent[4] = 1</code> করি, ফলে একটি সেট হয় <code>[0, 1, 4]</code>।
+      </p>
+
+      <h3 className="font-semibold text-lg mb-1">Path Compression: দ্রুত করার কৌশল</h3>
+      <p className="mb-4 text-justify">
+        লম্বা প্যারেন্ট চেইন থাকলে Find ধীর হতে পারে। তাই আমরা <strong>Path Compression</strong> ব্যবহার করি। <code>Find</code> করার সময়, পথের সব উপাদানকে সরাসরি রুটের সাথে যুক্ত করি, গাছ সমতল করে। যেমন, <code>0 → 1 → 4</code> থাকলে, <code>Find(0)</code> করার পর এটি হয় <code>0 → 4</code>, <code>1 → 4</code>। এর ফলে পরবর্তী <code>Find</code> দ্রুত হয়!
+      </p>
+
+      <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">অপটিমাইজেশন: Union by Rank</h2>
+      <p className="mb-4 text-justify">
+        DSU কে আরও দ্রুত করতে আমরা <strong>Union by Rank</strong> ব্যবহার করি। প্রতিটি সেটের একটি “র‍্যাঙ্ক” থাকে, যা গাছের উচ্চতার মতো। দুটি সেট এক করার সময়:
+      </p>
+      <ul className="list-disc pl-6 mb-4">
+        <li>বড় র‍্যাঙ্কের গাছের অধীনে ছোট র‍্যাঙ্কের গাছ যুক্ত করি।</li>
+        <li>র‍্যাঙ্ক সমান হলে, একটিকে প্যারেন্ট করে এর র‍্যাঙ্ক ১ বাড়াই।</li>
+      </ul>
+      <p className="mb-4 text-justify">
+        এটি গাছের উচ্চতা কমায়, ফলে <code>Find</code> অপারেশন দ্রুত হয়। Path Compression এর সাথে এটি DSU কে অত্যন্ত কার্যকর করে।
+      </p>
+
+      <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">বাস্তব উদাহরণ: C++ কোড</h2>
+      <p className="mb-4 text-justify">
+        চলো, একটি সহজ C++ কোড দিয়ে DSU কীভাবে কাজ করে তা দেখি। এই কোডে Path Compression এবং Union by Rank ব্যবহৃত হয়েছে, এবং এটি বোঝা সহজ।
+      </p>
+      <pre className="bg-gray-100 p-4 rounded mb-4 overflow-x-auto">
+        <code>
+{`#include <vector>
+
+class DSU {
+private:
+    std::vector<int> parent; // প্রতিটি উপাদানের প্যারেন্ট ট্র্যাক করে
+    std::vector<int> rank;   // প্রতিটি সেটের উচ্চতা (র‍্যাঙ্ক) ট্র্যাক করে
+
+public:
+    // nটি উপাদান দিয়ে DSU শুরু করা
+    DSU(int n) {
+        parent.resize(n);
+        rank.resize(n, 0); // সব র‍্যাঙ্ক শুরুতে ০
+        for (int i = 0; i < n; ++i) {
+            parent[i] = i; // প্রতিটি উপাদান নিজেই তার প্যারেন্ট
+        }
+    }
+
+    // Path Compression সহ রুট খুঁজে বের করা
+    int find(int x) {
+        if (parent[x] != x) {
+            parent[x] = find(parent[x]); // Path Compression
+        }
+        return parent[x];
+    }
+
+    // Union by Rank সহ সেট এক করা
+    void unionSets(int x, int y) {
+        int rootX = find(x);
+        int rootY = find(y);
+        if (rootX == rootY) return;
+        if (rank[rootX] > rank[rootY]) {
+            parent[rootY] = rootX;
+        } else if (rank[rootX] < rank[rootY]) {
+            parent[rootX] = rootY;
+        } else {
+            parent[rootY] = rootX;
+            rank[rootX]++;
+        }
+    }
+};
+
+// উদাহরণ ব্যবহার
+#include <iostream>
+
+int main() {
+    DSU dsu(5); // ৫টি উপাদান দিয়ে DSU তৈরি (০, ১, ২, ৩, ৪)
+    dsu.unionSets(0, 1); // ০ এবং ১ এক করো
+    dsu.unionSets(2, 3); // ২ এবং ৩ এক করো
+    dsu.unionSets(1, 4); // ১ এবং ৪ এক করো
+    std::cout << "০ এর রুট: " << dsu.find(0) << std::endl;
+    std::cout << "২ এর রুট: " << dsu.find(2) << std::endl;
+    return 0;
+}`}
+        </code>
+      </pre>
+      <p className="mb-4 text-justify">
+        এই উদাহরণে আমরা ৫টি উপাদান নিয়ে DSU তৈরি করেছি এবং ইউনিয়ন করে সেট তৈরি করেছি: <code>[0, 1, 4]</code> এবং <code>[2, 3]</code>। <code>find</code> কলগুলো সেটের রুট দেখায়, যা DSU এর গ্রুপ ট্র্যাকিং ক্ষমতা দেখায়।
+      </p>
+
+      <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">DSU কোথায় ব্যবহৃত হয়? বাস্তব অ্যাপ্লিকেশন</h2>
+      <p className="mb-4 text-justify">
+        DSU অনেক কাজে ব্যবহৃত হয়, যেমন:
+      </p>
+      <ul className="list-disc pl-6 mb-4">
+        <li><strong>গ্রাফে সাইকেল ধরা</strong>: দুটি নোড একই সেটে থাকলে এজ যোগ করলে সাইকেল হবে।</li>
+        <li><strong>ক্রুস্কাল অ্যালগরিদম</strong>: মিনিমাম স্প্যানিং ট্রি (MST) তৈরি করতে।</li>
+        <li><strong>সোশ্যাল নেটওয়ার্ক</strong>: ফেসবুকের মতো প্ল্যাটফর্মে বন্ধুদের গ্রুপ তৈরি।</li>
+        <li><strong>কানেক্টেড কম্পোনেন্টস</strong>: গ্রাফে পৃথক গ্রুপ খুঁজে বের করা।</li>
+      </ul>
+
+      <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">সময়ের জটিলতা: DSU কত দ্রুত?</h2>
+      <p className="mb-4 text-justify">
+        DSU এর দক্ষতা অপটিমাইজেশনের উপর নির্ভর করে:
+      </p>
+      <ul className="list-disc pl-6 mb-4">
+        <li><strong>অপটিমাইজেশন ছাড়া</strong>: <code>Find</code> এবং <code>Union</code> সবচেয়ে খারাপ ক্ষেত্রে O(n) সময় নিতে পারে, যেখানে n হলো উপাদানের সংখ্যা।</li>
+        <li><strong>Union by Rank সহ</strong>: গাছের উচ্চতা O(log n) হয়।</li>
+        <li><strong>Path Compression + Union by Rank</strong>: প্রতি অপারেশনের গড় সময় O(α(n)), যেখানে α(n) ইনভার্স অ্যাকারম্যান ফাংশন—বাস্তবে প্রায় ধ্রুব।</li>
+      </ul>
+      <p className="mb-4 text-justify">
+        এই প্রায় ধ্রুব সময়ের কারণে DSU বড় ডেটাসেটের জন্য দারুণ কাজ করে, তাই অনেক অ্যালগরিদমে এটি ব্যবহৃত হয়।
+      </p>
+
+      <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">উপসংহার</h2>
+      <p className="mb-4 text-justify">
+        ডিসজয়েন্ট সেট ইউনিয়ন (ইউনিয়ন-ফাইন্ড) একটি আকর্ষণীয় এবং শক্তিশালী ডেটা স্ট্রাকচার যা গ্রুপিং এবং সংযোগের জটিল সমস্যা সহজ করে। এর মূল অপারেশন—<code>Find</code> এবং <code>Union</code>—এবং Path Compression ও Union by Rank এর মতো অপটিমাইজেশন শিখে তুমি সাইকেল ধরা বা মিনিমাম স্প্যানিং ট্রির মতো সমস্যা সহজেই সমাধান করতে পারবে। সোশ্যাল নেটওয়ার্ক হোক বা গ্রাফ বিশ্লেষণ, DSU একটি দরকারি টুল। উপরের কোড চালিয়ে এবং পরীক্ষা করে DSU কীভাবে কাজ করে তা নিজে দেখে নাও!
+      </p>
+
+      <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">অনুপ্রেরণার উৎস:</h2>
+      <p className="mb-4">
+        <a
+          key="1"
+          href="https://cp-algorithms.com/data_structures/disjoint_set_union.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-5 sm:ml-2 mt-1 sm:mt-0 px-2 py-1 font-medium text-red-600 hover:text-red-800 hover:bg-blue-100 rounded transition-colors"
+        >
+          [CP Algorithms: ডিসজয়েন্ট সেট ইউনিয়ন]
+        </a>
+      </p>
+
+      <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">ক্যাটাগরি/ট্যাগ:</h2>
+      <ul className="flex flex-wrap gap-2 text-sm text-gray-500 mb-4">
+        <li>[ডেটা স্ট্রাকচার]</li>
+        <li>[অ্যালগরিদম]</li>
+        <li>[ইউনিয়ন-ফাইন্ড]</li>
+        <li>[গ্রাফ তত্ত্ব]</li>
+      </ul>
+    </div>
+  ),
+}
 ];
 
 export const blogs = [
