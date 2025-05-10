@@ -563,58 +563,57 @@ export const blogsData = [
         <pre className="bg-gray-100 p-4 rounded mb-4 overflow-x-auto">
           <code>
             {`#include <vector>
+            class DSU {
+            private:
+                std::vector<int> parent; // Tracks the parent of each element
+                std::vector<int> rank;   // Tracks the height (rank) of each set
 
-class DSU {
-private:
-    std::vector<int> parent; // Tracks the parent of each element
-    std::vector<int> rank;   // Tracks the height (rank) of each set
+            public:
+                // Initialize DSU with n elements
+                DSU(int n) {
+                    parent.resize(n);
+                    rank.resize(n, 0); // All ranks start at 0
+                    for (int i = 0; i < n; ++i) {
+                        parent[i] = i; // Each element is its own parent
+                    }
+                }
 
-public:
-    // Initialize DSU with n elements
-    DSU(int n) {
-        parent.resize(n);
-        rank.resize(n, 0); // All ranks start at 0
-        for (int i = 0; i < n; ++i) {
-            parent[i] = i; // Each element is its own parent
-        }
-    }
+                // Find the root with Path Compression
+                int find(int x) {
+                    if (parent[x] != x) {
+                        parent[x] = find(parent[x]); // Path Compression
+                    }
+                    return parent[x];
+                }
 
-    // Find the root with Path Compression
-    int find(int x) {
-        if (parent[x] != x) {
-            parent[x] = find(parent[x]); // Path Compression
-        }
-        return parent[x];
-    }
+                // Merge sets using Union by Rank
+                void unionSets(int x, int y) {
+                    int rootX = find(x);
+                    int rootY = find(y);
+                    if (rootX == rootY) return;
+                    if (rank[rootX] > rank[rootY]) {
+                        parent[rootY] = rootX;
+                    } else if (rank[rootX] < rank[rootY]) {
+                        parent[rootX] = rootY;
+                    } else {
+                        parent[rootY] = rootX;
+                        rank[rootX]++;
+                    }
+                }
+            };
 
-    // Merge sets using Union by Rank
-    void unionSets(int x, int y) {
-        int rootX = find(x);
-        int rootY = find(y);
-        if (rootX == rootY) return;
-        if (rank[rootX] > rank[rootY]) {
-            parent[rootY] = rootX;
-        } else if (rank[rootX] < rank[rootY]) {
-            parent[rootX] = rootY;
-        } else {
-            parent[rootY] = rootX;
-            rank[rootX]++;
-        }
-    }
-};
+            // Example usage
+            #include <iostream>
 
-// Example usage
-#include <iostream>
-
-int main() {
-    DSU dsu(5); // Create DSU with 5 elements (0, 1, 2, 3, 4)
-    dsu.unionSets(0, 1); // Merge 0 and 1
-    dsu.unionSets(2, 3); // Merge 2 and 3
-    dsu.unionSets(1, 4); // Merge 1 and 4
-    std::cout << "Root of 0: " << dsu.find(0) << std::endl;
-    std::cout << "Root of 2: " << dsu.find(2) << std::endl;
-    return 0;
-}`}
+            int main() {
+                DSU dsu(5); // Create DSU with 5 elements (0, 1, 2, 3, 4)
+                dsu.unionSets(0, 1); // Merge 0 and 1
+                dsu.unionSets(2, 3); // Merge 2 and 3
+                dsu.unionSets(1, 4); // Merge 1 and 4
+                std::cout << "Root of 0: " << dsu.find(0) << std::endl;
+                std::cout << "Root of 2: " << dsu.find(2) << std::endl;
+                return 0;
+            }`}
           </code>
         </pre>
         <p className="mb-4 text-justify">
@@ -724,7 +723,7 @@ int main() {
   title: "ডিসজয়েন্ট সেট ইউনিয়ন (ইউনিয়ন-ফাইন্ড): একটি শক্তিশালী ডেটা স্ট্রাকচার",
   date: "১৫ মে, ২০২৫",
   description: "ডিসজয়েন্ট সেট ইউনিয়ন (ইউনিয়ন-ফাইন্ড) ডেটা স্ট্রাকচার সম্পর্কে জানুন, এটি কীভাবে কাজ করে, এর অপটিমাইজেশন, এবং গ্রাফ সংযোগের মতো সমস্যা সমাধানে এর ব্যবহার।",
-  readTime: "১২ মিনিট পড়তে সময় লাগবে",
+  readTime: "১২ মিনিট ",
   author: "অমিত কুমার ঘোষ",
   tags: ["ডেটা স্ট্রাকচার", "অ্যালগরিদম", "ইউনিয়ন-ফাইন্ড", "গ্রাফ তত্ত্ব"],
   content: (
@@ -791,59 +790,59 @@ int main() {
       </p>
       <pre className="bg-gray-100 p-4 rounded mb-4 overflow-x-auto">
         <code>
-{`#include <vector>
+        {`#include <vector>
 
-class DSU {
-private:
-    std::vector<int> parent; // প্রতিটি উপাদানের প্যারেন্ট ট্র্যাক করে
-    std::vector<int> rank;   // প্রতিটি সেটের উচ্চতা (র‍্যাঙ্ক) ট্র্যাক করে
+        class DSU {
+        private:
+            std::vector<int> parent; // প্রতিটি উপাদানের প্যারেন্ট ট্র্যাক করে
+            std::vector<int> rank;   // প্রতিটি সেটের উচ্চতা (র‍্যাঙ্ক) ট্র্যাক করে
 
-public:
-    // nটি উপাদান দিয়ে DSU শুরু করা
-    DSU(int n) {
-        parent.resize(n);
-        rank.resize(n, 0); // সব র‍্যাঙ্ক শুরুতে ০
-        for (int i = 0; i < n; ++i) {
-            parent[i] = i; // প্রতিটি উপাদান নিজেই তার প্যারেন্ট
-        }
-    }
+        public:
+            // nটি উপাদান দিয়ে DSU শুরু করা
+            DSU(int n) {
+                parent.resize(n);
+                rank.resize(n, 0); // সব র‍্যাঙ্ক শুরুতে ০
+                for (int i = 0; i < n; ++i) {
+                    parent[i] = i; // প্রতিটি উপাদান নিজেই তার প্যারেন্ট
+                }
+            }
 
-    // Path Compression সহ রুট খুঁজে বের করা
-    int find(int x) {
-        if (parent[x] != x) {
-            parent[x] = find(parent[x]); // Path Compression
-        }
-        return parent[x];
-    }
+            // Path Compression সহ রুট খুঁজে বের করা
+            int find(int x) {
+                if (parent[x] != x) {
+                    parent[x] = find(parent[x]); // Path Compression
+                }
+                return parent[x];
+            }
 
-    // Union by Rank সহ সেট এক করা
-    void unionSets(int x, int y) {
-        int rootX = find(x);
-        int rootY = find(y);
-        if (rootX == rootY) return;
-        if (rank[rootX] > rank[rootY]) {
-            parent[rootY] = rootX;
-        } else if (rank[rootX] < rank[rootY]) {
-            parent[rootX] = rootY;
-        } else {
-            parent[rootY] = rootX;
-            rank[rootX]++;
-        }
-    }
-};
+            // Union by Rank সহ সেট এক করা
+            void unionSets(int x, int y) {
+                int rootX = find(x);
+                int rootY = find(y);
+                if (rootX == rootY) return;
+                if (rank[rootX] > rank[rootY]) {
+                    parent[rootY] = rootX;
+                } else if (rank[rootX] < rank[rootY]) {
+                    parent[rootX] = rootY;
+                } else {
+                    parent[rootY] = rootX;
+                    rank[rootX]++;
+                }
+            }
+        };
 
-// উদাহরণ ব্যবহার
-#include <iostream>
+        // উদাহরণ ব্যবহার
+        #include <iostream>
 
-int main() {
-    DSU dsu(5); // ৫টি উপাদান দিয়ে DSU তৈরি (০, ১, ২, ৩, ৪)
-    dsu.unionSets(0, 1); // ০ এবং ১ এক করো
-    dsu.unionSets(2, 3); // ২ এবং ৩ এক করো
-    dsu.unionSets(1, 4); // ১ এবং ৪ এক করো
-    std::cout << "০ এর রুট: " << dsu.find(0) << std::endl;
-    std::cout << "২ এর রুট: " << dsu.find(2) << std::endl;
-    return 0;
-}`}
+        int main() {
+            DSU dsu(5); // ৫টি উপাদান দিয়ে DSU তৈরি (০, ১, ২, ৩, ৪)
+            dsu.unionSets(0, 1); // ০ এবং ১ এক করো
+            dsu.unionSets(2, 3); // ২ এবং ৩ এক করো
+            dsu.unionSets(1, 4); // ১ এবং ৪ এক করো
+            std::cout << "০ এর রুট: " << dsu.find(0) << std::endl;
+            std::cout << "২ এর রুট: " << dsu.find(2) << std::endl;
+            return 0;
+        }`}
         </code>
       </pre>
       <p className="mb-4 text-justify">
