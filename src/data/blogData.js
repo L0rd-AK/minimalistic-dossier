@@ -1030,7 +1030,7 @@ export const blogsData = [
           rel="noopener noreferrer"
           className="ml-5 sm:ml-2 mt-1 sm:mt-0 px-2 py-1 font-medium text-red-600 hover:text-red-800 hover:bg-blue-100 rounded transition-colors"
         >
-          [Scratch About Page]
+          [Scratch MIT]
         </a>
       </h2>
 
