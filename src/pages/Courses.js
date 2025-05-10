@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import AnimatedLetters from "../AnimatedLetters";
+// import AnimatedLetters from "../AnimatedLetters";
 
 function Courses() {
   const [showCertificate, setShowCertificate] = useState(null); 
