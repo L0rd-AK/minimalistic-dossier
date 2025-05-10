@@ -4,8 +4,8 @@ import AnimatedLetters from "../AnimatedLetters";
 
 function Courses() {
   const [showCertificate, setShowCertificate] = useState(null); 
-  const [letterClass, setLetterClass] = useState("text-animate-hover");
-  const certificate =["C", "e", "r", "t", "i", "f", "i", "c", "a", "t", "e"];
+  // const [letterClass, setLetterClass] = useState("text-animate-hover");
+  // const certificate =["C", "e", "r", "t", "i", "f", "i", "c", "a", "t", "e"];
   const courses = [
     {
       title:"Dean's List Award for Academic Excellence",
@@ -73,6 +73,7 @@ function Courses() {
         />
         <link rel="canonical" href="https://amitkumarghosh.vercel.app/courses" />
       </Helmet>
+      
       <div className="p-4 sm:p-8 bg-gray-50 shadow-sm rounded-lg">
         <h1 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
           achievements and Courses
@@ -95,11 +96,7 @@ function Courses() {
                       className="ml-2 text-purple-600 hover:text-purple-700 italic"
                     >
                       [
-                        <AnimatedLetters
-                          letterClass={letterClass}
-                          strArray={certificate}
-                          idx={certificate.length}
-                        />
+                       View Certificate
                       ]
                     </button>
                   )}
