@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 function Activities() {
   const activities = [
@@ -9,8 +10,11 @@ function Activities() {
     },
     {
       title: "Web Developer",
-      description:
-        "I am a Web Developer Specialized in MERN Stack. Check out my projects on Projects page.",
+      description:(
+        <>
+         <h1>I am a Web Developer Specialized in MERN Stack. Check out my projects on {<Link to='/projects' className="text-red-500 underline">Projects</Link>} page.</h1>
+        </>
+      ),
       date: "[01/2023 – present]",
     },
     {
