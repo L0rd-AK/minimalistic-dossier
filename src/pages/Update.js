@@ -4,11 +4,6 @@ import Spinner from '../3DSpiner/Spinner';
 function Update() {
 const updates = [
     {
-        title: "Working on a React project",
-        date: "[03/2025]",
-        description: "Building a responsive resume website using React and Tailwind CSS.",
-    },
-    {
         title:"Learning React Native",
         date: "[02/2025]",
         description: "Currently learning React Native to build mobile applications for both Android and iOS.",
@@ -34,6 +29,11 @@ const updates = [
             </>
         ),
     },
+    {
+      title: "Learning postgreSQL",
+      date: "[20/10/2024]",
+      description: "Currently learning postgreSQL to enhance database management skills.",
+    }
 ];
 
   return (
