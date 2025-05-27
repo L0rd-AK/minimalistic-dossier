@@ -35,6 +35,13 @@ function Courses() {
       platform: "Online",
     },
     {
+      title: "Datathon Programming Contest",
+      date: "[07/2024]",
+      instructor: "Daffodil International University",
+      platform: "Academic",
+      certificateImage: "https://i.ibb.co/bj1CvkYM/certificate.png",
+    },
+    {
       title:"Communication Foundations",
       date: "[14/02/2024]",
       instructor: "LinkedIn Learning",
