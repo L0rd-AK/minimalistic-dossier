@@ -31,7 +31,7 @@ const updates = [
     },
     {
       title: "Learning postgreSQL",
-      date: "[20/10/2024]",
+      date: "[20/05/2025]",
       description: "Currently learning postgreSQL to enhance database management skills.",
     }
 ];
