@@ -39,7 +39,7 @@ function Skills() {
           <div className="p-1 hover:bg-blue-50 rounded-md transition-colors">
             <h3 className="font-bold text-blue-600">Web Technologies</h3>
             <p className="text-gray-700 ml-2 list-item text-sm sm:text-base">
-              HTML, CSS, JS, React JS, Express JS, Node JS, MongoDB
+              HTML, CSS, JS, React JS, Express JS, Node JS, MongoDB, React Native
             </p>
           </div>
           <div className="p-1 hover:bg-blue-50 rounded-md transition-colors">
