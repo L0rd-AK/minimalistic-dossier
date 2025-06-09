@@ -14,8 +14,8 @@ function Books() {
       title: "The Stranger",
       author: "Albert Camus",
       description: "A philosophical novel about absurdism and existentialism.",
-      status: "5 page",
-      isReading: true,
+      status: "Completed",
+      isReading: false,
     },
     {
       title: "1984",
