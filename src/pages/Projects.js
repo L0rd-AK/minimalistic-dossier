@@ -8,6 +8,16 @@ function Projects() {
 
   const projectsList = [
     {
+      title: "IELTS Pro – IELTS Practice Web App",
+      links: [
+        { url: "https://ielts-pro.vercel.app", label: "Live" },
+        { url: "https://github.com/L0rd-AK/IELTS_Pro", label: "Repo" },
+      ],
+      technologies:
+        "Next.js, React, TypeScript, Tailwind CSS, Firebase, Node.js",
+      description: `IELTS Pro is a full-featured IELTS practice platform. Users can sign up, take simulated IELTS speaking, writing, reading, and listening tests, and receive instant AI-powered feedback. The app uses Firebase for authentication and data storage, and integrates with AI services for test evaluation. The UI is built with Next.js and Tailwind CSS for a modern, responsive experience.`,
+    },
+    {
       title: "Full-stack Job Finder React app",
       links: [
         { url: "https://jobdoc-de92b.web.app", label: "Live" },
@@ -46,20 +56,28 @@ function Projects() {
     {
       title: "Cursor-Controlled Snake Game",
       technologies: "React JS, Tailwind CSS, DaisyUI",
-      description:"Just built this fun mouse-controlled Snake Game in 5 minutes using prompt engineering with DeepSeek R1! 🚀 The game is made with React.js and leverages useState, useEffect, and requestAnimationFrame for smooth movement and interactions. It features a countdown timer, food mechanics, collision detection, and a simple scoring system. This showcases the power of AI-assisted development in rapid prototyping.",
+      description:
+        "Just built this fun mouse-controlled Snake Game in 5 minutes using prompt engineering with DeepSeek R1! 🚀 The game is made with React.js and leverages useState, useEffect, and requestAnimationFrame for smooth movement and interactions. It features a countdown timer, food mechanics, collision detection, and a simple scoring system. This showcases the power of AI-assisted development in rapid prototyping.",
       links: [
         { url: "https://cursor-snake.vercel.app", label: "Live" },
-        { url: "https://youtu.be/OFGOr5Sm55w?si=366ft1vYQrikrKkA", label: "Video" },
+        {
+          url: "https://youtu.be/OFGOr5Sm55w?si=366ft1vYQrikrKkA",
+          label: "Video",
+        },
         { url: "https://github.com/L0rd-AK/Cursor_snake", label: "Repo" },
       ],
     },
     {
       title: "CSE-332 Compiler Design Project",
-      technologies: "C, Yacc, Lex, Bison, Flex, Lexical Analyzer, Parser Generator (Yacc)",
+      technologies:
+        "C, Yacc, Lex, Bison, Flex, Lexical Analyzer, Parser Generator (Yacc)",
       description: `This project is a comprehensive implementation of a compiler for a custom programming language, I developed it as part of the CSE-332 Compiler Design course. It covers essential compiler design stages such as lexical analysis, syntax analysis, and intermediate code generation. The project is written in C and utilizes Yacc for syntax parsing and Lex for lexical analysis. It demonstrates a strong understanding of compiler construction principles and practical skills in low-level programming and parser generation.`,
-      links:[
-        { url: "https://github.com/L0rd-AK/CSE-332_Compiler_Design", label: "Repo" },
-      ]
+      links: [
+        {
+          url: "https://github.com/L0rd-AK/CSE-332_Compiler_Design",
+          label: "Repo",
+        },
+      ],
     },
     {
       title: "Auto Attendance System Using Face-Recognition in Python",
@@ -97,15 +115,15 @@ function Projects() {
           name="description"
           content="This page highlights Amit Kumar Ghosh's Projects. It actively showcases his projects, including Full-stack Job Finder React app, Full-stack Medical clinic React-app, Front-end wedding React-project, Auto Attendance System Using Face-Recognition in Python, and Simple Server-Client Chat Application in Java. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
         />
-        <meta
-          property="og:title"
-          content="Amit Kumar Ghosh | Projects"
-        />
+        <meta property="og:title" content="Amit Kumar Ghosh | Projects" />
         <meta
           property="og:description"
           content="This page highlights Amit Kumar Ghosh's Projects. It actively showcases his projects, including Full-stack Job Finder React app, Full-stack Medical clinic React-app, Front-end wedding React-project, Auto Attendance System Using Face-Recognition in Python, and Simple Server-Client Chat Application in Java. The page is designed with a responsive layout, ensuring a clean and interactive user experience."
         />
-        <link rel="canonical" href="https://amitkumarghosh.vercel.app/projects"/>
+        <link
+          rel="canonical"
+          href="https://amitkumarghosh.vercel.app/projects"
+        />
       </Helmet>
       <div className="p-4 sm:p-8   bg-gray-50 shadow-sm rounded-lg">
         <h1 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
