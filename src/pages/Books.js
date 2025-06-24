@@ -11,6 +11,13 @@ function Books() {
       isReading: true,
     },
     {
+      title: "the Life Of a Stupid man",
+      author: "Ryunosuke Akutagawa",
+      description: "A short story about the life of a foolish man. A brief, haunting look into a man's final days.",
+      status: "Completed",
+      isReading: false,
+    },
+    {
       title: "The Stranger",
       author: "Albert Camus",
       description: "A philosophical novel about absurdism and existentialism.",
