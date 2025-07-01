@@ -7,7 +7,7 @@ function Books() {
       title: "Crime and Punishment",
       author: "Fyodor Dostoevsky",
       description: "A psychological exploration of morality and redemption.",
-      status: "152 page",
+      status: ".....",
       isReading: true,
     },
     {
