@@ -238,6 +238,83 @@ export const blogsData = [
           <li>Experiment with different AI platforms and APIs to experience their capabilities firsthand.</li>
           <li>Stay updated with the latest advancements in the rapidly evolving field of Artificial Intelligence.</li>
         </ul>
+        <div>
+          {/* Table of LLM Models */}
+        <table className="table-auto w-full mb-6 border-collapse border border-gray-200">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="border border-gray-200 px-4 py-2 text-left">Model</th>
+              <th className="border border-gray-200 px-4 py-2 text-left">Strong Side</th>
+              <th className="border border-gray-200 px-4 py-2 text-left">Official Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border border-gray-200 px-4 py-2">GPT-4o</td>
+              <td className="border border-gray-200 px-4 py-2">Multimodal understanding (text, image, audio, video)</td>
+              <td className="border border-gray-200 px-4 py-2">
+                <a href="https://openai.com/gpt-4o" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">openai.com/gpt-4o</a>
+              </td>
+            </tr>
+            <tr>
+              <td className="border border-gray-200 px-4 py-2">Claude 3.7 Sonnet</td>
+              <td className="border border-gray-200 px-4 py-2">Code generation & advanced reasoning with diagrams</td>
+              <td className="border border-gray-200 px-4 py-2">
+                <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">anthropic.com</a>
+              </td>
+            </tr>
+            <tr>
+              <td className="border border-gray-200 px-4 py-2">Gemini 2.5 Pro</td>
+              <td className="border border-gray-200 px-4 py-2">High-quality responses and robust reasoning</td>
+              <td className="border border-gray-200 px-4 py-2">
+                <a href="https://ai.google/models/gemini" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">ai.google/models/gemini</a>
+              </td>
+            </tr>
+            <tr>
+              <td className="border border-gray-200 px-4 py-2">BERT</td>
+              <td className="border border-gray-200 px-4 py-2">Contextual language understanding for search & QA</td>
+              <td className="border border-gray-200 px-4 py-2">
+                <a href="https://github.com/google-research/bert" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">github.com/google-research/bert</a>
+              </td>
+            </tr>
+            <tr>
+              <td className="border border-gray-200 px-4 py-2">LLaMA</td>
+              <td className="border border-gray-200 px-4 py-2">Versatile NLP tasks: conversation, summarization, translation</td>
+              <td className="border border-gray-200 px-4 py-2">
+                <a href="https://ai.facebook.com/blog/large-language-model-llama-meta-ai" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">facebook.com/llama</a>
+              </td>
+            </tr>
+            <tr>
+              <td className="border border-gray-200 px-4 py-2">PaLM 2</td>
+              <td className="border border-gray-200 px-4 py-2">Commonsense reasoning & multilingual coding</td>
+              <td className="border border-gray-200 px-4 py-2">
+                <a href="https://developers.generativeai.google/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">developers.generativeai.google</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <ul className="list-disc pl-6 mb-4">
+          <li>
+            <strong className="font-semibold">GPT-4o</strong>: Excels in multimodal tasks, seamlessly integrating text, image, audio, and video understanding. It's known for providing fast and accurate explanations, handling multilingual prompts effectively, and demonstrating strong visual reasoning capabilities.
+          </li>
+          <li>
+            <strong className="font-semibold">Claude 3.7 Sonnet</strong>: Highly proficient in code generation and debugging, and demonstrates advanced reasoning with complex diagrams and technical documentation.
+          </li>
+          <li>
+            <strong className="font-semibold">Gemini 2.5 Pro</strong>: Delivers high-quality responses and exhibits strong reasoning abilities across a range of topics.
+          </li>
+          <li>
+            <strong className="font-semibold">BERT</strong>: Stands out for its contextual understanding of language, making it highly effective for tasks like search, text analysis, and question answering.
+          </li>
+          <li>
+            <strong className="font-semibold">LLaMA</strong>: A versatile model adept at natural language processing, powering conversational AI, performing text analysis and summarization, assisting with coding tasks, and handling language translation.
+          </li>
+          <li>
+            <strong className="font-semibold">PaLM 2</strong>: Known for its strong commonsense reasoning, coding proficiency across multiple languages, and accurate multilingual translation capabilities.
+          </li>
+        </ul>
+        </div>
 
         <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">
           Categories/Tags:
