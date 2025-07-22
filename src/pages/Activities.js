@@ -25,7 +25,7 @@ function Activities() {
         { href: "https://leetcode.com/u/Lord-AK", label: "LeetCode", solved: "175" },
         { href: "https://codeforces.com/profile/Lord_AK", label: "Codeforces", solved: "894" },
         { href: "https://judge.beecrowd.com/en/profile/633824", label: "Beecrowd", solved: "238" },
-        { href: "https://www.codechef.com/users/l0rd", label: "CodeChef", solved: "110" },
+        { href: "https://www.codechef.com/users/l0rd", label: "CodeChef", solved: "113" },
         { href: "https://lightoj.com/user/lord-ak", label: "LightOJ", solved: "33" },
         { href: "https://uhunt.onlinejudge.org/id/1304273", label: "UVA", solved: "31" },
         { href: "https://kenkoooo.com/atcoder#/user/lord_AK", label: "AtCoder", solved: "47" },
