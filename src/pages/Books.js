@@ -11,6 +11,13 @@ function Books() {
       isReading: true,
     },
     {
+      title: "The Metamorphosis",
+      author: "Franz Kafka",
+      description: "A surreal story of a man who transforms into a giant insect.",
+      status: "Completed",
+      isReading: false,
+    },
+    {
       title: "the Life Of a Stupid man",
       author: "Ryunosuke Akutagawa",
       description: "A short story about the life of a foolish man. A brief, haunting look into a man's final days.",
