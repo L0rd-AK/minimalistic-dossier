@@ -204,7 +204,7 @@
 .matrix-toggle {
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
   background: rgba(0, 0, 0, 0.7);
   color: white;
   border: none;
@@ -329,7 +329,7 @@
     width: 40px;
     height: 40px;
     bottom: 15px;
-    left: 15px;
+    right: 15px;
   }
   
   .debug-panel {

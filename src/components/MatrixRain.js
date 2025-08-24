@@ -4,7 +4,7 @@ import './MatrixRain.css';
 const MatrixRain = ({ intensity = 0.3, speed = 50 }) => {
   const canvasRef = useRef(null);
   const animationRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [currentIntensity, setCurrentIntensity] = useState(intensity);
   const [currentSpeed, setCurrentSpeed] = useState(speed);
   const [hackerMode, setHackerMode] = useState(false);
@@ -160,7 +160,7 @@ const MatrixRain = ({ intensity = 0.3, speed = 50 }) => {
         onClick={toggleMatrix}
         title="Click to toggle Matrix effect"
       />
-      <div className="matrix-toggle" onClick={toggleMatrix}>
+      <div className="matrix-toggle" onClick={toggleMatrix} title={isVisible ? "Hide Matrix Rain" : "Show Matrix Rain"}>
         <span className="matrix-toggle-icon">⚡</span>
       </div>
     </>
