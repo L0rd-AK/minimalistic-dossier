@@ -14,6 +14,7 @@ import Update from './pages/Update';
 import Error from './pages/Error'; 
 import Blog from './pages/Blog';
 import BlogDetails from './pages/BlogDetails';
+import MatrixRain from './components/MatrixRain';
 import './App.css';
 import { HelmetProvider } from 'react-helmet-async';
 import { initDynamicFavicon, setNotificationCount, updateFavicon } from './utils/dynamicFavicon';
@@ -57,7 +58,8 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
-        <div className="min-h-screen max-w-4xl mx-auto bg-white text-black font-sans">
+        <div className="min-h-screen max-w-4xl mx-auto bg-white text-black font-sans relative">
+          <MatrixRain intensity={0.3} speed={50} />
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />

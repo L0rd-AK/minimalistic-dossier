@@ -1,0 +1,112 @@
+/* Matrix Rain Effect Styles */
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  background: transparent;
+}
+
+.matrix-rain.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.matrix-rain.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Toggle button for Matrix effect */
+.matrix-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #228B22;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.matrix-toggle:hover {
+  background: rgba(34, 139, 34, 0.1);
+  border-color: #32CD32;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(34, 139, 34, 0.3);
+}
+
+.matrix-toggle-icon {
+  font-size: 20px;
+  color: #228B22;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .matrix-toggle {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .matrix-toggle-icon {
+    font-size: 18px;
+  }
+}
+
+/* Performance optimizations */
+.matrix-rain canvas {
+  image-rendering: optimizeSpeed;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: optimize-contrast;
+}
+
+/* Dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+  .matrix-toggle {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #228B22;
+  }
+}
+
+/* Accessibility - reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .matrix-rain {
+    display: none;
+  }
+  
+  .matrix-toggle {
+    display: none;
+  }
+}

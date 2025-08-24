@@ -1,0 +1,121 @@
+/* Matrix-themed animations and effects */
+
+/* Glitch effect for text */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    opacity: 0.8;
+  }
+  40% {
+    transform: translate(-2px, -2px);
+    opacity: 0.9;
+  }
+  60% {
+    transform: translate(2px, 2px);
+    opacity: 0.8;
+  }
+  80% {
+    transform: translate(2px, -2px);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+/* Matrix text reveal effect */
+@keyframes matrixReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    color: #228B22;
+  }
+  50% {
+    color: #228B22;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    color: inherit;
+  }
+}
+
+/* Cyber typing effect */
+@keyframes cyberType {
+  0% {
+    width: 0;
+    border-right: 2px solid #228B22;
+  }
+  50% {
+    border-right: 2px solid #228B22;
+  }
+  100% {
+    width: 100%;
+    border-right: 2px solid transparent;
+  }
+}
+
+/* Utility classes for matrix effects */
+.matrix-glitch {
+  animation: glitch 0.3s linear infinite;
+}
+
+.matrix-reveal {
+  animation: matrixReveal 1s ease-out forwards;
+}
+
+.cyber-type {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: cyberType 2s steps(40, end) forwards;
+}
+
+/* Enhanced hover effects with matrix theme */
+.matrix-hover:hover {
+  color: #228B22;
+  text-shadow: 0 0 8px rgba(34, 139, 34, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Scanning line effect */
+@keyframes scan {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.scan-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 139, 34, 0.08),
+    transparent
+  );
+  animation: scan 3s infinite;
+}
+
+/* Matrix-style focus effects */
+.matrix-focus:focus {
+  outline: 2px solid #228B22;
+  outline-offset: 2px;
+  box-shadow: 0 0 15px rgba(34, 139, 34, 0.3);
+}

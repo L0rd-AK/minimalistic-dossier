@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import "../components/animations.css";
 
 function Skills() {
   return (
@@ -19,36 +20,36 @@ function Skills() {
         />
         <link rel="canonical" href="https://amitkumarghosh.vercel.app/skills" />
       </Helmet>
-      <div className="p-4 sm:p-8   bg-gray-50 shadow-sm rounded-lg">
-        <h1 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2">
+      <div className="p-4 sm:p-8 bg-gray-50 shadow-sm rounded-lg scan-effect">
+        <h1 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2 matrix-reveal">
           Skills & Proficiencies
         </h1>
         <div className="space-y-4">
-          <div className="p-1 hover:bg-blue-50 rounded-md transition-colors">
+          <div className="p-1 hover:bg-blue-50 rounded-md transition-colors matrix-hover">
             <h3 className="font-bold text-blue-600">Tools</h3>
             <p className="text-gray-700 ml-2 list-item text-sm sm:text-base">
               Adobe Photoshop, Illustrator, Figma, MS Office (Excel, Word)
             </p>
           </div>
-          <div className="p-1 hover:bg-blue-50 rounded-md transition-colors">
+          <div className="p-1 hover:bg-blue-50 rounded-md transition-colors matrix-hover">
             <h3 className="font-bold text-blue-600">Pro Skills</h3>
             <p className="text-gray-700 ml-2 list-item text-sm sm:text-base">
               Front-End Developer, Web Developer, Mern-Stack Developer
             </p>
           </div>
-          <div className="p-1 hover:bg-blue-50 rounded-md transition-colors">
+          <div className="p-1 hover:bg-blue-50 rounded-md transition-colors matrix-hover">
             <h3 className="font-bold text-blue-600">Web Technologies</h3>
             <p className="text-gray-700 ml-2 list-item text-sm sm:text-base">
               HTML, CSS, JS, React JS, Express JS, Node JS, MongoDB, React Native
             </p>
           </div>
-          <div className="p-1 hover:bg-blue-50 rounded-md transition-colors">
+          <div className="p-1 hover:bg-blue-50 rounded-md transition-colors matrix-hover">
             <h3 className="font-bold text-blue-600">Languages</h3>
             <p className="text-gray-700 ml-2 list-item text-sm sm:text-base">
               Python, C, C++, Java, JavaScript
             </p>
           </div>
-          <div className="p-1 hover:bg-blue-50 rounded-md transition-colors">
+          <div className="p-1 hover:bg-blue-50 rounded-md transition-colors matrix-hover">
             <h3 className="font-bold text-blue-600">IDE</h3>
             <p className="text-gray-700 ml-2 list-item text-sm sm:text-base">
               VS-Code, PyCharm, Eclipse
