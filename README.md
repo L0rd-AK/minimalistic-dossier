@@ -11,7 +11,14 @@ A modern, text-based portfolio website built with React featuring unique Matrix-
 - Fully responsive and performance optimized
 - Respects user's motion preferences (accessibility)
 
-### 📱 **Responsive Design**
+### � **Interactive Terminal Portfolio**
+- Full-featured terminal interface for exploring portfolio
+- Type real terminal commands to navigate resume sections
+- Commands: `whoami`, `ls`, `cat`, `grep`, `help`, and more
+- Realistic terminal experience with command history
+- Click the 💻 button to launch terminal
+
+### �📱 **Responsive Design**
 - Mobile-first approach with Tailwind CSS
 - Clean, minimalistic text-based layout
 - Professional resume-style presentation
@@ -53,11 +60,31 @@ npm install
 npm start
 ```
 
-## 🎮 **Matrix Rain Controls**
+## 🎮 **Interactive Features**
+
+### **Matrix Rain Controls**
 - **Toggle Effect**: Click the ⚡ icon in bottom-right corner
 - **Auto-adjust**: Automatically adapts to screen size
 - **Performance**: Uses efficient canvas rendering
 - **Accessibility**: Disabled for users with motion sensitivity
+
+### **Terminal Commands**
+- **Launch**: Click the 💻 icon to open terminal
+- **Navigation**: Use `ls <directory>/` to explore sections
+- **File Reading**: Use `cat <file>` to view content
+- **Search**: Use `grep <term>` to find specific technologies
+- **Help**: Type `help` for all available commands
+
+**Available Commands:**
+```bash
+whoami              # Display user information
+ls [directory]      # List portfolio sections
+cat <file>          # Display specific content
+grep <term>         # Search portfolio
+contact             # Show contact info
+clear               # Clear terminal
+help                # Show all commands
+```
 
 ## 🌟 **Unique Features**
 - **Dynamic Content**: Matrix rain displays actual programming terms and skills

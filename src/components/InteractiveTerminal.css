@@ -1,0 +1,264 @@
+/* Interactive Terminal Styles */
+.terminal-toggle {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.terminal-toggle:hover {
+  background: rgba(240, 240, 240, 0.95);
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.terminal-toggle-icon {
+  font-size: 20px;
+  color: #333;
+}
+
+.terminal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.terminal-window {
+  background: #ffffff;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  font-family: 'Courier New', monospace;
+}
+
+.terminal-header {
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px 6px 0 0;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+  margin-right: 15px;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.terminal-button:hover {
+  opacity: 0.8;
+}
+
+.terminal-button.close {
+  background: #ff5f56;
+}
+
+.terminal-button.minimize {
+  background: #ffbd2e;
+}
+
+.terminal-button.maximize {
+  background: #27ca3f;
+}
+
+.terminal-title {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.terminal-body {
+  background: #ffffff;
+  color: #333;
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 0 0 6px 6px;
+}
+
+.terminal-entry {
+  margin-bottom: 10px;
+}
+
+.terminal-command {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.terminal-prompt {
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.terminal-input {
+  color: #333;
+}
+
+.terminal-output {
+  color: #444;
+  margin-left: 0;
+}
+
+.terminal-line {
+  margin: 2px 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.terminal-input-form {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.terminal-input-field {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #333;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  flex: 1;
+  padding: 2px 0;
+}
+
+.terminal-input-field::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .terminal-toggle {
+    width: 45px;
+    height: 45px;
+    bottom: 75px;
+    right: 15px;
+  }
+  
+  .terminal-toggle-icon {
+    font-size: 18px;
+  }
+
+  .terminal-overlay {
+    padding: 10px;
+  }
+
+  .terminal-window {
+    max-height: 90vh;
+  }
+
+  .terminal-body {
+    padding: 15px;
+    font-size: 13px;
+  }
+
+  .terminal-header {
+    padding: 8px 12px;
+  }
+
+  .terminal-title {
+    font-size: 12px;
+  }
+}
+
+/* Scrollbar styling for webkit browsers */
+.terminal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Animation for terminal opening */
+.terminal-window {
+  animation: terminalSlideIn 0.3s ease-out;
+}
+
+@keyframes terminalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Cursor blink effect */
+.terminal-input-field:focus {
+  animation: cursorBlink 1s infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 50% {
+    border-right: 2px solid #333;
+  }
+  51%, 100% {
+    border-right: 2px solid transparent;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .terminal-window {
+    animation: none;
+  }
+  
+  .terminal-toggle {
+    transition: none;
+  }
+  
+  .terminal-input-field {
+    animation: none;
+  }
+}

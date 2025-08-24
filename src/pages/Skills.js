@@ -23,6 +23,9 @@ function Skills() {
       <div className="p-4 sm:p-8 bg-gray-50 shadow-sm rounded-lg scan-effect">
         <h1 className="text-xl font-bold uppercase mb-4 text-blue-700 border-b border-gray-300 pb-2 matrix-reveal">
           Skills & Proficiencies
+          <span className="text-xs text-gray-500 normal-case ml-2">
+            💡 Try the terminal: click 💻 below
+          </span>
         </h1>
         <div className="space-y-4">
           <div className="p-1 hover:bg-blue-50 rounded-md transition-colors matrix-hover">
