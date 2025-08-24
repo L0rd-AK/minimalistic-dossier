@@ -1,19 +1,66 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [logoClickCount, setLogoClickCount] = useState(0);
+  const [showSecretLink, setShowSecretLink] = useState(false);
+
+  // Secret logo click easter egg
+  const handleLogoClick = () => {
+    setLogoClickCount(prev => prev + 1);
+    
+    if (logoClickCount + 1 === 5) {
+      setShowSecretLink(true);
+      // Dispatch easter egg event
+      const event = new CustomEvent('easterEggFound', {
+        detail: { type: 'logo_clicks', count: 5 }
+      });
+      document.dispatchEvent(event);
+    } else if (logoClickCount + 1 === 10) {
+      // Navigate to secret page
+      window.location.href = '/secret';
+    }
+  };
+
+  // Konami code in navigation
+  useEffect(() => {
+    let sequence = [];
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+    
+    const handleKeyDown = (e) => {
+      sequence.push(e.code);
+      if (sequence.length > konamiCode.length) {
+        sequence.shift();
+      }
+      
+      if (JSON.stringify(sequence) === JSON.stringify(konamiCode)) {
+        window.location.href = '/konami';
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   return (
     <header className="sticky top-0 bg-white p-4 flex justify-between md:justify-end items-center z-10 shadow-sm">
-      <button 
-        className="md:hidden" 
-        onClick={() => setMenuOpen(true)}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <div className="md:hidden flex items-center space-x-4">
+        <div 
+          onClick={handleLogoClick}
+          className="cursor-pointer text-blue-600 font-bold text-lg hover:text-blue-800 transition-colors"
+          title={`Click count: ${logoClickCount}/10`}
+        >
+          {logoClickCount >= 5 ? '🥚' : '💻'}
+        </div>
+        <button 
+          onClick={() => setMenuOpen(true)}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
 
       <nav className="hidden md:block">
         <ul className="flex space-x-2 text-sm text-gray-600">
@@ -32,6 +79,12 @@ function Header() {
           <Link to="/contests" className="hover:text-blue-600 transition-colors px-2">Contests</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/skills" className="hover:text-blue-600 transition-colors px-2">Skills</Link>
+          {showSecretLink && (
+            <>
+              <span className="hidden md:inline">/</span>
+              <Link to="/secret" className="hover:text-yellow-600 transition-colors px-2 text-yellow-500">🥚Secret</Link>
+            </>
+          )}
         </ul>
       </nav>
 
@@ -61,6 +114,9 @@ function Header() {
           <Link to="/courses" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Courses</Link>
           <Link to="/contests" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Contests</Link>
           <Link to="/skills" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Skills</Link>
+          {showSecretLink && (
+            <Link to="/secret" className="hover:text-yellow-600 transition-colors text-yellow-500" onClick={() => setMenuOpen(false)}>🥚 Secret Page</Link>
+          )}
         </ul>
       </div>
     </header>

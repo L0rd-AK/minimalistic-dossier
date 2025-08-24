@@ -1,0 +1,350 @@
+/* Easter Egg Animations and Styles */
+
+/* Konami Mode Animations */
+@keyframes konamiGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.konami-mode {
+  background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00) !important;
+  background-size: 400% 400% !important;
+  animation: konamiGradient 3s ease infinite !important;
+}
+
+.konami-mode * {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Rainbow Mode */
+@keyframes rainbow-text {
+  0% { color: #ff0000; }
+  16.66% { color: #ff8000; }
+  33.33% { color: #ffff00; }
+  50% { color: #00ff00; }
+  66.66% { color: #0080ff; }
+  83.33% { color: #8000ff; }
+  100% { color: #ff0000; }
+}
+
+.rainbow-mode * {
+  animation: rainbow-text 2s linear infinite !important;
+}
+
+/* Retro Mode */
+@keyframes retro-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.retro-mode {
+  background: linear-gradient(45deg, #ff00ff, #00ffff) !important;
+  background-size: 400% 400% !important;
+  animation: retro-bg 4s ease infinite !important;
+}
+
+.retro-mode * {
+  font-family: 'Courier New', monospace !important;
+  text-shadow: 2px 2px 0px #000000, 4px 4px 0px #ff00ff !important;
+}
+
+/* Dark Web Mode */
+.dark-web-mode {
+  background: #000000 !important;
+  color: #00ff00 !important;
+  font-family: 'Courier New', monospace !important;
+}
+
+.dark-web-mode * {
+  background: transparent !important;
+  color: #00ff00 !important;
+  border-color: #00ff00 !important;
+  text-shadow: 0 0 5px #00ff00 !important;
+}
+
+.dark-web-mode a {
+  color: #ff0000 !important;
+  text-shadow: 0 0 5px #ff0000 !important;
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch-mode * {
+  animation: glitch 0.3s infinite !important;
+}
+
+/* Neon Mode */
+.neon-mode {
+  background: #000011 !important;
+}
+
+.neon-mode * {
+  color: #00ffff !important;
+  text-shadow: 
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 15px #00ffff,
+    0 0 20px #00ffff !important;
+  border: 1px solid #00ffff !important;
+  box-shadow: 
+    0 0 5px #00ffff,
+    inset 0 0 5px #00ffff !important;
+}
+
+/* Floating Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating-element {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Pulse Animations for Interactive Elements */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse-on-hover:hover {
+  animation: pulse 0.5s ease-in-out;
+}
+
+/* Easter Egg Discovery Animation */
+@keyframes easterEggReveal {
+  0% { 
+    opacity: 0; 
+    transform: scale(0) rotate(0deg);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.easter-egg-reveal {
+  animation: easterEggReveal 0.8s ease-out;
+}
+
+/* Click Effect Animation */
+@keyframes clickWave {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.click-wave {
+  position: absolute;
+  border: 2px solid #4facfe;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: clickWave 0.6s ease-out;
+  pointer-events: none;
+}
+
+/* Secret Text Highlight */
+.secret-text {
+  position: relative;
+  cursor: help;
+}
+
+.secret-text::after {
+  content: '🥚';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+}
+
+.secret-text:hover::after {
+  opacity: 1;
+}
+
+/* Matrix Rain Custom Styles */
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.5s ease;
+}
+
+.matrix-rain.hidden {
+  opacity: 0;
+}
+
+.matrix-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.matrix-toggle:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+.matrix-toggle-icon {
+  font-size: 20px;
+}
+
+/* Achievement Badge Styles */
+.achievement-badge {
+  background: linear-gradient(45deg, #ffd700, #ffed4e);
+  color: #333;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin: 4px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+  animation: easterEggReveal 0.8s ease-out;
+}
+
+/* Notification Styles */
+.easter-egg-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  max-width: 300px;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from { 
+    transform: translateX(100%); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+/* Developer Debug Panel */
+.debug-panel {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #00ff00;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  z-index: 10000;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Secret Game Styles */
+.typing-game-container {
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Hover Effects for Interactive Elements */
+.interactive-element {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.interactive-element:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Special Holiday Themes */
+.halloween-mode {
+  background: linear-gradient(45deg, #ff6600, #000000) !important;
+}
+
+.christmas-mode {
+  background: linear-gradient(45deg, #ff0000, #00ff00) !important;
+}
+
+.april-fools-mode {
+  transform: rotate(1deg);
+  filter: hue-rotate(45deg);
+}
+
+/* Responsive Easter Egg Adjustments */
+@media (max-width: 768px) {
+  .easter-egg-notification {
+    max-width: 250px;
+    font-size: 14px;
+    padding: 12px;
+  }
+  
+  .matrix-toggle {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    left: 15px;
+  }
+  
+  .debug-panel {
+    font-size: 10px;
+    padding: 8px;
+  }
+}
+
+/* Print Mode - Hide Easter Eggs */
+@media print {
+  .matrix-rain,
+  .matrix-toggle,
+  .easter-egg-notification,
+  .debug-panel,
+  .floating-element {
+    display: none !important;
+  }
+}
