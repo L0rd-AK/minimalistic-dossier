@@ -9,13 +9,13 @@ const MatrixRain = ({ intensity = 0.3, speed = 50 }) => {
   // Programming terms, skills, and code snippets related to the portfolio
   const matrixChars = useRef([
     // Programming languages
-    'JavaScript', 'Python', 'Java', 'C++', 'HTML', 'CSS', 'React', 'Node.js',
+    'JavaScript', 'C++', 'HTML', 'CSS', 'React', 'Node.js','PostgreSQL','SQL','Prisma',
     // Technical terms
     'MongoDB', 'Express', 'API', 'JSON', 'DOM', 'HTTP', 'CRUD', 'REST',
     // Code symbols and syntax
     '{', '}', '[', ']', '(', ')', ';', ':', '=', '+', '-', '*', '/', '%',
     // Binary and hex
-    '0', '1', '0x', 'FF', 'null', 'true', 'false',
+    '0', '1', '0x', 'FF', 'null', 'true', 'false','undefined',
     // Portfolio specific terms
     'Amit', 'Kumar', 'Ghosh', 'DIU', 'Dhaka', 'FullStack', 'WebDev',
     // Function keywords
