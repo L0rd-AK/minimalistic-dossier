@@ -12,11 +12,13 @@ const MatrixRain = ({ intensity = 0.3, speed = 50 }) => {
   // Programming terms, skills, and code snippets related to the portfolio
   const matrixChars = React.useMemo(() => [
     // Programming languages
-    'JavaScript', 'C++', 'HTML', 'CSS', 'React', 'Node.js','PostgreSQL','SQL','Prisma',
+    'JavaScript', 'C++', 'HTML', 'CSS', 'React', 'Node.js','PostgreSQL','SQL','Prisma','Git','GitHub',
     // Technical terms
     'MongoDB', 'Express', 'API', 'JSON', 'DOM', 'HTTP', 'CRUD', 'REST',
     // Code symbols and syntax
     '{', '}', '[', ']', '(', ')', ';', ':', '=', '+', '-', '*', '/', '%',
+    // C++ specific
+    'vector<int> a(n)','cin>>n',
     // Binary and hex
     '0', '1', '0x', 'FF', 'null', 'true', 'false','undefined',
     // Portfolio specific terms
