@@ -58,11 +58,11 @@ const MatrixRain = ({ intensity = 0.3, speed = 50 }) => {
         ctx.font = '14px "Courier New", monospace';
         ctx.textAlign = 'center';
         
-        // Create gradient effect - darker green on white background
+        // Create gradient effect - black text on white background
         const gradient = ctx.createLinearGradient(0, column.y - 100, 0, column.y + 20);
-        gradient.addColorStop(0, `rgba(34, 139, 34, 0)`);
-        gradient.addColorStop(0.7, `rgba(34, 139, 34, ${column.opacity * 0.6})`);
-        gradient.addColorStop(1, `rgba(34, 139, 34, ${column.opacity * 0.8})`);
+        gradient.addColorStop(0, `rgba(0, 0, 0, 0)`);
+        gradient.addColorStop(0.7, `rgba(0, 0, 0, ${column.opacity * 0.6})`);
+        gradient.addColorStop(1, `rgba(0, 0, 0, ${column.opacity * 0.8})`);
         
         ctx.fillStyle = gradient;
         
