@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from "react-helmet-async";
-import { SecretBlogsData } from '../data/SecretBlogData';
+import { SecretBlogsData } from '../data/SecretBlogsData';
 
 function SecretBlogs() {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -75,7 +75,7 @@ function SecretBlogs() {
                   className="group p-4 rounded-lg transition-all duration-300 border border-gray-200 hover:border-blue-300 hover:shadow-md"
                 >
                   <Link 
-                    to={`/blogs/${blog?.id}`}
+                    to={`/secret-blogs/${blog?.id}`}
                     className="flex flex-col h-full"
                   >
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2 gap-2">
@@ -122,9 +122,6 @@ function SecretBlogs() {
             </div>
           )}
         </div>
-      </div>
-      <div className='flex justify-center items-center mt-8'>
-      <a href="https://clustrmaps.com/site/1c5mk" title="Visit tracker for Amitkumarghosh.vercel.app"><img alt="clustermaps plugin" src="//www.clustrmaps.com/map_v2.png?d=0LVDVCa48UMbcFc5A7j7x6SXo1CjooXrZrvX6ar6lyQ" /></a>
       </div>
     </>
   );

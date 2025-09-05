@@ -1,4 +1,4 @@
-export const blogsData = [
+export const SecretBlogsData = [
   {
     id: 1,
     title: "Lynx: Tiktok's React Native killer?",
@@ -134,7 +134,7 @@ export const blogsData = [
   description:
     "A beginner-friendly tour through the top 10 fastest cars (2022), from Bugatti legends to Koenigsegg marvels — engineering, specs, and what makes each one special.",
   readTime: "12 min read",
-  author: "Orn",
+  author: "Amit Kumar Ghosh",
   tags: [
     "Cars",
     "Supercars",
