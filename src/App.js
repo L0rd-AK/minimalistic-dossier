@@ -25,6 +25,7 @@ import './styles/easterEggs.css';
 import { HelmetProvider } from 'react-helmet-async';
 import { initDynamicFavicon, setNotificationCount, updateFavicon } from './utils/dynamicFavicon';
 import { easterEggManager } from './utils/easterEggs';
+import SecretBlogs from './pages/SecretBlogs';
 
 function App() {
   // Theme change optimization with debounce
@@ -93,6 +94,7 @@ function App() {
             <Route path="/🥚" element={<SecretPage />} />
             <Route path="/easter-egg" element={<SecretPage />} />
             <Route path="/konami" element={<SecretPage />} />
+            <Route path="/secret-blogs" element={<SecretBlogs />} />
             <Route path="*" element={<Error />} /> {/* Add fallback route */}
           </Routes>
         </div>
