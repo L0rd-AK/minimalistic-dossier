@@ -4,9 +4,9 @@ import Spinner from '../3DSpiner/Spinner';
 function Update() {
 const updates = [
     {
-        title:"Learning React Native",
-        date: "[02/2025]",
-        description: "Currently learning React Native to build mobile applications for both Android and iOS.",
+        title:"8 of my Research Papers got accepted in Conferences",
+        date: "[10/2025]",
+        description: "My 8 research papers on various topics got accepted in reputed conferences, marking a significant milestone in my academic journey.",
     },
     {
         title: "Reached Pupil on Codeforces",
