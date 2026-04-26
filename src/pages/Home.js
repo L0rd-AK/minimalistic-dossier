@@ -1,4 +1,5 @@
 import Hero from "./Hero";
+import WorkExperience from "./WorkExperience";
 import Education from "./Education";
 import Courses from "./Courses";
 import Contests from "./Contests";
@@ -15,6 +16,7 @@ function Home() {
      
       <Hero />
       <Update />
+      <WorkExperience />
       <Education />
       <Projects />
       <Courses />

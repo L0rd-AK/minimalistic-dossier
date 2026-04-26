@@ -66,6 +66,8 @@ function Header() {
         <ul className="flex space-x-2 text-sm text-gray-600">
           <Link to="/" className="hover:text-blue-600 transition-colors px-2">Home</Link>
           <span className="hidden md:inline">/</span>
+          <Link to="/work-experience" className="hover:text-blue-600 transition-colors px-2">Work Experience</Link>
+          <span className="hidden md:inline">/</span>
           <Link to="/projects" className="hover:text-blue-600 transition-colors px-2">Projects</Link>
           <span className="hidden md:inline">/</span>
           <Link to="/activities" className="hover:text-blue-600 transition-colors px-2">Activities</Link>
@@ -107,6 +109,7 @@ function Header() {
         </button>
         <ul className="flex flex-col space-y-6 text-lg text-gray-600 text-center">
           <Link to="/" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/work-experience" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Work Experience</Link>
           <Link to="/projects" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Projects</Link>
           <Link to="/activities" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Activities</Link>
           <Link to="/blogs" className="hover:text-blue-600 transition-colors" onClick={() => setMenuOpen(false)}>Blogs</Link>

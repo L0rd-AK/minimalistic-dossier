@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Headar';
 import Home from './pages/Home';
 import Education from './pages/Education';
+import WorkExperience from './pages/WorkExperience';
 import Courses from './pages/Courses';
 import Contests from './pages/Contests';
 import Skills from './pages/Skills';
@@ -81,6 +82,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/update" element={<Update />} />
+            <Route path="/work-experience" element={<WorkExperience />} />
             <Route path="/education" element={<Education />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/contests" element={<Contests />} />
