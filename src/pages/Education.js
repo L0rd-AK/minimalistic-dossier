@@ -31,12 +31,12 @@ function Education() {
               </h3>
               <p className="text-gray-700">Daffodil International University</p>
               <p className="text-gray-700">
-                CGPA: <span className="font-medium text-green-600">3.80</span>{" "}
+                CGPA: <span className="font-medium text-green-600">3.82</span>{" "}
                 out of 4.00
               </p>
             </div>
             <p className="text-purple-600 font-medium italic sm:text-right">
-              [01/2022 – Present]
+              [01/2022 – 12/2025]
             </p>
           </div>
           <div className="flex flex-col sm:flex-row sm:justify-between">
