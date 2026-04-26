@@ -22,8 +22,8 @@ function Activities() {
       description: "Solved 1500+ Problems in various online judges",
       date: "[12/2021 – present]",
       links: [
-        { href: "https://leetcode.com/u/Lord-AK", label: "LeetCode", solved: "175" },
-        { href: "https://codeforces.com/profile/Lord_AK", label: "Codeforces", solved: "894" },
+        { href: "https://leetcode.com/u/Lord-AK", label: "LeetCode", solved: "207" },
+        { href: "https://codeforces.com/profile/Lord_AK", label: "Codeforces", solved: "1092" },
         { href: "https://judge.beecrowd.com/en/profile/633824", label: "Beecrowd", solved: "238" },
         { href: "https://www.codechef.com/users/l0rd", label: "CodeChef", solved: "113" },
         { href: "https://lightoj.com/user/lord-ak", label: "LightOJ", solved: "33" },
