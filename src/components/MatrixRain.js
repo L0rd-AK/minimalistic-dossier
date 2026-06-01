@@ -1,67 +1,21 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './MatrixRain.css';
 
-const MatrixRain = ({ intensity = 0.3, speed = 50 }) => {
+const MatrixRain = ({ speed = 50 }) => {
   const canvasRef = useRef(null);
   const animationRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [currentIntensity, setCurrentIntensity] = useState(intensity);
-  const [currentSpeed, setCurrentSpeed] = useState(speed);
-  const [hackerMode, setHackerMode] = useState(false);
 
-  // Programming terms, skills, and code snippets related to the portfolio
   const matrixChars = React.useMemo(() => [
-    // Programming languages
-    'JavaScript', 'C++', 'HTML', 'CSS', 'React', 'Node.js','PostgreSQL','SQL','Prisma','Git','GitHub',
-    // Technical terms
+    'JavaScript', 'C++', 'HTML', 'CSS', 'React', 'Node.js', 'PostgreSQL', 'SQL', 'Prisma', 'Git', 'GitHub',
     'MongoDB', 'Express', 'API', 'JSON', 'DOM', 'HTTP', 'CRUD', 'REST',
-    // Code symbols and syntax
     '{', '}', '[', ']', '(', ')', ';', ':', '=', '+', '-', '*', '/', '%',
-    // C++ specific
-    'vector<int> a(n)','cin>>n',
-    // Binary and hex
-    '0', '1', '0x', 'FF', 'null', 'true', 'false','undefined',
-    // Portfolio specific terms
+    'vector<int> a(n)', 'cin>>n',
+    '0', '1', '0x', 'FF', 'null', 'true', 'false', 'undefined',
     'Amit', 'Kumar', 'Ghosh', 'DIU', 'Dhaka', 'FullStack', 'WebDev',
-    // Function keywords
     'function', 'const', 'let', 'var', 'return', 'if', 'else', 'for', 'while',
-    // Special characters
-    '⚡', '🚀', '💻', '🔥', '⭐', '🎯', '🛠️', '📊',
-    // More technical terms
     'async', 'await', 'promise', 'callback', 'event', 'listener', 'handler',
-    // Easter egg terms
-    'EasterEgg', 'Secret', 'Hidden', 'Konami', 'Achievement', '🥚', '🎮'
   ], []);
-
-  // Easter egg event listener
-  const handleEasterEggEvent = useCallback((event) => {
-    const { type, intensity: newIntensity } = event.detail;
-    
-    switch (type) {
-      case 'hacker':
-        setHackerMode(true);
-        setCurrentIntensity(newIntensity || 2.0);
-        setCurrentSpeed(20);
-        setTimeout(() => {
-          setHackerMode(false);
-          setCurrentIntensity(intensity);
-          setCurrentSpeed(speed);
-        }, 10000);
-        break;
-      case 'matrix_toggle':
-        setIsVisible(prev => !prev);
-        break;
-      default:
-        break;
-    }
-  }, [intensity, speed]);
-
-  useEffect(() => {
-    document.addEventListener('easterEggActivated', handleEasterEggEvent);
-    return () => {
-      document.removeEventListener('easterEggActivated', handleEasterEggEvent);
-    };
-  }, [handleEasterEggEvent]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -95,17 +49,10 @@ const MatrixRain = ({ intensity = 0.3, speed = 50 }) => {
         ctx.font = '14px "Courier New", monospace';
         ctx.textAlign = 'center';
         
-        // Create gradient effect - black text on white background or hacker mode
         const gradient = ctx.createLinearGradient(0, column.y - 100, 0, column.y + 20);
-        if (hackerMode) {
-          gradient.addColorStop(0, `rgba(0, 255, 0, 0)`);
-          gradient.addColorStop(0.7, `rgba(0, 255, 0, ${column.opacity * 0.8})`);
-          gradient.addColorStop(1, `rgba(0, 255, 0, ${column.opacity * 1.0})`);
-        } else {
-          gradient.addColorStop(0, `rgba(0, 0, 0, 0)`);
-          gradient.addColorStop(0.7, `rgba(0, 0, 0, ${column.opacity * 0.6})`);
-          gradient.addColorStop(1, `rgba(0, 0, 0, ${column.opacity * 0.8})`);
-        }
+        gradient.addColorStop(0, `rgba(0, 0, 0, 0)`);
+        gradient.addColorStop(0.7, `rgba(0, 0, 0, ${column.opacity * 0.6})`);
+        gradient.addColorStop(1, `rgba(0, 0, 0, ${column.opacity * 0.8})`);
         
         ctx.fillStyle = gradient;
         
@@ -113,7 +60,7 @@ const MatrixRain = ({ intensity = 0.3, speed = 50 }) => {
         ctx.fillText(column.char, index * 20 + 10, column.y);
         
         // Update position
-        column.y += column.speed * (hackerMode ? currentSpeed : speed) / 50;
+        column.y += column.speed * speed / 50;
         
         // Reset when off screen or randomly change character
         if (column.y > canvas.height + 50 || Math.random() < 0.002) {
@@ -147,9 +94,8 @@ const MatrixRain = ({ intensity = 0.3, speed = 50 }) => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [currentIntensity, currentSpeed, isVisible, matrixChars, hackerMode, speed]);
+  }, [isVisible, matrixChars, speed]);
 
-  // Toggle visibility on click (Easter egg)
   const toggleMatrix = () => {
     setIsVisible(!isVisible);
   };

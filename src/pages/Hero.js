@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import AnimatedLetters from "../AnimatedLetters";
 import img from "../assates/pasport.jpg";
 import "loaders.css/src/animations/pacman.scss";
@@ -7,9 +7,6 @@ import { Helmet } from "react-helmet-async";
 
 function Hero() {
   const [letterClass] = useState("text-animate-hover");
-  const [profileClickCount, setProfileClickCount] = useState(0);
-  const [showEasterEgg, setShowEasterEgg] = useState(false);
-  const [secretText, setSecretText] = useState("");
 
   const nameArray = [
     "A",
@@ -32,42 +29,6 @@ function Hero() {
   const github = ["G", "i", "t", "H", "u", "b"];
   const linkedin = ["L", "i", "n", "k", "e", "d", "I", "n"];
 
-  // Profile image easter egg
-  const handleProfileClick = () => {
-    setProfileClickCount(prev => prev + 1);
-    
-    if (profileClickCount + 1 === 3) {
-      setShowEasterEgg(true);
-      const event = new CustomEvent('easterEggFound', {
-        detail: { type: 'profile_clicks', count: 3 }
-      });
-      document.dispatchEvent(event);
-    }
-  };
-
-  // Text animation easter egg
-  useEffect(() => {
-    const secretTexts = [
-      "I debug in my sleep 😴",
-      "Coffee.exe has stopped working ☕",
-      "404: Social life not found 🤖",
-      "Hello World, it's me again! 👋",
-      "Ctrl+Z my life decisions 🔄",
-      "I speak fluent Stack Overflow 📚",
-      "Powered by caffeine and determination ⚡"
-    ];
-
-    const interval = setInterval(() => {
-      if (Math.random() < 0.1) { // 10% chance
-        const randomText = secretTexts[Math.floor(Math.random() * secretTexts.length)];
-        setSecretText(randomText);
-        setTimeout(() => setSecretText(""), 3000);
-      }
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <>
       <Helmet>
@@ -89,25 +50,11 @@ function Hero() {
       <div className="p-4 sm:p-8   bg-gray-50 shadow-sm rounded-lg">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-6 mb-6">
           <div className="flex justify-center md:justify-start">
-            <div className="relative">
-              <img
-                src={img}
-                alt="Profile pic of Amit Kumar Ghosh"
-                className={`w-32 h-32 sm:w-36 sm:h-36 object-cover object-top rounded-full border-2 border-blue-500 shadow-md cursor-pointer transition-transform hover:scale-105 ${showEasterEgg ? 'animate-bounce' : ''}`}
-                onClick={handleProfileClick}
-                title={`Click count: ${profileClickCount}/3`}
-              />
-              {showEasterEgg && (
-                <div className="absolute -top-2 -right-2 text-2xl animate-spin">
-                  🎉
-                </div>
-              )}
-              {secretText && (
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
-                  {secretText}
-                </div>
-              )}
-            </div>
+            <img
+              src={img}
+              alt="Profile pic of Amit Kumar Ghosh"
+              className="w-32 h-32 sm:w-36 sm:h-36 object-cover object-top rounded-full border-2 border-blue-500 shadow-md transition-transform hover:scale-105"
+            />
           </div>
           <div className="text-center md:text-left">
             <h2 className="text-3xl sm:text-2xl font-bold text-blue-700">
@@ -159,18 +106,6 @@ function Hero() {
           <p className="text-gray-700 leading-relaxed text-justify text-sm sm:text-base">
           "Full-stack developer" is just a fancy way of saying "I can argue with both front-end and back-end until neither works, then fix them while muttering darkly."
           I've mastered the art of translating caffeine into code, churning out "dynamic web applications" that users pretend to love until the next shiny thing comes along. My toolkit? HTML, CSS, JavaScript, React, Node.js, Express.js, and MongoDB—because why settle for one language when you can juggle seven? I build "scalable and efficient solutions," which is corporate-speak for "I can make your tech stack slightly less of a disaster."
-          <span 
-            className="cursor-help" 
-            title="🥚 Easter Egg: You found a secret tooltip! Try selecting this text."
-            onMouseEnter={() => {
-              const event = new CustomEvent('easterEggFound', {
-                detail: { type: 'tooltip_hover', text: 'secret tooltip' }
-              });
-              document.dispatchEvent(event);
-            }}
-          >
-            {/* Hidden easter egg in plain sight */}
-          </span>
           </p>
           <p className="text-gray-700 leading-relaxed text-justify text-sm sm:text-base mt-4">
           Passionate about leveraging "cutting-edge" technologies (read: whatever just got a Medium blog post) to solve "real-world problems" (read: make someone's app slightly less slow). I thrive in "collaborative environments" where "innovation" means three-hour meetings to decide a button's color.

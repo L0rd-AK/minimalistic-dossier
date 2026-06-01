@@ -2,7 +2,7 @@ import './index.scss'
 
 const AnimatedLetters = ({ letterClass, strArray, idx }) => {
   return (
-    <span>
+    <span style={{ display: 'inline-flex', flexWrap: 'wrap' }}>
       {strArray.map((char, i) => (
         <span key={char + i} className={`${letterClass} _${i + idx}`}>{char}</span>
       ))}
