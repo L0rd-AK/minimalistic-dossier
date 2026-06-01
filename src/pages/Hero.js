@@ -6,7 +6,7 @@ import "loaders.css/loaders.min.css";
 import { Helmet } from "react-helmet-async";
 
 function Hero() {
-  const [letterClass, setLetterClass] = useState("text-animate-hover");
+  const [letterClass] = useState("text-animate-hover");
   const [profileClickCount, setProfileClickCount] = useState(0);
   const [showEasterEgg, setShowEasterEgg] = useState(false);
   const [secretText, setSecretText] = useState("");
