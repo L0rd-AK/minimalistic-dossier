@@ -6,7 +6,7 @@ function Activities() {
     {
       title: "Associate Member",
       description: "DIU Computer & Programming Club",
-      date: "[08/2022 – present]",
+      date: "[08/2022 – 10/2025]",
     },
     {
       title: "Web Developer",
