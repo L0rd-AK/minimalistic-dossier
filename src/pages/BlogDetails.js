@@ -1,28 +1,10 @@
-import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { blogsData } from "../data/blogData";
 
 function BlogDetails() {
   const { id } = useParams();
-  const [blog, setBlog] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate loading time
-    setLoading(true);
-    const foundBlog = blogsData.find((b) => b.id === parseInt(id));
-    setBlog(foundBlog);
-    setLoading(false);
-  }, [id]);
-
-  if (loading) {
-    return (
-      <div className="p-4 sm:p-8 bg-gray-50 shadow-sm rounded-lg flex justify-center items-center min-h-[400px]">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-      </div>
-    );
-  }
+  const blog = blogsData.find((b) => b.id === parseInt(id));
 
   if (!blog) {
     return (
@@ -58,9 +40,9 @@ function BlogDetails() {
     <>
       <Helmet>
         <title>{blog?.title} | Amit</title>
-        <meta name="description" content={blog?.description.slice(0,30)} />
-        <meta property="og:title" content={blog?.title} />
-        <meta property="og:description" content={blog?.description.slice(0,30)} />
+        <meta name="description" content={blog.description} />
+        <meta property="og:title" content={blog.title} />
+        <meta property="og:description" content={blog.description} />
       </Helmet>
 
       <div className="p-4 sm:p-8 bg-gray-50 shadow-sm rounded-lg">
