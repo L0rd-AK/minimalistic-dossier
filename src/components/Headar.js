@@ -20,26 +20,17 @@ function Header() {
       </div>
 
       <nav className="hidden md:block">
-        <ul className="flex flex-wrap items-center justify-end gap-x-2 gap-y-1 text-sm text-gray-600">
-          <Link to="/" className="whitespace-nowrap hover:text-blue-600 transition-colors px-2">Home</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/work-experience" className="whitespace-nowrap hover:text-blue-600 transition-colors px-2">Work Experience</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/publications" className="whitespace-nowrap hover:text-blue-600 transition-colors px-2">Publications</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/projects" className="whitespace-nowrap hover:text-blue-600 transition-colors px-2">Projects</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/activities" className="whitespace-nowrap hover:text-blue-600 transition-colors px-2">Activities</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/blogs" className="whitespace-nowrap hover:text-blue-600 transition-colors px-2">Blogs</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/books" className="whitespace-nowrap hover:text-blue-600 transition-colors px-2">Books</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/courses" className="whitespace-nowrap hover:text-blue-600 transition-colors px-2">Courses</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/contests" className="whitespace-nowrap hover:text-blue-600 transition-colors px-2">Contests</Link>
-          <span className="hidden md:inline">/</span>
-          <Link to="/skills" className="whitespace-nowrap hover:text-blue-600 transition-colors px-2">Skills</Link>
+        <ul className="flex flex-wrap items-center justify-end gap-x-2 gap-y-1 text-xs lg:text-sm text-gray-600">
+          <Link to="/" className="whitespace-nowrap before:content-['/'] before:mr-2 before:text-gray-300 first:before:content-none hover:text-blue-600 transition-colors">Home</Link>
+          <Link to="/work-experience" className="whitespace-nowrap before:content-['/'] before:mr-2 before:text-gray-300 first:before:content-none hover:text-blue-600 transition-colors">Work Experience</Link>
+          <Link to="/publications" className="whitespace-nowrap before:content-['/'] before:mr-2 before:text-gray-300 first:before:content-none hover:text-blue-600 transition-colors">Publications</Link>
+          <Link to="/projects" className="whitespace-nowrap before:content-['/'] before:mr-2 before:text-gray-300 first:before:content-none hover:text-blue-600 transition-colors">Projects</Link>
+          <Link to="/activities" className="whitespace-nowrap before:content-['/'] before:mr-2 before:text-gray-300 first:before:content-none hover:text-blue-600 transition-colors">Activities</Link>
+          <Link to="/blogs" className="whitespace-nowrap before:content-['/'] before:mr-2 before:text-gray-300 first:before:content-none hover:text-blue-600 transition-colors">Blogs</Link>
+          <Link to="/books" className="whitespace-nowrap before:content-['/'] before:mr-2 before:text-gray-300 first:before:content-none hover:text-blue-600 transition-colors">Books</Link>
+          <Link to="/courses" className="whitespace-nowrap before:content-['/'] before:mr-2 before:text-gray-300 first:before:content-none hover:text-blue-600 transition-colors">Courses</Link>
+          <Link to="/contests" className="whitespace-nowrap before:content-['/'] before:mr-2 before:text-gray-300 first:before:content-none hover:text-blue-600 transition-colors">Contests</Link>
+          <Link to="/skills" className="whitespace-nowrap before:content-['/'] before:mr-2 before:text-gray-300 first:before:content-none hover:text-blue-600 transition-colors">Skills</Link>
         </ul>
       </nav>
 
