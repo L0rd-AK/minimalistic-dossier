@@ -7,6 +7,25 @@ import { Helmet } from "react-helmet-async";
 
 function Hero() {
   const [letterClass] = useState("text-animate-hover");
+  const [fact, setFact] = useState("");
+  const [showFact, setShowFact] = useState(false);
+  const [loadingFact, setLoadingFact] = useState(false);
+
+  const fetchFact = async () => {
+    setShowFact(true);
+    setLoadingFact(true);
+    try {
+      const res = await fetch("https://api.api-ninjas.com/v1/facts", {
+        headers: { "X-Api-Key": process.env.REACT_APP_FACTS_API_KEY },
+      });
+      const data = await res.json();
+      setFact(data?.[0]?.fact || "No fact found.");
+    } catch (err) {
+      setFact("Couldn't fetch a fact right now.");
+    } finally {
+      setLoadingFact(false);
+    }
+  };
 
   const nameArray = [
     "A",
@@ -50,11 +69,24 @@ function Hero() {
       <div className="p-4 sm:p-8   bg-gray-50 shadow-sm rounded-lg">
         <div className="flex flex-col md:grid md:grid-cols-2 gap-6 mb-6">
           <div className="flex justify-center md:justify-start">
-            <img
-              src={img}
-              alt="Profile pic of Amit Kumar Ghosh"
-              className="w-32 h-32 sm:w-36 sm:h-36 object-cover object-top rounded-full border-2 border-blue-500 shadow-md transition-transform hover:scale-105"
-            />
+            <div
+              className="relative"
+              onMouseEnter={fetchFact}
+              onMouseLeave={() => setShowFact(false)}
+            >
+              <img
+                src={img}
+                alt="Profile pic of Amit Kumar Ghosh"
+                className="w-32 h-32 sm:w-36 sm:h-36 object-cover object-top rounded-full border-2 border-blue-500 shadow-md transition-transform hover:scale-105"
+              />
+              {showFact && (
+                <div className="absolute left-1/2 top-full z-20 mt-3 w-56 -translate-x-1/2 rounded-lg bg-gray-900 px-3 py-2 text-xs text-white shadow-lg">
+                  <span className="font-bold text-blue-300">Did you know? </span>
+                  {loadingFact ? "Loading fact..." : fact}
+                  <span className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rotate-45 bg-gray-900" />
+                </div>
+              )}
+            </div>
           </div>
           <div className="text-center md:text-left">
             <h2 className="text-3xl sm:text-2xl font-bold text-blue-700">
