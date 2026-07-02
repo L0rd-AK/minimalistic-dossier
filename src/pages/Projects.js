@@ -18,6 +18,21 @@ function Projects() {
       description: `IELTS Pro is a full-featured IELTS practice platform. Users can sign up, take simulated IELTS speaking, writing, reading, and listening tests, and receive instant AI-powered feedback. The app uses Firebase for authentication and data storage, and integrates with AI services for test evaluation. The UI is built with Next.js and Tailwind CSS for a modern, responsive experience.`,
     },
     {
+      title: "Full-stack Wellness Tracker Next.js-app",
+      links: [
+        { url: "https://vital-track-eight.vercel.app", label: "Live" },
+        { url: "https://github.com/L0rd-AK/Vital-Track", label: "Repo" },
+      ],
+      technologies: "Next.js, React, TypeScript, MongoDB, Firebase Auth, Tailwind CSS",
+      description: `User can sign in using Email or Google account via Firebase Auth. Once logged in, 
+      the user gets a personal wellness dashboard tracking posture, back pain, sleep, mood, and 
+      daily sitting duration, with charts visualizing trends over time. The app includes a posture 
+      checker, exercise plans and reminders, a gym finder with reviews, doctor appointment 
+      scheduling, and a community feed where users can post and like. Every record is scoped to the 
+      logged-in user — the backend uses Next.js API routes with Firebase Admin to verify each 
+      request's ID token, and MongoDB (Mongoose) for data storage.`,
+    },
+    {
       title: "Full-stack Job Finder React app",
       links: [
         { url: "https://jobdoc-de92b.web.app", label: "Live" },
@@ -27,6 +42,23 @@ function Projects() {
       description: `User can sign in using Email or Google account. Once Logged in user can   
       search for job, apply for a job or post a job. For authentication I used Firebase. For      
       backend I used Express JS and for storing data I used MongoDB.`,
+    },
+    {
+      title: "AstroImpact Simulator — NASA Asteroid Impact Web-app",
+      links: [
+        { url: "https://astroimpact.vercel.app", label: "Live" },
+        { url: "https://github.com/L0rd-AK/AstroImpact", label: "Repo" },
+      ],
+      technologies: "React JS, Express JS, MongoDB, Node JS, Socket.io, Leaflet.js, Chart.js, JWT",
+      description: `A full-stack MERN app for the 2025 NASA Space Apps "Meteor Madness"
+      challenge. Users register and log in (JWT auth) to browse live asteroid data pulled
+      from NASA's NeoWs API. They pick an asteroid, choose any impact point on an interactive
+      Leaflet map, set parameters like impact angle and deflection strategy, then run a
+      simulation that computes crater size, blast damage, seismic magnitude, tsunami effects
+      and economic impact using USGS scaling laws. Results visualize with Chart.js. A community
+      layer lets users share simulations publicly, vote on mitigation strategies, and comment,
+      with live updates over Socket.io. Backend is Express + MongoDB (Mongoose); frontend is
+      React with React Router and Bootstrap.`,
     },
     {
       title: "Full-stack Medical clinic React-app",
