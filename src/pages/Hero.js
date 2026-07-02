@@ -47,6 +47,7 @@ function Hero() {
   ];
   const github = ["G", "i", "t", "H", "u", "b"];
   const linkedin = ["L", "i", "n", "k", "e", "d", "I", "n"];
+  const scholar = ["G","o","o","g","l","e"," ","S","c","h","o","l","a","r"]
 
   return (
     <>
@@ -125,6 +126,19 @@ function Hero() {
                   letterClass={letterClass}
                   strArray={linkedin}
                   idx={linkedin.length}
+                />
+              </a>
+              ] [
+              <a
+                href="https://scholar.google.com/citations?hl=en&user=uWTBIJwAAAAJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                <AnimatedLetters
+                  letterClass={letterClass}
+                  strArray={scholar}
+                  idx={scholar.length}
                 />
               </a>
               ]
