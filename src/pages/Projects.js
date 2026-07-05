@@ -80,7 +80,7 @@ function Projects() {
       API, MongoDB via Mongoose for storage, and deployed both apps as separate projects on Vercel.`,
     },
     {
-      title: "Full-stack Task Manager MERN App with Focus & Offline Features",
+      title: "Full-stack Task Manager with Focus & Offline Features",
       links: [
         { url: "https://task-manag3er.vercel.app", label: "Live" },
         { url: "https://github.com/L0rd-AK/Personal-Task-Manager", label: "Repo" },
