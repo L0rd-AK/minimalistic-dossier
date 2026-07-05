@@ -61,6 +61,25 @@ function Projects() {
       React with React Router and Bootstrap.`,
     },
     {
+      title: "AI-Powered Expense Tracker (Web + Mobile)",
+      links: [
+        { url: "https://expense-tracker-blush-eta-75.vercel.app", label: "Live" },
+        { url: "https://github.com/L0rd-AK/Expense-Tracker", label: "Repo" },
+      ],
+      technologies: "Next.js, React, TypeScript, Express JS, Node JS, MongoDB, Google Gemini AI, React Native (Expo), Tailwind CSS",
+      description: `A monorepo expense tracker with a Next.js web app, an Express backend, and a
+      React Native (Expo) mobile app sharing one codebase. Users can sign in with Email/Password
+      or a Google account, which I built using Google Identity Services on the frontend and
+      verified server-side with the google-auth-library, issuing my own JWT sessions. The
+      standout feature is AI-driven entry: a user can speak or type an expense in plain English
+      or Bangla (e.g. "rickshaw 40 taka"), and I parse it into structured data (item, category,
+      amount, note) using the Google Gemini API, with a manual form as a fallback. The dashboard
+      shows monthly stats and spending charts (Recharts), and the history page supports live
+      search, category filters, sorting, plus inline edit and delete. I also generate AI monthly
+      reports with spending insights. For the backend I used Express JS with a Zod-validated REST
+      API, MongoDB via Mongoose for storage, and deployed both apps as separate projects on Vercel.`,
+    },
+    {
       title: "Full-stack Medical clinic React-app",
       links: [
         { url: "https://medlab-3e261.web.app", label: "Live" },
