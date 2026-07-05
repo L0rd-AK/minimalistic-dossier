@@ -80,6 +80,24 @@ function Projects() {
       API, MongoDB via Mongoose for storage, and deployed both apps as separate projects on Vercel.`,
     },
     {
+      title: "Full-stack Task Manager MERN App with Focus & Offline Features",
+      links: [
+        { url: "https://task-manag3er.vercel.app", label: "Live" },
+        { url: "https://github.com/L0rd-AK/Personal-Task-Manager", label: "Repo" },
+      ],
+      technologies: "React, TypeScript, Vite, Tailwind, Zustand, Node JS, Express, MongoDB, Redis, BullMQ",
+      description: `Production task manager built on MERN + TypeScript. User signs in with Email/password 
+      (JWT + refresh tokens) or Google OAuth. Core is a three-column board — Ongoing, Completed, 
+      Given-up — with non-stoppable live countdown timers synced to server time, so a task's deadline 
+      can't be cheated by changing the client clock. Tasks created via natural-language parsing 
+      ("Finish slides in 2h") and organized with projects and tags. Focus suite includes Pomodoro mode, 
+      Forced Focus (blocks navigation, 10s emergency exit), and a Deep Work preset. Ships Google 
+      Keep-style rich notes with markdown, checklists, colors, pinning, and file attachments (local/S3). 
+      Offline-first: operations queue in IndexedDB and background-sync with conflict resolution when 
+      back online. Scheduled reminders run on Redis + BullMQ and fire browser push notifications via 
+      VAPID web-push. Backend is Express + Mongoose, hardened with Helmet, CORS, and rate limiting.`,
+    },
+    {
       title: "Full-stack Medical clinic React-app",
       links: [
         { url: "https://medlab-3e261.web.app", label: "Live" },
