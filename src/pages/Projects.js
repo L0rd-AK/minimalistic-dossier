@@ -112,6 +112,28 @@ function Projects() {
       ],
     },
     {
+      title: "IoT Smart Home Automation System (ESP8266 + Firebase)",
+      links: [
+        { url: "https://l0rd-ak.github.io/Home-Automation-Project", label: "Live" },
+        { url: "https://github.com/L0rd-AK/Home-Automation-Project", label: "Repo" },
+      ],
+      technologies: "ESP8266 (Arduino/C++), Firebase Realtime Database, Firebase Auth, HTML, CSS, JavaScript, DHT11 / PIR / LDR sensors, L298N Motor Driver",
+      description: `An end-to-end IoT smart home system that monitors and controls a physical
+      environment in real time. An ESP8266 (NodeMCU) reads a PIR motion sensor, an LDR light
+      sensor, and a DHT11 temperature/humidity sensor, then drives actuators — two LEDs and a
+      DC motor via an L298N driver with PWM speed and direction control. All sensor readings,
+      control states, and event notifications sync live to Firebase Realtime Database, so the
+      hardware and a web dashboard stay in constant two-way sync. The user signs in through
+      Firebase Auth (email/password) and gets a dashboard to monitor temperature, humidity,
+      light level, and motion, plus toggle lights and motor remotely. The firmware runs
+      autonomous logic — auto-lighting when ambient light drops, auto-motor when temperature
+      crosses a threshold, and instant motion alerts — while physical override switches and
+      dashboard commands take priority over automation. Engineered for reliability with
+      non-blocking millis() timers, hysteresis to stop relay oscillation, rate-limited
+      notifications, switch debouncing, PWM capped at 80% for motor safety, and automatic
+      WiFi reconnection.`,
+    },
+    {
       title: "Auto Attendance System Using Face-Recognition in Python",
       links: [
         {
@@ -164,7 +186,7 @@ function Projects() {
             <Link to="/projects" className="text-blue-600">
               (
               <span className="text-red-600 text-sm lowercase font-medium">
-                details
+                {"details - "+projectsList?.length}
               </span>
               )
             </Link>
