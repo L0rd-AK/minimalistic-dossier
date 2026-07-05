@@ -61,7 +61,7 @@ function Projects() {
       React with React Router and Bootstrap.`,
     },
     {
-      title: "AI-Powered Expense Tracker (Web + Mobile)",
+      title: "AI-Powered Expense Tracker Web App",
       links: [
         { url: "https://expense-tracker-blush-eta-75.vercel.app", label: "Live" },
         { url: "https://github.com/L0rd-AK/Expense-Tracker", label: "Repo" },
