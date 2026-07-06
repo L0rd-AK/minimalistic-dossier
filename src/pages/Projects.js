@@ -44,6 +44,23 @@ function Projects() {
       backend I used Express JS and for storing data I used MongoDB.`,
     },
     {
+      title: "EduLeap — Vocational Education, Loans & ROI Platform",
+      links: [
+        { url: "https://eduleap.vercel.app/", label: "Live" },        
+        { url: "https://github.com/L0rd-AK/EduLeap", label: "Repo" },
+      ],
+      technologies: "Next.js, React JS, TypeScript, Express JS, MongoDB, Node JS, Tailwind CSS, Genkit AI, Firebase",
+      description: `EduLeap is a full-stack education platform where students enroll in vocational 
+      courses backed by micro-loans (up to 3x the course fee) and track both their learning progress 
+      and projected earning ROI. Users can sign up with Email or a Google account; authentication runs 
+      on JWT access and refresh tokens stored in httpOnly cookies, with email verification and password 
+      reset flows sent through Nodemailer. The platform has a role-based system: students get a dashboard 
+      showing course completion, milestone certifications, and ROI projections, while admins access an 
+      Admin-Dashboard to manage courses, students, loan approvals, and quarterly graduation caps. The 
+      frontend is built with Next.js and Tailwind CSS, with an AI layer via Genkit. The backend uses 
+      Express JS with MongoDB (Mongoose), secured with Helmet, rate limiting, and Zod validation.`,
+    },
+    {
       title: "AstroImpact Simulator — NASA Asteroid Impact Web-app",
       links: [
         { url: "https://astroimpact.vercel.app", label: "Live" },
