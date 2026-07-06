@@ -1,40 +1,9 @@
 import React from 'react';
 import Spinner from '../3DSpiner/Spinner';
+import { updatesData } from '../data/updatesData';
 
 function Update() {
-const updates = [
-    {
-        title:"8 of my Research Papers got accepted in Conferences",
-        date: "[10/2025]",
-        description: "My 8 research papers on various topics got accepted in reputed conferences, marking a significant milestone in my academic journey.",
-    },
-    {
-        title: "Reached Pupil on Codeforces",
-        date: "[25/02/2025]",
-        description: (
-            <>
-                Just reached pupil. Working on improving problem-solving skills.{" "}MAX rating:
-                <span className="text-red-600 font-medium">1215</span>.
-            </>
-        ),
-    },
-    {
-        title: "Reached 2 Star on Codechef",
-        date: "[27/11/2024]",
-        description: (
-            <>
-                Reached 2 ⭐ on Codechef.{" "}MAX rating: 
-                <span className="text-red-600 font-medium">1559</span>.
-                Country rank: <span className="text-red-600 font-medium">860</span>.
-            </>
-        ),
-    },
-    {
-      title: "Learning postgreSQL",
-      date: "[20/05/2025]",
-      description: "Currently learning postgreSQL to enhance database management skills.",
-    }
-];
+  const updates = updatesData;
 
   return (
     <div className="p-4 sm:p-8 bg-gray-50 shadow-sm rounded-lg">

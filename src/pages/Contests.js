@@ -1,33 +1,8 @@
 import { Helmet } from "react-helmet-async";
+import { contestsData } from "../data/contestsData";
 
 function Contests() {
-  const contests = [
-    {
-      title:"ICPC Asia Dhaka Regional Contest 2024",
-      year: "[2024]",
-    },
-    {
-      title:"Ranked 6th at DIU DataThon Contest 2024",
-      year: "[2024]",
-    },
-    {
-      title:"DIU Unlock The Algorithm Programming contest",
-      year: "[2023]",
-    },
-    {
-      title: "DIU Spring TAKEOFF Programming contest",
-      year: "[2023]",
-    },
-    {
-      title:
-      "Regularly Attend Online CP Contest on Codeforces, Codechef, Atcoder",
-      year: "[2023]",
-    },
-    {
-      title: "DIU FALL TAKEOFF Programming contest",
-      year: "[2022]",
-    },
-  ];
+  const contests = contestsData;
 
   return (
     <>

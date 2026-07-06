@@ -1,61 +1,13 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { coursesData } from "../data/coursesData";
 // import AnimatedLetters from "../AnimatedLetters";
 
 function Courses() {
-  const [showCertificate, setShowCertificate] = useState(null); 
+  const [showCertificate, setShowCertificate] = useState(null);
   // const [letterClass, setLetterClass] = useState("text-animate-hover");
   // const certificate =["C", "e", "r", "t", "i", "f", "i", "c", "a", "t", "e"];
-  const courses = [
-    {
-      title:"Dean's List Award for Academic Excellence",
-      date: "[Fall-2023]",
-      platform: "Academic",
-      instructor: "Daffodil International University",
-      certificateImage: "https://i.ibb.co.com/CpWv3sB3/Deans-list-Award.jpg",
-    },
-    {
-      title: "Learn C++ Programming - Beginner to Advance - Deep Dive in C++",
-      date: "[06/2022]",
-      instructor: "Abdul Bari",
-      platform: "Udemy",
-    },
-    {
-      title: "Graphic Design",
-      date: "[02/2023]",
-      instructor: "Shahadat Saykot",
-      certificateImage: "https://i.ibb.co.com/JWfxL58B/Ghapic-saykot.jpg",
-      platform: "Online",
-    },
-    {
-      title: "Complete Web Development Course With Jhankar Mahbub",
-      date: "[06/2023]",
-      certificateImage: "https://i.ibb.co/wh2VRXTw/Programming-hero-certificate.jpg", 
-      instructor: "Jhankar Mahbub",
-      platform: "Online",
-    },
-    {
-      title: "Datathon Programming Contest",
-      date: "[07/2024]",
-      instructor: "Daffodil International University",
-      platform: "Academic",
-      certificateImage: "https://i.ibb.co/bj1CvkYM/certificate.png",
-    },
-    {
-      title:"Communication Foundations",
-      date: "[14/02/2024]",
-      instructor: "LinkedIn Learning",
-      platform: "Online",
-      certificateImage: "https://i.ibb.co.com/Pz4wZbzQ/Certificate-Of-Completion-Communication-Foundations-2018.jpg",
-    },
-    {
-      title:"Communication Secrets",
-      date: "[15/02/2024]",
-      instructor: "10 Minute School",
-      platform: "Online",
-      certificateImage: "https://i.ibb.co.com/wZv2jB7W/a-FREE-online-course-offered-by-10-Minute-School.jpg",
-    },
-  ];
+  const courses = coursesData;
 
   const handleCertificateClick = (index) => {
     setShowCertificate(index); 
