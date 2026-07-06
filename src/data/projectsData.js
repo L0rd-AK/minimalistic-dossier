@@ -1,0 +1,216 @@
+// Projects list.
+// To add a new project, append an object to this array. Fields:
+//   title        - project title (string, required)
+//   links        - array of { url, label } — labels used: "Live", "Repo", "Video" (can be empty [])
+//   technologies - comma-separated tech string (shown only on /projects route)
+//   description  - template literal describing the project (optional; shown only on /projects route)
+// Array order = display order (first item shows first). The count on the page is projectsData.length.
+
+export const projectsData = [
+  {
+    title: "IELTS Pro – IELTS Practice Web App",
+    links: [
+      { url: "https://ielts-pro.vercel.app", label: "Live" },
+      { url: "https://github.com/L0rd-AK/IELTS_Pro", label: "Repo" },
+    ],
+    technologies:
+      "Next.js, React, TypeScript, Tailwind CSS, Firebase, Node.js",
+    description: `IELTS Pro is a full-featured IELTS practice platform. Users can sign up, take simulated IELTS speaking, writing, reading, and listening tests, and receive instant AI-powered feedback. The app uses Firebase for authentication and data storage, and integrates with AI services for test evaluation. The UI is built with Next.js and Tailwind CSS for a modern, responsive experience.`,
+  },
+  {
+    title: "Full-stack Wellness Tracker Next.js-app",
+    links: [
+      { url: "https://vital-track-eight.vercel.app", label: "Live" },
+      { url: "https://github.com/L0rd-AK/Vital-Track", label: "Repo" },
+    ],
+    technologies: "Next.js, React, TypeScript, MongoDB, Firebase Auth, Tailwind CSS",
+    description: `User can sign in using Email or Google account via Firebase Auth. Once logged in,
+    the user gets a personal wellness dashboard tracking posture, back pain, sleep, mood, and
+    daily sitting duration, with charts visualizing trends over time. The app includes a posture
+    checker, exercise plans and reminders, a gym finder with reviews, doctor appointment
+    scheduling, and a community feed where users can post and like. Every record is scoped to the
+    logged-in user — the backend uses Next.js API routes with Firebase Admin to verify each
+    request's ID token, and MongoDB (Mongoose) for data storage.`,
+  },
+  {
+    title: "Full-stack Job Finder React app",
+    links: [
+      { url: "https://jobdoc-de92b.web.app", label: "Live" },
+      { url: "https://github.com/L0rd-AK/JobDoc_Frontend", label: "Repo" },
+    ],
+    technologies: "React JS, Express JS, MongoDB, Node JS, Firebase",
+    description: `User can sign in using Email or Google account. Once Logged in user can
+    search for job, apply for a job or post a job. For authentication I used Firebase. For
+    backend I used Express JS and for storing data I used MongoDB.`,
+  },
+  {
+    title: "EduLeap — Vocational Education, Loans & ROI Platform",
+    links: [
+      { url: "https://eduleap.vercel.app/", label: "Live" },
+      { url: "https://github.com/L0rd-AK/EduLeap", label: "Repo" },
+    ],
+    technologies: "Next.js, React JS, TypeScript, Express JS, MongoDB, Node JS, Tailwind CSS, Genkit AI, Firebase",
+    description: `EduLeap is a full-stack education platform where students enroll in vocational
+    courses backed by micro-loans (up to 3x the course fee) and track both their learning progress
+    and projected earning ROI. Users can sign up with Email or a Google account; authentication runs
+    on JWT access and refresh tokens stored in httpOnly cookies, with email verification and password
+    reset flows sent through Nodemailer. The platform has a role-based system: students get a dashboard
+    showing course completion, milestone certifications, and ROI projections, while admins access an
+    Admin-Dashboard to manage courses, students, loan approvals, and quarterly graduation caps. The
+    frontend is built with Next.js and Tailwind CSS, with an AI layer via Genkit. The backend uses
+    Express JS with MongoDB (Mongoose), secured with Helmet, rate limiting, and Zod validation.`,
+  },
+  {
+    title: "AstroImpact Simulator — NASA Asteroid Impact Web-app",
+    links: [
+      { url: "https://astroimpact.vercel.app", label: "Live" },
+      { url: "https://github.com/L0rd-AK/AstroImpact", label: "Repo" },
+    ],
+    technologies: "React JS, Express JS, MongoDB, Node JS, Socket.io, Leaflet.js, Chart.js, JWT",
+    description: `A full-stack MERN app for the 2025 NASA Space Apps "Meteor Madness"
+    challenge. Users register and log in (JWT auth) to browse live asteroid data pulled
+    from NASA's NeoWs API. They pick an asteroid, choose any impact point on an interactive
+    Leaflet map, set parameters like impact angle and deflection strategy, then run a
+    simulation that computes crater size, blast damage, seismic magnitude, tsunami effects
+    and economic impact using USGS scaling laws. Results visualize with Chart.js. A community
+    layer lets users share simulations publicly, vote on mitigation strategies, and comment,
+    with live updates over Socket.io. Backend is Express + MongoDB (Mongoose); frontend is
+    React with React Router and Bootstrap.`,
+  },
+  {
+    title: "AI-Powered Expense Tracker Web App",
+    links: [
+      { url: "https://expense-tracker-blush-eta-75.vercel.app", label: "Live" },
+      { url: "https://github.com/L0rd-AK/Expense-Tracker", label: "Repo" },
+    ],
+    technologies: "Next.js, React, TypeScript, Express JS, Node JS, MongoDB, Google Gemini AI, React Native (Expo), Tailwind CSS",
+    description: `A monorepo expense tracker with a Next.js web app, an Express backend, and a
+    React Native (Expo) mobile app sharing one codebase. Users can sign in with Email/Password
+    or a Google account, which I built using Google Identity Services on the frontend and
+    verified server-side with the google-auth-library, issuing my own JWT sessions. The
+    standout feature is AI-driven entry: a user can speak or type an expense in plain English
+    or Bangla (e.g. "rickshaw 40 taka"), and I parse it into structured data (item, category,
+    amount, note) using the Google Gemini API, with a manual form as a fallback. The dashboard
+    shows monthly stats and spending charts (Recharts), and the history page supports live
+    search, category filters, sorting, plus inline edit and delete. I also generate AI monthly
+    reports with spending insights. For the backend I used Express JS with a Zod-validated REST
+    API, MongoDB via Mongoose for storage, and deployed both apps as separate projects on Vercel.`,
+  },
+  {
+    title: "Full-stack Task Manager with Focus & Offline Features",
+    links: [
+      { url: "https://task-manag3er.vercel.app", label: "Live" },
+      { url: "https://github.com/L0rd-AK/Personal-Task-Manager", label: "Repo" },
+    ],
+    technologies: "React, TypeScript, Vite, Tailwind, Zustand, Node JS, Express, MongoDB, Redis, BullMQ",
+    description: `Production task manager built on MERN + TypeScript. User signs in with Email/password
+    (JWT + refresh tokens) or Google OAuth. Core is a three-column board — Ongoing, Completed,
+    Given-up — with non-stoppable live countdown timers synced to server time, so a task's deadline
+    can't be cheated by changing the client clock. Tasks created via natural-language parsing
+    ("Finish slides in 2h") and organized with projects and tags. Focus suite includes Pomodoro mode,
+    Forced Focus (blocks navigation, 10s emergency exit), and a Deep Work preset. Ships Google
+    Keep-style rich notes with markdown, checklists, colors, pinning, and file attachments (local/S3).
+    Offline-first: operations queue in IndexedDB and background-sync with conflict resolution when
+    back online. Scheduled reminders run on Redis + BullMQ and fire browser push notifications via
+    VAPID web-push. Backend is Express + Mongoose, hardened with Helmet, CORS, and rate limiting.`,
+  },
+  {
+    title: "Full-stack Medical clinic React-app",
+    links: [
+      { url: "https://medlab-3e261.web.app", label: "Live" },
+      { url: "https://github.com/L0rd-AK/MedLab_Frontend", label: "Repo" },
+    ],
+    technologies: "React JS, Express JS, MongoDB, Node JS, Firebase",
+    description: `User can sign in using Email or Google account. Once Logged in, the user can
+    search for a doctor and test. To book a test, the user must pay a fee. I have implemented
+    a Payment-gateway using Stripe. This site contains an Admin role system. When an admin
+    logs in, they can access their Admin-Dashboard. Through this dashboard, the admin can
+    delete or update any test information, block any user, and blocked users cannot access
+    the site anymore. For the backend, I used Express JS, and for storing data, I used MongoDB.`,
+  },
+  {
+    title: "Front-end wedding React-project",
+    links: [
+      { url: "https://love-and-wedding-demo-site.vercel.app", label: "Live" },
+      {
+        url: "https://github.com/L0rd-AK/Love-and-Wedding_Demo-site",
+        label: "Repo",
+      },
+    ],
+    technologies: "React JS, Tailwind CSS, DaisyUI, Firebase",
+  },
+  {
+    title: "Cursor-Controlled Snake Game",
+    technologies: "React JS, Tailwind CSS, DaisyUI",
+    description:
+      "Just built this fun mouse-controlled Snake Game in 5 minutes using prompt engineering with DeepSeek R1! 🚀 The game is made with React.js and leverages useState, useEffect, and requestAnimationFrame for smooth movement and interactions. It features a countdown timer, food mechanics, collision detection, and a simple scoring system. This showcases the power of AI-assisted development in rapid prototyping.",
+    links: [
+      { url: "https://cursor-snake.vercel.app", label: "Live" },
+      {
+        url: "https://youtu.be/OFGOr5Sm55w?si=366ft1vYQrikrKkA",
+        label: "Video",
+      },
+      { url: "https://github.com/L0rd-AK/Cursor_snake", label: "Repo" },
+    ],
+  },
+  {
+    title: "CSE-332 Compiler Design Project",
+    technologies:
+      "C, Yacc, Lex, Bison, Flex, Lexical Analyzer, Parser Generator (Yacc)",
+    description: `This project is a comprehensive implementation of a compiler for a custom programming language, I developed it as part of the CSE-332 Compiler Design course. It covers essential compiler design stages such as lexical analysis, syntax analysis, and intermediate code generation. The project is written in C and utilizes Yacc for syntax parsing and Lex for lexical analysis. It demonstrates a strong understanding of compiler construction principles and practical skills in low-level programming and parser generation.`,
+    links: [
+      {
+        url: "https://github.com/L0rd-AK/CSE-332_Compiler_Design",
+        label: "Repo",
+      },
+    ],
+  },
+  {
+    title: "IoT Smart Home Automation System (ESP8266 + Firebase)",
+    links: [
+      { url: "https://l0rd-ak.github.io/Home-Automation-Project", label: "Live" },
+      { url: "https://github.com/L0rd-AK/Home-Automation-Project", label: "Repo" },
+    ],
+    technologies: "ESP8266 (Arduino/C++), Firebase Realtime Database, Firebase Auth, HTML, CSS, JavaScript, DHT11 / PIR / LDR sensors, L298N Motor Driver",
+    description: `An end-to-end IoT smart home system that monitors and controls a physical
+    environment in real time. An ESP8266 (NodeMCU) reads a PIR motion sensor, an LDR light
+    sensor, and a DHT11 temperature/humidity sensor, then drives actuators — two LEDs and a
+    DC motor via an L298N driver with PWM speed and direction control. All sensor readings,
+    control states, and event notifications sync live to Firebase Realtime Database, so the
+    hardware and a web dashboard stay in constant two-way sync. The user signs in through
+    Firebase Auth (email/password) and gets a dashboard to monitor temperature, humidity,
+    light level, and motion, plus toggle lights and motor remotely. The firmware runs
+    autonomous logic — auto-lighting when ambient light drops, auto-motor when temperature
+    crosses a threshold, and instant motion alerts — while physical override switches and
+    dashboard commands take priority over automation. Engineered for reliability with
+    non-blocking millis() timers, hysteresis to stop relay oscillation, rate-limited
+    notifications, switch debouncing, PWM capped at 80% for motor safety, and automatic
+    WiFi reconnection.`,
+  },
+  {
+    title: "Auto Attendance System Using Face-Recognition in Python",
+    links: [
+      {
+        url: "https://youtu.be/hEhCqYvJyNw?si=Q_1lpFz1cL3zt3RN",
+        label: "Video",
+      },
+      {
+        url: "https://github.com/L0rd-AK/Auto-Attendance-System-using-Face-Recognition",
+        label: "Repo",
+      },
+    ],
+    technologies: "Python, OpenCV, SQLite",
+    description: `This project is an automated attendance system using face recognition.`,
+  },
+  {
+    title: "Simple Server-Client Chat Application in Java",
+    links: [
+      {
+        url: "https://github.com/L0rd-AK/Simple_chat_App_using_java",
+        label: "Repo",
+      },
+    ],
+    technologies: "Java",
+    description: `This project is a simple chat application using Java. The server and client can chat with each other.`,
+  },
+];
