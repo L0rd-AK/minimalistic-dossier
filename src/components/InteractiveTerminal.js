@@ -5,6 +5,8 @@ const InteractiveTerminal = () => {
   const [history, setHistory] = useState([]);
   const [currentInput, setCurrentInput] = useState('');
   const [isVisible, setIsVisible] = useState(false);
+  const [cmdHistory, setCmdHistory] = useState([]); // executed commands, for ↑/↓ recall
+  const [historyIndex, setHistoryIndex] = useState(-1);
   const inputRef = useRef(null);
   const terminalRef = useRef(null);
 
@@ -71,25 +73,42 @@ const InteractiveTerminal = () => {
     ]
   };
 
+  // Short aliases → real command names
+  const aliasMap = {
+    cls: 'clear',
+    quit: 'exit',
+    q: 'exit',
+    bye: 'exit',
+    '?': 'help',
+    man: 'help',
+    info: 'whoami',
+    me: 'whoami'
+  };
+
   const commands = {
     help: () => ({
       output: [
         "Available commands:",
         "",
-        "  whoami           - Display user information",
-        "  ls [directory]   - List contents (skills, projects, education, experience)",
-        "  cat <file>       - Display file contents",
-        "  grep <term>      - Search for term in portfolio",
-        "  clear            - Clear terminal",
-        "  pwd              - Show current directory",
-        "  date             - Show current date",
-        "  contact          - Show contact information",
-        "  exit             - Close terminal",
+        "  whoami            - About me",
+        "  ls [dir]          - List contents (skills, projects, education, experience)",
+        "  cat <file>        - Show file contents",
+        "  grep [-i] <term>  - Search the portfolio",
+        "  contact           - Contact information",
+        "  history           - Show command history",
+        "  echo <text>       - Print text",
+        "  date              - Current date/time",
+        "  pwd               - Current directory",
+        "  clear             - Clear the screen",
+        "  exit              - Close terminal",
+        "",
+        "Tips:",
+        "  • Commands are case-insensitive  (LS = ls = Ls)",
+        "  • Tab autocompletes  ·  ↑/↓ recall history  ·  Esc closes",
+        "  • Aliases: cls, quit/q/bye, man/?, me/info",
         "",
         "Examples:",
-        "  ls skills/",
-        "  cat experience.txt",
-        "  grep -i react",
+        "  ls skills    ·    cat about.txt    ·    grep react",
         ""
       ]
     }),
@@ -112,6 +131,16 @@ const InteractiveTerminal = () => {
       output: [new Date().toString()]
     }),
 
+    echo: (args) => ({
+      output: [args.join(' ')]
+    }),
+
+    history: () => ({
+      output: cmdHistory.length
+        ? cmdHistory.map((c, i) => `  ${String(i + 1).padStart(3, ' ')}  ${c}`)
+        : ["No commands in history yet."]
+    }),
+
     contact: () => ({
       output: [
         "Contact Information:",
@@ -125,9 +154,9 @@ const InteractiveTerminal = () => {
     }),
 
     ls: (args) => {
-      const dir = args[0] || "";
+      // case-insensitive, tolerate trailing slash: "Skills/" == "skills"
+      const dir = (args[0] || "").toLowerCase().replace(/\/+$/, "");
       switch (dir) {
-        case "skills/":
         case "skills":
           return {
             output: [
@@ -136,7 +165,6 @@ const InteractiveTerminal = () => {
               "Use 'cat skills/<category>' to view details"
             ]
           };
-        case "projects/":
         case "projects":
           return {
             output: [
@@ -145,15 +173,13 @@ const InteractiveTerminal = () => {
               "Use 'cat projects/<number>' for details"
             ]
           };
-        case "education/":
         case "education":
           return {
-            output: ["degree.txt", "certifications.txt"]
+            output: ["education.txt"]
           };
-        case "experience/":
         case "experience":
           return {
-            output: ["work-history.txt", "achievements.txt"]
+            output: ["experience.txt"]
           };
         case "":
           return {
@@ -161,7 +187,7 @@ const InteractiveTerminal = () => {
               "skills/     projects/     education/     experience/",
               "about.txt   contact.txt   resume.pdf",
               "",
-              "Use 'ls <directory>/' to explore folders"
+              "Use 'ls <directory>' to explore folders"
             ]
           };
         default:
@@ -176,8 +202,8 @@ const InteractiveTerminal = () => {
         return { output: ["cat: missing file operand"] };
       }
 
-      const file = args[0];
-      
+      const file = args[0].toLowerCase().replace(/\/+$/, "");
+
       if (file.startsWith("skills/")) {
         const category = file.split("/")[1];
         const skillData = portfolioData.skills[category];
@@ -190,10 +216,11 @@ const InteractiveTerminal = () => {
             ]
           };
         }
+        return { output: [`cat: ${file}: unknown category. Try: cat skills`] };
       }
 
       if (file.startsWith("projects/")) {
-        const projectNum = parseInt(file.split("/")[1]) - 1;
+        const projectNum = parseInt(file.split("/")[1], 10) - 1;
         const project = portfolioData.projects[projectNum];
         if (project) {
           return {
@@ -206,6 +233,7 @@ const InteractiveTerminal = () => {
             ]
           };
         }
+        return { output: [`cat: ${file}: no such project. Try: ls projects`] };
       }
 
       switch (file) {
@@ -219,6 +247,8 @@ const InteractiveTerminal = () => {
             ]
           };
         case "experience.txt":
+        case "work-history.txt":
+        case "achievements.txt":
           return {
             output: [
               "=== WORK EXPERIENCE ===",
@@ -232,6 +262,7 @@ const InteractiveTerminal = () => {
             ]
           };
         case "education.txt":
+        case "degree.txt":
           return {
             output: [
               "=== EDUCATION ===",
@@ -247,6 +278,15 @@ const InteractiveTerminal = () => {
           };
         case "contact.txt":
           return commands.contact();
+        case "resume.pdf":
+          return {
+            output: [
+              "📄 resume.pdf",
+              "",
+              "Binary file — can't cat. Grab the details with:",
+              "  cat about.txt · cat education.txt · cat experience.txt · contact"
+            ]
+          };
         default:
           return {
             output: [`cat: ${file}: No such file or directory`]
@@ -255,13 +295,15 @@ const InteractiveTerminal = () => {
     },
 
     grep: (args) => {
-      if (!args[0]) {
+      // skip flags like -i (search is already case-insensitive); take first real term
+      const term = args.find(a => !a.startsWith('-'));
+      if (!term) {
         return { output: ["grep: missing search pattern"] };
       }
 
-      const pattern = args[0].toLowerCase();
+      const pattern = term.toLowerCase();
       const results = [];
-      
+
       // Search in skills
       Object.entries(portfolioData.skills).forEach(([category, items]) => {
         items.forEach(item => {
@@ -273,15 +315,32 @@ const InteractiveTerminal = () => {
 
       // Search in projects
       portfolioData.projects.forEach((project, i) => {
-        if (project.name.toLowerCase().includes(pattern) || 
+        if (project.name.toLowerCase().includes(pattern) ||
             project.tech.toLowerCase().includes(pattern) ||
             project.description.toLowerCase().includes(pattern)) {
           results.push(`projects/${i + 1}: ${project.name} (${project.tech})`);
         }
       });
 
+      // Search in experience
+      portfolioData.experience.forEach(exp => {
+        if (exp.role.toLowerCase().includes(pattern) ||
+            exp.company.toLowerCase().includes(pattern) ||
+            exp.description.toLowerCase().includes(pattern)) {
+          results.push(`experience: ${exp.role} @ ${exp.company}`);
+        }
+      });
+
+      // Search in education
+      portfolioData.education.forEach(edu => {
+        if (edu.degree.toLowerCase().includes(pattern) ||
+            edu.institution.toLowerCase().includes(pattern)) {
+          results.push(`education: ${edu.degree} — ${edu.institution}`);
+        }
+      });
+
       return {
-        output: results.length > 0 ? results : [`No matches found for '${pattern}'`]
+        output: results.length > 0 ? results : [`No matches found for '${term}'`]
       };
     },
 
@@ -290,15 +349,50 @@ const InteractiveTerminal = () => {
       return { output: [] };
     },
 
+    sudo: () => ({
+      output: ["🔒 Permission denied: this incident will NOT be reported. Nice try 😄"]
+    }),
+
     exit: () => {
       setIsVisible(false);
       return { output: ["Goodbye! Thanks for exploring my portfolio!"] };
     }
   };
 
+  // Levenshtein distance for "did you mean" suggestions
+  const distance = (a, b) => {
+    const m = [];
+    for (let i = 0; i <= b.length; i++) m[i] = [i];
+    for (let j = 0; j <= a.length; j++) m[0][j] = j;
+    for (let i = 1; i <= b.length; i++) {
+      for (let j = 1; j <= a.length; j++) {
+        m[i][j] = b[i - 1] === a[j - 1]
+          ? m[i - 1][j - 1]
+          : Math.min(m[i - 1][j - 1], m[i][j - 1], m[i - 1][j]) + 1;
+      }
+    }
+    return m[b.length][a.length];
+  };
+
+  const suggestCommand = (name) => {
+    const names = [...Object.keys(commands), ...Object.keys(aliasMap)];
+    let best = null;
+    let bestD = Infinity;
+    names.forEach(n => {
+      const d = distance(name, n);
+      if (d < bestD) { bestD = d; best = n; }
+    });
+    return bestD <= 2 ? best : null;
+  };
+
   const executeCommand = (input) => {
-    const [command, ...args] = input.trim().split(' ');
-    
+    const raw = input.trim();
+    const parts = raw.split(/\s+/);
+    const rawCommand = parts[0] || '';
+    const command = rawCommand.toLowerCase(); // case-insensitive
+    const args = parts.slice(1);
+    const name = aliasMap[command] || command;
+
     const historyEntry = {
       command: input,
       output: []
@@ -306,13 +400,18 @@ const InteractiveTerminal = () => {
 
     if (command === '') {
       historyEntry.output = [''];
-    } else if (commands[command]) {
-      const result = commands[command](args);
+    } else if (commands[name]) {
+      const result = commands[name](args);
       if (result.output) {
         historyEntry.output = result.output;
       }
     } else {
-      historyEntry.output = [`Command not found: ${command}. Type 'help' for available commands.`];
+      const suggestion = suggestCommand(command);
+      historyEntry.output = [
+        `Command not found: ${rawCommand}.`,
+        ...(suggestion ? [`Did you mean '${suggestion}'?`] : []),
+        "Type 'help' for available commands."
+      ];
     }
 
     setHistory(prev => [...prev, historyEntry]);
@@ -322,7 +421,48 @@ const InteractiveTerminal = () => {
     e.preventDefault();
     if (currentInput.trim()) {
       executeCommand(currentInput);
+      setCmdHistory(prev => [...prev, currentInput.trim()]);
+      setHistoryIndex(-1);
       setCurrentInput('');
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    // Recall previous commands
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (cmdHistory.length === 0) return;
+      const idx = historyIndex === -1 ? cmdHistory.length - 1 : Math.max(0, historyIndex - 1);
+      setHistoryIndex(idx);
+      setCurrentInput(cmdHistory[idx]);
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (historyIndex === -1) return;
+      const idx = historyIndex + 1;
+      if (idx >= cmdHistory.length) {
+        setHistoryIndex(-1);
+        setCurrentInput('');
+      } else {
+        setHistoryIndex(idx);
+        setCurrentInput(cmdHistory[idx]);
+      }
+    } else if (e.key === 'Tab') {
+      // Autocomplete the command name
+      e.preventDefault();
+      const typed = currentInput.trim().toLowerCase();
+      if (!typed || typed.includes(' ')) return;
+      const names = [...Object.keys(commands), ...Object.keys(aliasMap)];
+      const matches = names.filter(n => n.startsWith(typed));
+      if (matches.length === 1) {
+        setCurrentInput(matches[0] + ' ');
+      } else if (matches.length > 1) {
+        setHistory(prev => [...prev, {
+          command: `${typed} (tab)`,
+          output: [matches.sort().join('    ')]
+        }]);
+      }
+    } else if (e.key === 'Escape') {
+      setIsVisible(false);
     }
   };
 
@@ -336,8 +476,8 @@ const InteractiveTerminal = () => {
           output: [
             "Welcome to Amit's Interactive Portfolio Terminal!",
             "",
-            "Type 'help' to see available commands.",
-            "Try: whoami, ls, cat about.txt, grep react",
+            "Commands are case-insensitive. Tab autocompletes, ↑/↓ recall history.",
+            "Type 'help' to see everything.  Try: whoami · ls · cat about.txt · grep react",
             ""
           ]
         }]);
@@ -360,7 +500,16 @@ const InteractiveTerminal = () => {
   return (
     <>
       {/* Terminal Toggle Button */}
-      <div className="terminal-toggle" onClick={toggleTerminal}>
+      <div
+        className="terminal-toggle"
+        onClick={toggleTerminal}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTerminal(); } }}
+        role="button"
+        tabIndex={0}
+        aria-label={isVisible ? "Close interactive terminal" : "Open interactive terminal"}
+        aria-pressed={isVisible}
+        title="Interactive terminal"
+      >
         <span className="terminal-toggle-icon">💻</span>
       </div>
 
@@ -370,14 +519,21 @@ const InteractiveTerminal = () => {
           <div className="terminal-window">
             <div className="terminal-header">
               <div className="terminal-buttons">
-                <span className="terminal-button close" onClick={() => setIsVisible(false)}></span>
+                <span
+                  className="terminal-button close"
+                  onClick={() => setIsVisible(false)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Close terminal"
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setIsVisible(false); } }}
+                ></span>
                 <span className="terminal-button minimize"></span>
                 <span className="terminal-button maximize"></span>
               </div>
               <div className="terminal-title">amit@portfolio:~</div>
             </div>
-            
-            <div className="terminal-body" ref={terminalRef}>
+
+            <div className="terminal-body" ref={terminalRef} onClick={() => inputRef.current && inputRef.current.focus()}>
               {history.map((entry, index) => (
                 <div key={index} className="terminal-entry">
                   {entry.command && (
@@ -393,7 +549,7 @@ const InteractiveTerminal = () => {
                   </div>
                 </div>
               ))}
-              
+
               <form onSubmit={handleSubmit} className="terminal-input-form">
                 <span className="terminal-prompt">amit@portfolio:~$ </span>
                 <input
@@ -401,10 +557,14 @@ const InteractiveTerminal = () => {
                   type="text"
                   value={currentInput}
                   onChange={(e) => setCurrentInput(e.target.value)}
+                  onKeyDown={handleKeyDown}
                   className="terminal-input-field"
-                  placeholder="Type a command..."
+                  placeholder="Type a command...  (try 'help')"
                   autoComplete="off"
+                  autoCapitalize="off"
+                  autoCorrect="off"
                   spellCheck="false"
+                  aria-label="Terminal command input"
                 />
               </form>
             </div>
