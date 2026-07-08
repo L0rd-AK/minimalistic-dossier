@@ -1,21 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import { coursesData } from "../data/coursesData";
 // import AnimatedLetters from "../AnimatedLetters";
 
 function Courses() {
-  const [showCertificate, setShowCertificate] = useState(null);
   // const [letterClass, setLetterClass] = useState("text-animate-hover");
   // const certificate =["C", "e", "r", "t", "i", "f", "i", "c", "a", "t", "e"];
   const courses = coursesData;
-
-  const handleCertificateClick = (index) => {
-    setShowCertificate(index); 
-  };
-
-  const closeModal = () => {
-    setShowCertificate(null); 
-  };
 
   return (
     <>
@@ -50,12 +41,14 @@ function Courses() {
                 <span className="text-purple-600 font-medium italic px-0 md:px-2 rounded ml-0 md:ml-2 flex items-center">
                   {course.date}
                   {course?.certificateImage && (
-                    <button
-                      onClick={() => handleCertificateClick(index)}
+                    <a
+                      href={course.certificateImage}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="ml-2 text-purple-600 hover:text-purple-700 italic"
                     >
                       [View Certificate]
-                    </button>
+                    </a>
                   )}
                 </span>
               </div>
@@ -69,25 +62,6 @@ function Courses() {
           ))}
         </ul>
       </div>
-
-      {/* Modal for Certificate */}
-      {showCertificate !== null && courses[showCertificate]?.certificateImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-4 rounded-lg shadow-lg max-w-lg w-full relative">
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-            >
-              ✖
-            </button>
-            <img
-              src={courses[showCertificate].certificateImage}
-              alt={`${courses[showCertificate].title} Certificate`}
-              className="w-full rounded"
-            />
-          </div>
-        </div>
-      )}
     </>
   );
 }

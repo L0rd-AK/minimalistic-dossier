@@ -4,7 +4,7 @@
 //   date             - date label shown in brackets, e.g. "[06/2022]"
 //   platform         - platform / type, e.g. "Udemy", "Online", "Academic"
 //   instructor       - instructor or issuing organization (string)
-//   certificateImage - optional image URL; if present a [View Certificate] button opens it in a modal
+//   certificateImage - optional image URL; if present a [View Certificate] link opens it in a new tab
 // Array order = display order.
 
 export const coursesData = [
