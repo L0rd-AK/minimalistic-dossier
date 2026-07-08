@@ -9,9 +9,10 @@
 
 export const coursesData = [
   {
-    title: "EF SET Certificate",
+    title: "EF SET English Test Certificate",
     date: "[04/04/2026]",
     platform: "Online",
+    instructor: "EF SET",
     certificateImage: "https://cert.efset.org/MioTEi",
   },
   {
