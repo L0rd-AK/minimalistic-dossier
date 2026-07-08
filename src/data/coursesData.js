@@ -9,6 +9,12 @@
 
 export const coursesData = [
   {
+    title: "EF SET Certificate",
+    date: "[04/04/2026]",
+    platform: "Online",
+    certificateImage: "https://cert.efset.org/MioTEi",
+  },
+  {
     title: "Dean's List Award for Academic Excellence",
     date: "[Fall-2023]",
     platform: "Academic",
