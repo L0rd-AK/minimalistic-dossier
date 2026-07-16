@@ -1253,6 +1253,158 @@ export const blogsData = [
   </>
 )
   },
+  {
+    id: 6,
+    title: "The Doomscroll Loop: Why Your Thumb Knows Something You Don’t",
+    date: "July 15, 2026",
+    description:
+      "A neuroscience-based look at why doomscrolling hooks you — and the low-effort exits that work with your wiring instead of against it.",
+    readTime: "6 min read",
+    author: "Amit Kumar Ghosh",
+    tags: ["Mental Health", "Neuroscience", "Attention", "Habits", "Self‑Care"],
+    content: (
+      <div className="mb-8">
+        <p className="mb-4 text-justify">
+          Remember the overzealous security guard in your head—the amygdala who
+          jumps at every rustle of leaves? Doomscrolling is what happens when
+          someone hands that guard a bottomless stack of surveillance monitors
+          and tells him to keep watching. He will. He was built to. He’ll do it
+          for three hours and feel worse the whole time, and he will not stop,
+          because nothing in his job description says <em>when to stop</em>.
+        </p>
+        <p className="mb-4 text-justify">
+          Here’s the uncomfortable part: your thumb isn’t weak. It’s obeying a
+          system that’s working perfectly. Let’s look at what that system
+          actually is.
+        </p>
+
+        <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">
+          1. Wanting Is Not Liking
+        </h2>
+        <p className="mb-4 text-justify">
+          The biggest myth about dopamine is that it’s the “pleasure chemical.”
+          It isn’t. Berridge and Robinson spent decades separating two things we
+          lazily fuse: <strong>wanting</strong> and <strong>liking</strong>.
+          Dopamine drives the wanting—the pull, the reach, the <em>one more
+          swipe</em>. Liking runs on a different system entirely (opioid and
+          endocannabinoid circuits, mostly). Which explains the strangest
+          feature of doomscrolling: you can want it intensely while enjoying it
+          not at all. That’s not a contradiction. That’s two systems, and only
+          one of them is holding the phone.
+          <em>Low‑effort action:</em> Mid‑scroll, ask one question—“Am I
+          enjoying this, or am I just reaching?” Don’t try to stop. Just answer
+          it. Separating wanting from liking, out loud, is often enough to make
+          the reach visible.
+        </p>
+
+        <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">
+          2. The Slot Machine in Your Pocket
+        </h2>
+        <p className="mb-4 text-justify">
+          Wolfram Schultz’s work showed that dopamine neurons don’t fire for
+          reward. They fire for <strong>reward prediction error</strong>—the gap
+          between what you expected and what you got. Predictable reward, no
+          signal. Surprise, big signal. Now consider a feed. Most posts are
+          nothing. Some are interesting. A rare few are genuinely alarming or
+          genuinely great, and you cannot predict which. That’s a{" "}
+          <strong>variable‑ratio schedule</strong>—the reinforcement pattern
+          Ferster and Skinner documented in 1957 as the hardest of all to
+          extinguish. Same math as a slot machine. The unpredictability isn’t a
+          side effect of the feed. It <em>is</em> the product.
+          <em>Low‑effort action:</em> Make the reward predictable and it loses
+          its grip. Check one specific thing—a person, a topic, a single
+          tab—instead of the feed. Predictable reward means no prediction error,
+          which means no signal, which means a much smaller pull.
+        </p>
+
+        <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">
+          3. Why <em>Doom</em>, Specifically
+        </h2>
+        <p className="mb-4 text-justify">
+          Feeds don’t have to serve bad news. They do it because we grab it.
+          Baumeister and colleagues laid this out in a paper titled, with rare
+          academic bluntness, “Bad Is Stronger Than Good” (2001), and Rozin and
+          Royzman mapped the same asymmetry as <strong>negativity bias</strong>{" "}
+          the same year: threat information is processed faster, weighted
+          heavier, and remembered longer than the pleasant kind. For an ancestor
+          scanning a treeline, that asymmetry was survival. For you, scanning a
+          feed engineered by people who measured exactly which headlines you
+          couldn’t scroll past, it’s a vulnerability with a business model
+          attached. Your guard isn’t malfunctioning. He’s just been aimed.
+          <em>Low‑effort action:</em> Say the quiet part out loud—“This is being
+          selected <em>for</em> me because I can’t look away.” Naming the
+          mechanism does to it roughly what emotional labeling does to sadness
+          (Lieberman et al., 2007): it moves the thing from something happening{" "}
+          <em>to</em> you to something you’re <em>watching</em> happen.
+        </p>
+
+        <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">
+          4. The Missing Stop Sign
+        </h2>
+        <p className="mb-4 text-justify">
+          Every good habit loop has a boundary. Book has a last page. Episode
+          has credits. Meal has an empty plate. These are{" "}
+          <strong>stopping cues</strong>—the moment your brain gets permission
+          to be done. Infinite scroll deletes the cue. There is no last page, so
+          there’s no moment where continuing becomes a decision instead of a
+          default. This isn’t a failure of your willpower; you never got the
+          prompt where willpower gets to speak. You can’t decide to stop if
+          nothing ever asks.
+          <em>Low‑effort action:</em> Build the cue yourself, on the outside
+          where the app can’t delete it. A timer. A glass of water you’re
+          finished with. Standing up. It doesn’t need to be strict—it just needs
+          to be a <em>moment</em>, because a moment is where a decision can
+          happen.
+        </p>
+
+        <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">
+          5. The Cost You Don’t Feel Until Later
+        </h2>
+        <p className="mb-4 text-justify">
+          Killingsworth and Gilbert (2010) pinged thousands of people at random
+          through their days and found something durable: a wandering mind is an
+          unhappy mind—and it predicted lower mood <em>afterward</em>, not just
+          alongside. The mind‑wandering came first. Doomscrolling is
+          mind‑wandering with a supplier. And it hides its own cost, because the
+          bill doesn’t arrive during—it arrives forty minutes later, as flatness
+          you’ll probably blame on something else entirely.
+          <em>Low‑effort action:</em> Timestamp it. Note the mood you started
+          with and the mood you ended with, once. Not to shame yourself—to close
+          the loop between the action and its cost, which is the connection the
+          design is quietly counting on you never making.
+        </p>
+
+        <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">
+          Why This Matters (Without the Hype)
+        </h2>
+        <p className="mb-4 text-justify">
+          Honest caveat: the neuroscience above—wanting versus liking,
+          prediction error, negativity bias—is well established. The research on{" "}
+          <em>doomscrolling specifically</em> is younger, mostly correlational,
+          and it can’t cleanly tell you whether the scrolling causes the low mood
+          or the low mood drives the scrolling. Probably both, feeding each
+          other. Anyone selling you a clean causal arrow is selling you
+          something. So don’t treat this as a moral verdict on your phone. Treat
+          it as a <strong>wiring diagram</strong>. You’re not weak‑willed for
+          losing three hours to a feed built by teams who tested it against
+          millions of people to make sure you would. That’s not a fair fight, and
+          pretending it is just adds shame on top of the flatness.
+        </p>
+
+        <h2 className="font-bold text-xl mb-2 text-blue-600 hover:text-blue-800">
+          Final Thought
+        </h2>
+        <p className="mb-4 text-justify">
+          The loop isn’t a character flaw. It’s a wanting system that predates
+          agriculture, wired to a threat detector that predates language,
+          plugged into an interface designed last quarter to exploit both. You’re
+          not going to out‑discipline that. But you don’t have to. You just have
+          to give the guard a stopping cue—something the feed refuses to give
+          him—and let him finally clock out. He’s been on shift a long time.
+        </p>
+      </div>
+    ),
+  },
 
 ];
 
