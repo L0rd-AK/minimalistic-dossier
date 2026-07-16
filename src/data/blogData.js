@@ -1254,7 +1254,7 @@ export const blogsData = [
 )
   },
   {
-    id: 6,
+    id: 7,
     title: "The Doomscroll Loop: Why Your Thumb Knows Something You Don’t",
     date: "July 15, 2026",
     description:
